@@ -6,19 +6,19 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <div className="min-h-screen flex">
+      <div className="min-h-screen flex flex-col lg:flex-row">
         <div className="relative p-16 flex-1 flex flex-col justify-center item-center">
-          <div className="absolute top-1/8 left-1/6">
+          <div className="absolute top-1/8 left-1/6 hidden lg:block">
             <Image
               src="/images/gear.png"
               alt="Illustration eines Zahnrades"
               width={200}
               height={200}
-              className="w-24"
+              className="w-24 "
               loading="eager"
             />
           </div>
-          <div className="absolute  top-1/5 right-1/6">
+          <div className="absolute top-1/5 right-1/6 hidden lg:block">
             <Image
               src="/images/tool_2.webp"
               alt="Illustration eines Zahnrades"
@@ -28,7 +28,7 @@ export default function Home() {
               loading="eager"
             />
           </div>
-          <div className="absolute  bottom-10 left-1/6">
+          <div className="absolute  bottom-10 left-1/6 hidden lg:block">
             <Image
               src="/images/tool_3.webp"
               alt="Illustration eines Zahnrades"
@@ -38,7 +38,7 @@ export default function Home() {
               loading="eager"
             />
           </div>
-          <div className="absolute  bottom-1/8 right-1/6">
+          <div className="absolute bottom-1/8 right-1/6 hidden lg:block">
             <Image
               src="/images/tool_4.png"
               alt="Illustration eines Zahnrades"
@@ -54,7 +54,7 @@ export default function Home() {
               alt="Logo"
               width={200}
               height={200}
-              className="w-24 mx-auto"
+              className="w-24 h-auto mx-auto"
               loading="eager"
             />
             <h1 id="print-now" className="text-center mt-12">

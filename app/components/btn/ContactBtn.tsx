@@ -1,4 +1,5 @@
 'use client'
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 type Props = {
@@ -9,9 +10,9 @@ type Props = {
 export default function ContactBtn({ className, content}: Props) {
   return (
     <Link href={'#'} target="_blank"
-      className={`text-xl bg-cta px-6 py-4 shadow-xl !font-inter font-semibold tracking-tight rounded-xl hover:shadow-xl ${className}`}
+      className={`flex items-center gap-4 justify-center lg:justify-start text-xl bg-cta px-4 py-2 font-inter font-bold tracking-tight rounded-xl hover:shadow-xl lg:w-fit ${className}`}
     >
-      {content ? content : "Beratungsgespräch vereinbaren"}
+        <ArrowRight className="shrink-0" />  <span>BERATUNGSGESPRÄCH</span>
     </Link>
   );
 }

@@ -28,7 +28,7 @@ body {
 
 h1, h2 {
   font-family: var(--font-inter);
-  font-weight: 600;
+  font-weight: 600; /* semibold */
 }
 
 h2 {
@@ -39,11 +39,80 @@ h2 {
 }
 
 h1 {
-  font-size: 3rem; /* 5xl  */
-  line-height: 1.1; 
-  letter-spacing: -0.04em;
-  margin-bottom: 1.5rem; 
-  font-weight: 800;
-  /* Tech-Look: Buchstaben leicht stauchen (optional, sehr modern) */
-  text-transform: none; 
+  font-family: var(--font-inter);
+  font-size: 1.5rem; /*text-2-xl*/
+  line-height: calc(2 / 1.5);
+  margin-bottom: 1rem;
+}
+
+
+/* burger menu */
+/* Navbar */
+.burgermenu {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  margin: 1rem;
+  margin-right: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.burgermenu > span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  background-color: #ffffff;
+}
+
+span:nth-child(1) {
+  top: 0px;
+}
+
+span:nth-child(2) {
+  top: 10px;
+}
+
+span:nth-child(3) {
+  top: 20px;
+}
+
+.top.open {
+  top: 18px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.middle.open {
+  opacity: 0;
+  left: -60px;
+}
+
+.bottom.open {
+  top: 18px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
 }

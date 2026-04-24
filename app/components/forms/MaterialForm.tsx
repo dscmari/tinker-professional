@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Dropzone from "./Dropzone";
 
 type Props = {
   className?: string;
@@ -25,7 +26,7 @@ export default function MaterialForm({ className }: Props) {
   return (
     <form className={`${className}`} action="#">
       <label className="text-sm font-bold uppercase tracking-widest">
-        Material <span className="">*</span>
+        Material<span>*</span>
       </label>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
         {materials.map((mat) => {
@@ -135,7 +136,7 @@ export default function MaterialForm({ className }: Props) {
       {/* heights */}
       <div className="mt-8">
         <label className="text-sm font-bold uppercase tracking-widest">
-          Schichthöhe <span className="">*</span>
+          Schichthöhe<span>*</span>
         </label>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
           {heights.map((mat) => {
@@ -183,7 +184,7 @@ export default function MaterialForm({ className }: Props) {
         {/* Label & Wert-Anzeige */}
         <div className="flex justify-between items-center">
           <label className="text-sm font-bold uppercase tracking-widest">
-            Fülldichte <span>*</span>
+            Fülldichte<span>*</span>
           </label>
           <span className="font-mono font-bold text-lg">{infill}%</span>
         </div>
@@ -219,7 +220,7 @@ export default function MaterialForm({ className }: Props) {
         {/* Stückzahl */}
         <div className="flex flex-col gap-2">
           <label className="text-sm font-bold uppercase tracking-widest">
-            Stückzahl <span>*</span>
+            Stückzahl<span>*</span>
           </label>
           <div>
             <input
@@ -233,7 +234,7 @@ export default function MaterialForm({ className }: Props) {
         {/* Wandstärke */}
         <div className="flex flex-col gap-2">
           <label className="text-sm font-bold uppercase tracking-widest">
-            Wandstärke <span>*</span>
+            Wandstärke<span>*</span>
           </label>
           <div>
             <input
@@ -263,7 +264,17 @@ export default function MaterialForm({ className }: Props) {
           className=" mt-2 w-full bg-blue-500/40 border border-white/10 rounded-xl p-3 text-white outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none"
         />
       </div>
-      <p>TODO: Dropzone + Submit button</p>
+      {/* File Drop */}
+      <div className="mt-8">
+        <label className="text-sm font-bold uppercase tracking-widest">
+          ABC.abc. Datei hochladen<span>*</span>
+        </label>
+        <div className="mt-2">
+          <Dropzone />
+        </div>
+      </div>
+
+      <button type="submit" className="h-12 mt-8 text-sm font-bold uppercase tracking-widest bg-cta px-4 py-2 font-semibold tracking-tight rounded-xl hover:shadow-xl cursor-pointer w-full uppercase">Spezifikationen & Datei abschicken</button>
     </form>
   );
 }
