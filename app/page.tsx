@@ -72,7 +72,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="flex-1 bg-black p-16 flex flex-col justify-center item-center text-white">
+        <div className="flex-1 bg-black py-24 px-4 sm:px-16 flex flex-col justify-center item-center text-white">
           <h1 className="text-center">ABC.abc Datei hochladen</h1>
           <MaterialForm/>
         </div>
