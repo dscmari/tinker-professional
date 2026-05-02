@@ -66,7 +66,7 @@ export default function Navbar({ className }: Props) {
                 <Link href={"/"}>Home</Link>
               </div>
               <div className="pb-1 border-b-2 border-slate-200 w-full flex justify-end">
-                <Link href={"#"}>FDM Technologie</Link>
+                <Link href={"/fdm-technologie/"}>FDM Technologie</Link>
               </div>
               <div className="pb-1 border-b-2 border-slate-200 w-full flex justify-end">
                 <Link href={"#"}>Referenzen</Link>
@@ -101,11 +101,14 @@ export default function Navbar({ className }: Props) {
         </Link>
 
         <div className="flex items-center text-white text-lg xl:text-xl font-semibold font-inter lg:gap-4 xl:gap-8 2xl:gap-16">
-          <Link href={"#"} className="hover:underline underline-offset-4">
+          <Link href={"/fdm-technologie/"} className="hover:underline underline-offset-4">
             FDM Technologie
           </Link>
-          <Link href={"#"} className="hover:underline underline-offset-4">
+          {/* <Link href={"#"} className="hover:underline underline-offset-4">
             Referenzen
+          </Link> */}
+          <Link href={"#"} className="hover:underline underline-offset-4">
+            Materialwahl
           </Link>
           <Link href={"#"} className="hover:underline underline-offset-4">
             Über mich

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Dropzone from "./Dropzone";
+import Link from "next/link";
 
 type Props = {
   className?: string;
@@ -92,7 +93,7 @@ export default function MaterialForm({ className }: Props) {
                   </div>
                 </div>
               )}
-              {isTPU && (
+              {!isColorMaterial && (
                 <div
                   className={`transition-all duration-500 ease-in-out overflow-hidden px-2 ${
                     isSelected
@@ -131,6 +132,7 @@ export default function MaterialForm({ className }: Props) {
             </label>
           );
         })}
+        <p className="text-sm pl-4 !text-white">Tipps zu richtigen Materialwahl findest du <Link href={"#"} className="underline">hier</Link> </p>
       </div>
 
       {/* heights */}
@@ -250,7 +252,7 @@ export default function MaterialForm({ className }: Props) {
         <label className="text-sm font-bold uppercase tracking-widest">
           Düsendurchmesser
         </label>
-        <p>0.4 mm (auf Anfrage 0.2mm möglich)</p>
+        <p className="!text-white">0.4 mm (auf Anfrage 0.2mm möglich)</p>
       </div>
 
       {/* Verwendungszweck */}

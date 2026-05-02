@@ -3,9 +3,19 @@ import Hero from "./components/Hero";
 import MaterialForm from "./components/forms/MaterialForm";
 
 export default function Home() {
+   const hero = {
+    desktopTitle: "Professioneller 3D Druck - für Industrie & Tüftler",
+    mobileTitle: "Professioneller 3D Druck",
+    mobileSubtitle:
+      "- für Industrie & Tüftler",
+    intro:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque incidunt laboriosam tempora itaque provident veniam, soluta assumenda dicta facilis pariatur.",
+    imgPath: "/images/printer_graphic.webp",
+  };
+  const { desktopTitle, mobileTitle, mobileSubtitle, intro, imgPath } = hero;
   return (
     <div>
-      <Hero />
+      <Hero desktopTitle={desktopTitle} mobileTitle={mobileTitle} mobileSubtitle={mobileSubtitle} intro={intro} imgPath={imgPath} />
       <div className="min-h-screen flex flex-col lg:flex-row">
         <div className="relative p-16 flex-1 flex flex-col justify-center item-center">
           <div className="absolute top-1/8 left-1/6 hidden lg:block">
@@ -57,12 +67,12 @@ export default function Home() {
               className="w-24 h-auto mx-auto"
               loading="eager"
             />
-            <h1 id="print-now" className="text-center mt-12">
+            <h2 className="text-center mt-12">
               Jetzt Drucken
-            </h1>
-            <h2 className="text-center">
-              Schnell und einfach ABC.abc Datei hochladen
             </h2>
+            <h1 className="text-center mt-4">
+              Schnell und einfach ABC.abc Datei hochladen
+            </h1>
             <p className="pb-4 text-lg text-center">
               Laden Sie hier Ihre 3D-Datei (STL/STEP) hoch und wählen Sie Ihre
               Spezifikationen. Ob robuster Industrieteil oder filigraner
@@ -73,7 +83,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex-1 bg-black py-24 px-4 sm:px-16 flex flex-col justify-center item-center text-white">
-          <h1 className="text-center">ABC.abc Datei hochladen</h1>
+          <h1 className="text-center !text-white">ABC.abc Datei hochladen</h1>
           <MaterialForm/>
         </div>
       </div>
