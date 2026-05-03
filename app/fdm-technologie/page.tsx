@@ -1,4 +1,4 @@
-import React from "react";
+import Image from "next/image";
 import Hero from "../components/Hero";
 import { Check, Cylinder, Gavel, X } from "lucide-react";
 
@@ -24,12 +24,10 @@ export default function page() {
       <section className="px-4 sm:px-16 lg-px-32 pt-24 lg:pt-32 xl:pt-48">
         <div>
           <h2 className="text-center">Fused Deposition Modeling</h2>
-          <h1 className="text-center mt-4">
-            Wie funktioniert FDM?
-          </h1>
+          <h1 className="text-center mt-4">Wie funktioniert FDM?</h1>
         </div>
-        <div className="flex flex-col lg:flex-row lg:gap-16 mt-12 lg:mt-24 max-w-5xl mx-auto">
-          <div className="flex-1 flex justify-end">
+        <div className="flex flex-col lg:gap-16 mt-12 lg:mt-24 max-w-5xl mx-auto">
+          <div className=" max-w-3xl text-center mx-auto">
             <p className="lg:text-lg">
               Der FDM 3D-Druck zählt zu den am weitesten verbreiteten Verfahren
               der additiven Fertigung. Dabei wird ein thermoplastischer
@@ -39,72 +37,63 @@ export default function page() {
               funktionale Teile und individuelle Sonderanfertigungen.
             </p>
           </div>
-          <div className="flex-1 flex flex-col justify-center mt-12 lg:mt-0">
-            <div className="flex flex-col gap-4">
-              <div className="flex gap-4 items-center">
-                <span className="lg:text-2xl font-semibold text-blue">
-                  Klassische Anwendungsbereiche
-                </span>
-              </div>
-              <div className="flex gap-4 items-center">
-                <Cylinder className="shrink-0 text-blue" size={32} />
-                <span className="text-lg lg:text-2xl font-semibold text-blue">
+          <div className="mt-12 lg:mt-0">
+            <div className="grid grid-cols-3">
+              <div className="flex flex-col items-center h-90">
+                <Image
+                  src="/images/tool_6.png"
+                  alt="Illustration eines Zahnrades"
+                  width={200}
+                  height={200}
+                  className="w-72 "
+                  loading="eager"
+                />
+                <span className="mt-auto text-lg lg:text-2xl font-semibold text-blue">
                   Prototypenbau
                 </span>
               </div>
-              <div className="flex gap-4 items-center">
-                <Cylinder className="shrink-0 text-blue" size={32} />
-                <span className="text-lg lg:text-2xl font-semibold text-blue">
+              <div className="flex flex-col items-center h-90">
+                <Image
+                  src="/images/tool_7.png"
+                  alt="Illustration eines Zahnrades"
+                  width={200}
+                  height={200}
+                  className="w-76 "
+                  loading="eager"
+                />
+                <span className="mt-auto text-lg lg:text-2xl font-semibold text-blue">
                   Funktionale Teile
                 </span>
               </div>
-              <div className="flex gap-4 items-center">
-                <Cylinder className="shrink-0 text-blue" size={32} />
-                <span className="text-lg lg:text-2xl font-semibold text-blue">
-                  Individuelle Sonderanfertigungen
+              <div className="flex flex-col items-center h-90">
+                <Image
+                  src="/images/tool_8.png"
+                  alt="Illustration eines Zahnrades"
+                  width={200}
+                  height={200}
+                  className="w-80 "
+                  loading="eager"
+                />
+                <span className="mt-auto text-lg lg:text-2xl font-semibold text-blue">
+                  Sonderanfertigungen
                 </span>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex flex-col-reverse lg:flex-row lg:gap-16 mt-12 lg:mt-24 max-w-5xl mx-auto">
-          <div className="flex-1 flex flex-col justify-center">
-            <div className="flex flex-col gap-4">
-              <div className="flex gap-4 items-center">
-                <span className="lg:text-2xl font-semibold text-blue mt-12 lg:mt-0">
-                  Fused Deposition Modeling
-                </span>
-              </div>
-              <div className="flex gap-4 items-center">
-                <Check className="shrink-0 text-blue" size={32} />
-                <span className="text-lg lg:text-2xl font-semibold text-blue">
-                  Geschwindigkeit
-                </span>
-              </div>
-              <div className="flex gap-4 items-center">
-                <Check className="shrink-0 text-blue" size={32} />
-                <span className="text-lg lg:text-2xl font-semibold text-blue">
-                  Stabilität
-                </span>
-              </div>
-              <div className="flex gap-4 items-center">
-                <Check className="shrink-0 text-blue" size={32} />
-                <span className="text-lg lg:text-2xl font-semibold text-blue">
-                  Wirtschaftlichkeit
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="flex-1 flex">
-            <p className="lg:text-lg">
+        <div className="flex flex-col lg:gap-16 mt-12 lg:mt-32 max-w-5xl mx-auto">
+            <p className="lg:text-lg max-w-3xl mx-auto text-center">
               Für unsere Fertigung setzen wir auf hochwertige Komponenten wie
               den Bambu Lab H2S, die eine gleichbleibend hohe Druckqualität,
               präzise Details und zuverlässige Ergebnisse ermöglichen. Moderne
-              FDM-Technologie bietet dabei eine optimale Kombination aus
-              Geschwindigkeit, Stabilität und Wirtschaftlichkeit.
+              FDM-Technologie bietet dabei eine optimale Kombination aus 
+              <strong> Geschwindigkeit</strong>, <strong> Stabilität</strong>  und <strong> Wirtschaftlichkeit</strong>.
             </p>
+       
+  
+  
           </div>
-        </div>
+    
       </section>
       <section className="px-4 sm:px-16 lg-px-32 pt-24 lg:pt-32 xl:pt-48">
         <div>

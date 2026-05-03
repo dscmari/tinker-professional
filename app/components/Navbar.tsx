@@ -43,7 +43,7 @@ export default function Navbar({ className }: Props) {
             />
           </Link> */}
           <Link href={"/"}>
-            <h1 className="text-white !font-extrabold !tracking-tight">
+            <h1 className="!text-white !font-extrabold !tracking-tight">
               TINKER PRO
             </h1>
           </Link>
