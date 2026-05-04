@@ -75,7 +75,7 @@ export default function Hero({
           <Navbar className="pt-12 2xl:pt-24 pb-4 bg-gradient-to-br from-blue-950 from-10% via-blue-900 via-40% to-blue-500 to-70%" />
           <div style={{ backgroundImage: `url(${backgroundImgPath})` }} className="min-h-screen lg:min-h-[75vh] flex flex-col justify-center items-center px-4 sm:px-16 lg:px-32">
             <div className=" bg-white/50 text-center lg:text-start px-4 sm:px-16 lg:p-8 lg:rounded-xl flex flex-col justify-center items-center lg:flex-row">
-              <div className="lg:flex-2 z-10 max-w-5xl">
+              <div className="lg:flex-2 z-10 max-w-4xl">
                 {mobileTitle && (
                   <div className="lg:hidden">
                     <h1 className="!text-5xl/14 !font-extrabold !tracking-tight text-white">
