@@ -24,10 +24,10 @@ export default function MaterialCard({ className, data }: Props) {
   const { iconText, title, subtitle, bullets, applications } = data;
   return (
     <div
-      className={`flex flex-col rounded-xl font-inter border-x-1 border-b-1 border-slate-300 lg:w-xl h-full  ${className}`}
+      className={`flex flex-col bg-[#f5f6fa] rounded-xl font-inter border-x-1 border-b-1 border-slate-300 lg:w-xl h-full  ${className}`}
     >
       <div className="bg-[#2e86de]/90 rounded-t-xl flex flex-col gap-2 p-8 xl:h-[200px]">
-        <span className="self-start bg-blue-500 px-2 py-1 text-white rounded-xl text-xs/5 font-semibold tracking-tight">
+        <span className="self-start bg-blue/60 px-2 py-1 text-white rounded-xl text-xs/5 font-semibold tracking-tight">
           {iconText}
         </span>
         <span className="font-semibold text-3xl text-white mt-4">{title}</span>
@@ -37,7 +37,7 @@ export default function MaterialCard({ className, data }: Props) {
         {bullets.map((e, index) => (
           <div
             key={index}
-            className={`${e.isPro ? "bg-green-500/30" : "bg-red-500/30"} bg-white border-b-1 border-slate-200  flex items-start gap-8 p-4`}
+            className={`border-b-1 border-slate-200  flex items-start gap-8 p-4`}
           >
             {e.icon}
             <div className="flex flex-col">
@@ -53,7 +53,7 @@ export default function MaterialCard({ className, data }: Props) {
           {applications.map((e, index) => (
             <span
               key={index}
-              className="self-start bg-green-500 px-4 py-1 text-white rounded-xl text-sm font-semibold tracking-tight"
+              className="self-start bg-green-500/80 px-4 py-1 text-white rounded-xl text-sm font-semibold tracking-tight"
             >
               {e}
             </span>

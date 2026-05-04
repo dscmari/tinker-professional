@@ -1,8 +1,7 @@
-import React from "react";
 import Hero from "../components/Hero";
-import { ShieldPlus, Sun, ThermometerSun } from "lucide-react";
 import MaterialCard from "../components/MaterialCard";
 import { materialCardsData } from "../data/MaterialCardsData";
+import Image from "next/image";
 
 export default function page() {
   const hero = {
@@ -25,7 +24,7 @@ export default function page() {
 
   const className = "placeholder";
   return (
-    <div>
+    <div style={{ backgroundImage: `url(/images/tool_bg_vertikal.jpg)` }}>
       <Hero
         desktopTitle={desktopTitle}
         mobileTitle={mobileTitle}
@@ -35,7 +34,7 @@ export default function page() {
         backgroundImgPath={backgroundImgPath}
       />
       <section className="px-4 sm:px-16 lg:px-32 lg:pt-32 xl:pt-48">
-        <div>
+        <div className="bg-white/50 lg:p-8">
           <h3 className="text-center">FDM 3D-Druck</h3>
           <h1 className="text-center mt-4">Unsere Materialien</h1>
           <div className=" max-w-3xl text-center mx-auto">
@@ -49,10 +48,22 @@ export default function page() {
         </div>
         <div className="grid justify-items-center xl:grid-cols-2 gap-8 lg:gap-y-24 mt-12 lg:mt-24 xl:mt-32">
           {materialCardsData.map((card, index) => (
-            <div key={index} className={`${index % 2 === 0 ? "xl:justify-self-end" : "xl:justify-self-start"}`}>
+            <div
+              key={index}
+              className={`${index % 2 === 0 ? "xl:justify-self-end" : "xl:justify-self-start"}`}
+            >
               <MaterialCard data={card} />
             </div>
           ))}
+        </div>
+        <div className="hidden lg:block mt-32">
+          <Image
+            src={"/images/materials_overview.jpg"}
+            alt="Eine Grafik, die eine Übersicht von 3D-Druck Materialien darstellt"
+            width={1535}
+            height={1024}
+            className="mx-auto rounded-xl"
+          />
         </div>
       </section>
     </div>
