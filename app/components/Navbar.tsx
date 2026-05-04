@@ -71,7 +71,7 @@ export default function Navbar({ className }: Props) {
                 <Link href={"/fdm-technologie/"}>FDM Technologie</Link>
               </div>
               <div className="pb-1 border-b-2 border-slate-200 w-full flex justify-end">
-                <Link href={"3d-druck-naterial"}>Materialwahl</Link>
+                <Link href={"/3d-druck-material/"}>Materialwahl</Link>
               </div>
               <div className="pb-1 border-b-2 border-slate-200 w-full flex justify-end">
                 <Link href={"#n"}>Über mich</Link>
