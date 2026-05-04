@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Hero from "../components/Hero";
 import { Check, Cylinder, Gavel, X } from "lucide-react";
+import Navbar from "../components/Navbar";
 
 export default function page() {
   const hero = {
@@ -21,7 +22,7 @@ export default function page() {
         intro={intro}
         imgPath={imgPath}
       />
-      <section className="px-4 sm:px-16 lg-px-32 pt-24 lg:pt-32 xl:pt-48">
+      <section className="px-4 sm:px-16 lg-px-32 pt-24">
         <div>
           <h3 className="text-center">Fused Deposition Modeling</h3>
           <h1 className="text-center mt-4">Wie funktioniert FDM?</h1>

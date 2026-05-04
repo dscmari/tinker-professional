@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 type Props = {
   className?: string;
@@ -11,6 +12,7 @@ type Props = {
 
 export default function Navbar({ className }: Props) {
   const [showMenu, setShowMenu] = useState(false);
+  const pathname = usePathname()
 
   const toggleMenu = () => {
     toggleX();
@@ -88,7 +90,7 @@ export default function Navbar({ className }: Props) {
       </div>
       {/* desktop */}
       <div className="hidden lg:flex items-center justify-between ">
-        <Link className="z-100" href={"/"}>
+        {/* <Link className="z-100" href={"/"}>
           {" "}
           <Image
             src="/images/logo.png"
@@ -98,24 +100,29 @@ export default function Navbar({ className }: Props) {
             className="w-24"
             loading="eager"
           />
-        </Link>
+        </Link> */}
+               <Link href={"/"}>
+            <h1 className="!text-white !font-extrabold !tracking-tight">
+              TINKER PRO
+            </h1>
+          </Link>
 
         <div className="flex items-center text-white text-lg xl:text-xl font-semibold font-inter lg:gap-4 xl:gap-8 2xl:gap-16">
-          <Link href={"/fdm-technologie/"} className="hover:underline underline-offset-4">
+          <Link href={"/fdm-technologie/"} className={`hover:shadow-xl ${pathname === "/fdm-technologie" ? "underline underline-offset-4" : ""}`}>
             FDM Technologie
           </Link>
           {/* <Link href={"#"} className="hover:underline underline-offset-4">
             Referenzen
           </Link> */}
-          <Link href={"#"} className="hover:underline underline-offset-4">
+          <Link href={"3d-druck-material"} className={`hover:shadow-xl ${pathname === "/3d-druck-material" ? "underline underline-offset-4 " : ""}`}>
             Materialwahl
           </Link>
-          <Link href={"#"} className="hover:underline underline-offset-4">
+          <Link href={"ueber-mich"} className={`hover:shadow-xl ${pathname === "/ueber-mich" ? "underline underline-offset-4 " : ""}`}>
             Über mich
           </Link>
           <Link
             href={"#print-now"}
-            className="p-4 bg-blue/50 rounded-xl font-bold tracking-tight"
+            className="p-4 bg-cta rounded-xl font-bold tracking-tight hover:shadow-xl"
           >
             Jetzt Drucken
           </Link>
