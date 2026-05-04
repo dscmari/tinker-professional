@@ -11,8 +11,9 @@ export default function page() {
     intro:
       "In der modernen additiven Fertigung ist die Entscheidung für eine bestimmte Technologie eine strategische Weichenstellung. Bevor man sich mit den Spezifikationen und Parametern auseinandersetzt, steht eine grundlegende Analyse im Vordergrund: Harmoniert die gewählte Methode mit dem angestrebten Einsatzzweck des Bauteils?",
     imgPath: "/images/tool_5.png",
+       backgroundImgPath: "/images/tool_bg_horizontal.jpg"
   };
-  const { desktopTitle, mobileTitle, mobileSubtitle, intro, imgPath } = hero;
+  const { desktopTitle, mobileTitle, mobileSubtitle, intro, imgPath, backgroundImgPath } = hero;
   return (
     <div>
       <Hero
@@ -21,8 +22,9 @@ export default function page() {
         mobileSubtitle={mobileSubtitle}
         intro={intro}
         imgPath={imgPath}
+        backgroundImgPath={backgroundImgPath}
       />
-      <section className="px-4 sm:px-16 lg-px-32 pt-24">
+      <section className="px-4 sm:px-16 lg:px-32 pt-24 lg:pt-32 xl:pt-48">
         <div>
           <h3 className="text-center">Fused Deposition Modeling</h3>
           <h1 className="text-center mt-4">Wie funktioniert FDM?</h1>

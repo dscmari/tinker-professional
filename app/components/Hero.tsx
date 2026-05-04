@@ -12,6 +12,7 @@ type Props = {
   mobileSubtitle?: string;
   intro: string;
   imgPath: string;
+  backgroundImgPath?: string;
 };
 
 export default function Hero({
@@ -21,6 +22,7 @@ export default function Hero({
   mobileSubtitle,
   intro,
   imgPath,
+  backgroundImgPath,
 }: Props) {
   const pathname = usePathname();
 
@@ -71,8 +73,8 @@ export default function Hero({
       ) : (
         <div className={``}>
           <Navbar className="pt-12 2xl:pt-24 pb-4 bg-gradient-to-br from-blue-950 from-10% via-blue-900 via-40% to-blue-500 to-70%" />
-          <div className="min-h-screen lg:min-h-[75vh] flex flex-col justify-center items-center px-4 sm:px-16 lg:px-32">
-            <div className="text-center lg:text-start px-4 sm:px-16 lg:px-0 flex flex-col justify-center items-center lg:flex-row">
+          <div style={{ backgroundImage: `url(${backgroundImgPath})` }} className="min-h-screen lg:min-h-[75vh] flex flex-col justify-center items-center px-4 sm:px-16 lg:px-32">
+            <div className=" bg-white/50 text-center lg:text-start px-4 sm:px-16 lg:p-8 lg:rounded-xl flex flex-col justify-center items-center lg:flex-row">
               <div className="lg:flex-2 z-10 max-w-5xl">
                 {mobileTitle && (
                   <div className="lg:hidden">
@@ -92,7 +94,7 @@ export default function Hero({
                 </p>
                 <ContactBtn className="mx-4 lg:mx-0 mt-16 lg:mt-8 lg:px-6 py-4 mb-24 lg:mb-0" />
               </div>
-              <div className="hidden lg:block lg:flex-1">
+              {/* <div className="hidden lg:block lg:flex-1">
                 <div className="flex justify-center">
                   <Image
                     src={imgPath}
@@ -102,7 +104,7 @@ export default function Hero({
                     className="aspect-auto"
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
