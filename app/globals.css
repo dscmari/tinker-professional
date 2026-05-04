@@ -25,10 +25,11 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--font-inter);
   font-weight: 600; /* semibold */
-   color: var(--color-blue);
+  color: var(--color-blue);
 }
 
 h1 {
@@ -41,6 +42,11 @@ h2 {
   font-size: 1.5rem; /*text-2-xl*/
   line-height: 1.25;
   letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: var(--text-xl); /* 1.25rem (20px) tw: xl */
+  line-height: var(--text-xl--line-height);
   margin-bottom: 1rem;
 }
 

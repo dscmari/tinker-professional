@@ -23,7 +23,7 @@ export default function page() {
       />
       <section className="px-4 sm:px-16 lg-px-32 pt-24 lg:pt-32 xl:pt-48">
         <div>
-          <h2 className="text-center">Fused Deposition Modeling</h2>
+          <h3 className="text-center">Fused Deposition Modeling</h3>
           <h1 className="text-center mt-4">Wie funktioniert FDM?</h1>
         </div>
         <div className="flex flex-col lg:gap-16 mt-12 lg:mt-24 max-w-5xl mx-auto">
@@ -38,40 +38,40 @@ export default function page() {
             </p>
           </div>
           <div className="mt-12 lg:mt-0">
-            <div className="grid grid-cols-3">
-              <div className="flex flex-col items-center h-90">
+            <div className="grid gap-8 lg:gap-0 md:grid-cols-3">
+              <div className="flex flex-col items-center lg:h-90">
                 <Image
                   src="/images/tool_6.png"
                   alt="Illustration eines Zahnrades"
                   width={200}
                   height={200}
-                  className="w-72 "
+                  className="lg:w-72 "
                   loading="eager"
                 />
-                <span className="mt-auto text-lg lg:text-2xl font-semibold text-blue">
+                <span className="lg:mt-auto text-lg lg:text-2xl font-semibold text-blue">
                   Prototypenbau
                 </span>
               </div>
-              <div className="flex flex-col items-center h-90">
+              <div className="flex flex-col items-center lg:h-90">
                 <Image
                   src="/images/tool_7.png"
                   alt="Illustration eines Zahnrades"
                   width={200}
                   height={200}
-                  className="w-76 "
+                  className="lg:w-76 "
                   loading="eager"
                 />
                 <span className="mt-auto text-lg lg:text-2xl font-semibold text-blue">
                   Funktionale Teile
                 </span>
               </div>
-              <div className="flex flex-col items-center h-90">
+              <div className="flex flex-col items-center lg:h-90">
                 <Image
                   src="/images/tool_8.png"
                   alt="Illustration eines Zahnrades"
                   width={200}
                   height={200}
-                  className="w-80 "
+                  className="lg:w-80 "
                   loading="eager"
                 />
                 <span className="mt-auto text-lg lg:text-2xl font-semibold text-blue">
@@ -81,23 +81,18 @@ export default function page() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col lg:gap-16 mt-12 lg:mt-32 max-w-5xl mx-auto">
-            <p className="lg:text-lg max-w-3xl mx-auto text-center">
-              Für unsere Fertigung setzen wir auf hochwertige Komponenten wie
-              den Bambu Lab H2S, die eine gleichbleibend hohe Druckqualität,
-              präzise Details und zuverlässige Ergebnisse ermöglichen. Moderne
-              FDM-Technologie bietet dabei eine optimale Kombination aus 
-              <strong> Geschwindigkeit</strong>, <strong> Stabilität</strong>  und <strong> Wirtschaftlichkeit</strong>.
-            </p>
-       
-  
-  
-          </div>
-    
+        <p className="mt-24 lg:mt-32 lg:text-lg max-w-3xl mx-auto text-center">
+          Für unsere Fertigung setzen wir auf hochwertige Komponenten wie den
+          Bambu Lab h3S, die eine gleichbleibend hohe Druckqualität, präzise
+          Details und zuverlässige Ergebnisse ermöglichen. Moderne
+          FDM-Technologie bietet dabei eine optimale Kombination aus
+          <strong> Geschwindigkeit</strong>, <strong> Stabilität</strong> und{" "}
+          <strong> Wirtschaftlichkeit</strong>.
+        </p>
       </section>
       <section className="px-4 sm:px-16 lg-px-32 pt-24 lg:pt-32 xl:pt-48">
         <div>
-          <h2 className="text-center">Fused Deposition Modeling</h2>
+          <h3 className="text-center">Fused Deposition Modeling</h3>
           <h1 className="text-center mt-4">Vorteile & Nachteile von FDM</h1>
         </div>
         <div className="flex flex-col gap-24 lg:flex-row lg:gap-0 max-w-5xl mx-auto pt-12 lg:pt-24">

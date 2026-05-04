@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div>
       <Hero desktopTitle={desktopTitle} mobileTitle={mobileTitle} mobileSubtitle={mobileSubtitle} intro={intro} imgPath={imgPath} />
-      <div className="min-h-screen flex flex-col lg:flex-row">
+      <section className="min-h-screen flex flex-col lg:flex-row">
         <div className="relative p-16 flex-1 flex flex-col justify-center item-center">
           <div className="absolute top-1/8 left-1/6 hidden lg:block">
             <Image
@@ -86,7 +86,10 @@ export default function Home() {
           <h1 className="text-center !text-white">ABC.abc Datei hochladen</h1>
           <MaterialForm/>
         </div>
-      </div>
+      </section>
+      <section className="px-4 sm:px-16 lg:px-32 pt-24 lg:pt-32 xl:pt-48">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam nulla veniam exercitationem eveniet iusto et dolore, a ipsam. Quam nulla autem officiis odio doloremque a perferendis accusamus quas vel sint.</p>
+      </section>
     </div>
   );
 }
