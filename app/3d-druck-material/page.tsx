@@ -47,7 +47,7 @@ export default function page() {
             </p>
           </div>
         </div>
-        <div className="grid justify-items-center xl:grid-cols-2 gap-8 gap-y-24 mt-12 lg:mt-24 xl:mt-32">
+        <div className="grid justify-items-center xl:grid-cols-2 gap-8 lg:gap-y-24 mt-12 lg:mt-24 xl:mt-32">
           {materialCardsData.map((card, index) => (
             <div key={index} className={`${index % 2 === 0 ? "xl:justify-self-end" : "xl:justify-self-start"}`}>
               <MaterialCard data={card} />

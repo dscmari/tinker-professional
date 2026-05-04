@@ -49,7 +49,7 @@ export default function MaterialCard({ className, data }: Props) {
       </div>
       <div className=" flex flex-col gap-2 p-4 mt-auto">
         <span className="text-slate-400 font-semibold">Einsatzgebiete</span>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-4">
           {applications.map((e, index) => (
             <span
               key={index}
