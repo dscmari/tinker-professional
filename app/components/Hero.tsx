@@ -28,11 +28,11 @@ export default function Hero({
     <div>
       {pathname === "/" ? (
         <div
-          className={`h-screen bg-gradient-to-br from-blue-950 from-10% via-blue-900 via-40% to-blue-500 to-70% lg:flex flex-col justify-center items-center lg:p-8 xl:p-16 ${className}`}
+          className={`min-h-screen lg:h-screen bg-gradient-to-br from-blue-950 from-10% via-blue-900 via-40% to-blue-500 to-70% lg:flex flex-col justify-center items-center lg:p-8 xl:p-16 ${className}`}
         >
           <div className="h-full w-full lg:border-[16px] border-white lg:rounded-[60px] lg:p-8 xl:px-32">
             <Navbar className="p-4" />
-            <div className="h-full lg:flex lg:flex-col lg:justify-center">
+            <div className="min-h-screen lg:min-h-0 lg:h-full flex flex-col justify-center">
               <div className="h-full text-center lg:text-start px-4 sm:px-16 lg:px-0 flex flex-col justify-center items-center lg:flex-row">
                 <div className="text-white lg:flex-1 z-10">
                   {mobileTitle && (
@@ -71,15 +71,15 @@ export default function Hero({
       ) : (
         <div className={``}>
           <Navbar className="pt-12 2xl:pt-24 pb-4 bg-gradient-to-br from-blue-950 from-10% via-blue-900 via-40% to-blue-500 to-70%" />
-          <div className="min-h-[75vh] lg:flex lg:flex-col lg:justify-center lg:items-center px-4 sm:px-16 lg:px-32">
+          <div className="min-h-screen lg:min-h-[75vh] flex flex-col justify-center items-center px-4 sm:px-16 lg:px-32">
             <div className="text-center lg:text-start px-4 sm:px-16 lg:px-0 flex flex-col justify-center items-center lg:flex-row">
               <div className="lg:flex-2 z-10 max-w-5xl">
                 {mobileTitle && (
                   <div className="lg:hidden">
-                    <h1 className="!text-5xl/14 !font-extrabold !tracking-tight !text-white">
+                    <h1 className="!text-5xl/14 !font-extrabold !tracking-tight text-white">
                       {mobileTitle}
                     </h1>
-                    <h2 className="!text-white">{mobileSubtitle}</h2>
+                    <h2 className="text-white">{mobileSubtitle}</h2>
                   </div>
                 )}
 
