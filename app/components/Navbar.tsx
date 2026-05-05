@@ -107,14 +107,14 @@ export default function Navbar({ className }: Props) {
             </h1>
           </Link>
 
-        <div className="flex items-center text-white text-lg xl:text-xl font-semibold font-inter lg:gap-4 xl:gap-8 2xl:gap-16">
-          <Link href={"/fdm-technologie/"} className={`hover:shadow-xl ${pathname === "/fdm-technologie" ? "underline underline-offset-4" : ""}`}>
+        <div className="flex items-center text-white text-lg xl:text-lg font-semibold font-inter lg:gap-4 xl:gap-8 2xl:gap-16">
+          <Link href={"/fdm-technologie/"} transitionTypes={['nav-forward']} className={`hover:shadow-xl ${pathname === "/fdm-technologie" ? "underline underline-offset-4" : ""}`}>
             FDM Technologie
           </Link>
           {/* <Link href={"#"} className="hover:underline underline-offset-4">
             Referenzen
           </Link> */}
-          <Link href={"3d-druck-material"} className={`hover:shadow-xl ${pathname === "/3d-druck-material" ? "underline underline-offset-4 " : ""}`}>
+          <Link href={"3d-druck-material"} transitionTypes={['nav-forward']} className={`hover:shadow-xl ${pathname === "/3d-druck-material" ? "underline underline-offset-4 " : ""}`}>
             Materialwahl
           </Link>
           <Link href={"ueber-mich"} className={`hover:shadow-xl ${pathname === "/ueber-mich" ? "underline underline-offset-4 " : ""}`}>
@@ -122,7 +122,7 @@ export default function Navbar({ className }: Props) {
           </Link>
           <Link
             href={"#print-now"}
-            className="p-4 bg-cta rounded-xl font-bold tracking-tight hover:shadow-xl"
+            className="px-4 py-2 bg-cta rounded-xl font-bold tracking-tight hover:shadow-xl"
           >
             Jetzt Drucken
           </Link>

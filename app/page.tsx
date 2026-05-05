@@ -10,7 +10,7 @@ export default function Home() {
       "- für Industrie & Tüftler",
     intro:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque incidunt laboriosam tempora itaque provident veniam, soluta assumenda dicta facilis pariatur.",
-    imgPath: "/images/printer_graphic.webp",
+    imgPath: "/images/printer_graphic.png",
   };
   const { desktopTitle, mobileTitle, mobileSubtitle, intro, imgPath } = hero;
   return (

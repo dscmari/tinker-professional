@@ -124,3 +124,20 @@ span:nth-child(3) {
   -o-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
+
+::view-transition-old(hero) {
+  animation: 400ms ease-in both slide-out;
+}
+::view-transition-new(hero) {
+  animation: 500ms ease-out 400ms both slide-in;
+}
+
+@keyframes slide-out {
+  from { transform: translateX(0); }
+  to   { transform: translateX(100vw); }
+}
+
+@keyframes slide-in {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
