@@ -11,7 +11,7 @@ type Props = {
   desktopTitle: string;
   mobileTitle?: string;
   mobileSubtitle?: string;
-  intro: string;
+  intro: string | React.ReactNode;
   imgPath: string;
   backgroundImgPath?: string;
 };
@@ -29,7 +29,7 @@ export default function Hero({
 
   return (
     <div>
-      {true ? (
+      {pathname !== "/ueber-mich" ? (
         <div
           className={`min-h-screen lg:h-screen bg-gradient-to-br from-blue-950 from-10% via-blue-900 via-40% to-blue-500 to-70% lg:flex flex-col justify-center items-center lg:p-8 xl:p-16 ${className}`}
         >
@@ -74,43 +74,38 @@ export default function Hero({
           </div>
         </div>
       ) : (
-        <div className={``}>
-          <Navbar className="pt-12 2xl:pt-24 pb-4 bg-gradient-to-br from-blue-950 from-10% via-blue-900 via-40% to-blue-500 to-70%" />
-          <div
-            style={{ backgroundImage: `url(${backgroundImgPath})` }}
-            className="min-h-screen lg:min-h-[75vh] flex flex-col justify-center items-center px-4 sm:px-16 lg:px-32"
-          >
-            <div className=" bg-white/50 text-center lg:text-start px-4 sm:px-16 lg:p-8 lg:rounded-xl flex flex-col justify-center items-center lg:flex-row">
-              <div className="lg:flex-2 z-10 max-w-4xl">
-                {mobileTitle && (
-                  <div className="lg:hidden">
-                    <h1 className="!text-5xl/14 !font-extrabold !tracking-tight text-white">
-                      {mobileTitle}
-                    </h1>
-                    <h2 className="text-white">{mobileSubtitle}</h2>
+        <div
+          className={`min-h-screen lg:h-screen bg-gradient-to-br from-blue-950 from-10% via-blue-900 via-40% to-blue-500 to-70% lg:flex flex-col justify-center items-center lg:p-8 xl:p-16 ${className}`}
+        >
+          <div className="h-full w-full lg:border-[16px] border-white lg:rounded-[60px] lg:p-8 xl:px-32">
+            <Navbar className="p-4" />
+            <div className="min-h-screen lg:min-h-0 lg:h-full flex flex-col justify-center">
+              <ViewTransition name="hero">
+                <div className="h-full text-center lg:text-start px-4 sm:px-16 lg:px-0 flex flex-col justify-center items-center lg:flex-row lg:gap-8 xl:gap-16">
+                  <div className="text-white lg:flex-1 z-10">
+                    {mobileTitle && (
+                      <div className="lg:hidden">
+                        <h1 className="!text-5xl/14 !font-extrabold !tracking-tight !text-white">
+                          {mobileTitle}
+                        </h1>
+                        <h2 className="!text-white">{mobileSubtitle}</h2>
+                      </div>
+                    )}
+                    <div className="max-w-3xl 2xl:max-w-4xl mx-auto">
+                      <h1 className="hidden lg:block !text-white !text-3xl/10 lg:!text-5xl/14 !font-extrabold !tracking-tight ">
+                        {desktopTitle}
+                      </h1>
+
+                      <p className="font-semibold text-lg 2xl:text-lg mt-8 !text-white">
+                        {intro}
+                      </p>
+                                      <ContactBtn className="mx-4 lg:mx-0 mt-16 lg:mt-8 lg:px-6 mb-24 lg:mb-0" />
+                    </div>
+
+    
                   </div>
-                )}
-
-                <h1 className="hidden lg:block !text-3xl/10 lg:!text-5xl/14 !font-extrabold !tracking-tight">
-                  {desktopTitle}
-                </h1>
-
-                <p className="font-semibold text-lg 2xl:text-lg mt-8">
-                  {intro}
-                </p>
-                <ContactBtn className="mx-4 lg:mx-0 mt-16 lg:mt-8 lg:px-6 py-4 mb-24 lg:mb-0" />
-              </div>
-              {/* <div className="hidden lg:block lg:flex-1">
-                <div className="flex justify-center">
-                  <Image
-                    src={imgPath}
-                    alt="Grafik eines 3D Druckers"
-                    width={400}
-                    height={400}
-                    className="aspect-auto"
-                  />
                 </div>
-              </div> */}
+              </ViewTransition>
             </div>
           </div>
         </div>

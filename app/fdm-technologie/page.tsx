@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Hero from "../components/Hero";
-import { Check, Cylinder, Gavel, X } from "lucide-react";
-import Navbar from "../components/Navbar";
+import { Check, X } from "lucide-react";
 
 export default function page() {
   const hero = {
