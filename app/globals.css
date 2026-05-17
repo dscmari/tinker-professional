@@ -129,7 +129,7 @@ span:nth-child(3) {
   animation: 400ms ease-in both slide-out;
 }
 ::view-transition-new(hero) {
-  animation: 500ms ease-out 400ms both slide-in;
+  animation: 500ms ease-out 350ms both slide-in;
 }
 
 @keyframes slide-out {
@@ -138,6 +138,6 @@ span:nth-child(3) {
 }
 
 @keyframes slide-in {
-  from { transform: translateX(-100%); }
+  from { transform: translateX(-100vw); }
   to   { transform: translateX(0); }
 }

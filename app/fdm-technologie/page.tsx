@@ -4,31 +4,34 @@ import { Check, X } from "lucide-react";
 
 export default function page() {
   const hero = {
-    desktopTitle: "FDM 3D Druck - Fused Deposition Modeling",
-    mobileTitle: "FDM-Druck",
-    mobileSubtitle: "Fused Deposition Modeling",
+    title: "FDM-Druck",
+    subtitle: "- Fused Deposition Modeling",
     intro:
       "In der modernen additiven Fertigung ist die Entscheidung für eine bestimmte Technologie eine strategische Weichenstellung. Bevor man sich mit den Spezifikationen und Parametern auseinandersetzt, steht eine grundlegende Analyse im Vordergrund: Harmoniert die gewählte Methode mit dem angestrebten Einsatzzweck des Bauteils?",
     imgPath: "/images/tool_5.png",
        backgroundImgPath: "/images/tool_bg_horizontal.jpg"
   };
-  const { desktopTitle, mobileTitle, mobileSubtitle, intro, imgPath, backgroundImgPath } = hero;
+  const {
+   title,
+    subtitle,
+    intro,
+    imgPath,
+  } = hero;
+
   return (
-    <div>
-      <Hero
-        desktopTitle={desktopTitle}
-        mobileTitle={mobileTitle}
-        mobileSubtitle={mobileSubtitle}
-        intro={intro}
-        imgPath={imgPath}
-        backgroundImgPath={backgroundImgPath}
-      />
+    <div style={{ backgroundImage: `url(/images/tool_bg_vertikal.jpg)` }}>
+        <Hero
+          title={title}
+          subtitle={subtitle}
+          intro={intro}
+          imgPath={imgPath}
+        />
       <section className="px-4 sm:px-16 lg:px-32 pt-24 lg:pt-32 xl:pt-48">
         <div>
           <h3 className="text-center">Fused Deposition Modeling</h3>
           <h1 className="text-center mt-4">Wie funktioniert FDM?</h1>
         </div>
-        <div className="flex flex-col lg:gap-16 mt-12 lg:mt-24 max-w-5xl mx-auto">
+        <div className="flex flex-col lg:gap-16 mt-12 max-w-5xl mx-auto">
           <div className=" max-w-3xl text-center mx-auto">
             <p className="lg:text-lg">
               Der FDM 3D-Druck zählt zu den am weitesten verbreiteten Verfahren
@@ -83,7 +86,7 @@ export default function page() {
             </div>
           </div>
         </div>
-        <p className="mt-24 lg:mt-32 lg:text-lg max-w-3xl mx-auto text-center">
+        <p className="mt-24 lg:text-lg max-w-3xl mx-auto text-center">
           Für unsere Fertigung setzen wir auf hochwertige Komponenten wie den
           Bambu Lab h3S, die eine gleichbleibend hohe Druckqualität, präzise
           Details und zuverlässige Ergebnisse ermöglichen. Moderne
@@ -92,12 +95,12 @@ export default function page() {
           <strong> Wirtschaftlichkeit</strong>.
         </p>
       </section>
-      <section className="px-4 sm:px-16 lg-px-32 pt-24 lg:pt-32 xl:pt-48">
+      <section className="px-4 sm:px-16 lg-px-32 pt-24 lg:pt-32 xl:pt-48 mb-48">
         <div>
           <h3 className="text-center">Fused Deposition Modeling</h3>
           <h1 className="text-center mt-4">Vorteile & Nachteile von FDM</h1>
         </div>
-        <div className="flex flex-col gap-24 lg:flex-row lg:gap-0 max-w-5xl mx-auto pt-12 lg:pt-24">
+        <div className="flex flex-col gap-24 lg:flex-row lg:gap-0 max-w-5xl mx-auto pt-12 bg-white/60">
           <div className="flex-1 rounded-xl shadow-xl flex flex-col gap-4 p-4 lg:p-8">
             <h1 className="text-center text-blue pb-8 border-b border-slate-200">
               PRO

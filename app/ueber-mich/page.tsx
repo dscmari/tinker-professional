@@ -7,9 +7,8 @@ import Navbar from "../components/Navbar";
 
 export default function page() {
   const hero = {
-    desktopTitle: "Über Mich - Luca Krösche",
-    mobileTitle: "Über Mich",
-    mobileSubtitle: "Luca Krösche",
+    title: "Über Mich",
+    subtitle: "",
     intro: (
       <span className="text-base">
         Mein Name ist Luca Krösche und ich unterstütze Unternehmen und
@@ -33,23 +32,20 @@ export default function page() {
     backgroundImgPath: "/images/tool_bg_horizontal.jpg",
   };
   const {
-    desktopTitle,
-    mobileTitle,
-    mobileSubtitle,
+   title,
+    subtitle,
     intro,
     imgPath,
-    backgroundImgPath,
   } = hero;
   return (
-    <div>
+     <div style={{ backgroundImage: `url(/images/tool_bg_vertikal.jpg)` }}>
       <Hero 
-        desktopTitle={desktopTitle}
-        mobileTitle={mobileTitle}
-        mobileSubtitle={mobileSubtitle}
-        intro={intro}
-        imgPath={imgPath}
-        backgroundImgPath={backgroundImgPath}
+         title={title}
+          subtitle={subtitle}
+          intro={intro}
+          imgPath={imgPath}
       />
+      <p className="my-32">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat impedit, incidunt ad tempore atque ducimus, veniam velit cum vel minus accusamus veritatis fugit repudiandae, eveniet ex laudantium? Qui, officiis veniam.</p>
     </div>
   );
 }

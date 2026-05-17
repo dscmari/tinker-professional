@@ -5,33 +5,28 @@ import Image from "next/image";
 
 export default function page() {
   const hero = {
-    desktopTitle: "Materialien im 3D-Druck – Eigenschaften & Einsatzbereiche",
-    mobileTitle: "Materialien im 3D-Druck",
-    mobileSubtitle: "Eigenschaften & Einsatzbereiche",
+    title: "Materialien im 3D-Druck",
+    subtitle: "- Eigenschaften & Einsatzbereiche",
     intro:
       "Die Wahl des richtigen Materials ist entscheidend für die Funktion, Haltbarkeit und Optik eines Bauteils. Wir bieten eine Auswahl bewährter Kunststoffe für unterschiedlichste Anforderungen im FDM 3D-Druck.",
     imgPath: "/images/tool_5.png",
     backgroundImgPath: "/images/tool_bg_horizontal.jpg",
   };
   const {
-    desktopTitle,
-    mobileTitle,
-    mobileSubtitle,
+   title,
+    subtitle,
     intro,
     imgPath,
-    backgroundImgPath,
   } = hero;
 
   const className = "placeholder";
   return (
     <div style={{ backgroundImage: `url(/images/tool_bg_vertikal.jpg)` }}>
       <Hero
-        desktopTitle={desktopTitle}
-        mobileTitle={mobileTitle}
-        mobileSubtitle={mobileSubtitle}
+        title={title}
+        subtitle={subtitle}
         intro={intro}
         imgPath={imgPath}
-        backgroundImgPath={backgroundImgPath}
       />
       <section className="px-4 sm:px-16 lg:px-32 lg:pt-32 xl:pt-48">
         <div className="bg-white/50 lg:p-8">

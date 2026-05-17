@@ -26,10 +26,10 @@ export default function MaterialForm({ className }: Props) {
 
   return (
     <form className={`${className}`} action="#">
-      <label className="text-sm font-bold uppercase tracking-widest">
+      <label className="text-blue tracking-wide">
         Material<span>*</span>
       </label>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-4">
         {materials.map((mat) => {
           // PRÜFUNG: Ist DIESER Button gerade ausgewählt UND ist es PLA/PETG?
           const isSelected = selectedMaterial === mat;
@@ -39,10 +39,10 @@ export default function MaterialForm({ className }: Props) {
           return (
             <label
               key={mat}
-              className={`h-12 bg-blue-500/40 relative flex items-center gap-8 py-2 px-4 rounded-xl border transition-all cursor-pointer
+              className={`h-12 bg-blue relative flex items-center gap-8 py-2 px-4 rounded-xl border transition-all cursor-pointer
                 ${
                   isSelected
-                    ? "border-blue-500 bg-blue-500/10"
+                    ? "border-blue bg-blue-500/50"
                     : "border-white/10  hover:bg-blue-500/60"
                 }`}
             >
@@ -56,7 +56,7 @@ export default function MaterialForm({ className }: Props) {
 
               {/* Material Name */}
               <span
-                className={`font-semibold transition-colors ${isSelected ? "text-blue-400" : "text-slate-300"}`}
+                className={`font-semibold transition-colors w-full  hover:text-blue ${isSelected ? "text-blue" : "text-slate-300"}`}
               >
                 {mat}
               </span>
@@ -127,20 +127,27 @@ export default function MaterialForm({ className }: Props) {
 
               {/* Indikator-Punkt oben rechts */}
               <div
-                className={`absolute top-3 right-3 w-2 h-2 rounded-full bg-blue-500 transition-opacity ${isSelected ? "opacity-100" : "opacity-0"}`}
+                className={`absolute top-3 right-3 w-2 h-2 rounded-full bg-blue transition-opacity ${isSelected ? "opacity-100" : "opacity-0"}`}
               />
             </label>
           );
         })}
-        <p className="text-sm pl-4 !text-white">Tipps zu richtigen Materialwahl findest du <Link href={"#"} className="underline">hier</Link> </p>
+   
       </div>
+           <p className="mt-4 text-sm text-blue">
+          Tipps zu richtigen Materialwahl findest du{" "}
+          <Link href={"#"} className="underline">
+            hier
+          </Link>
+          .
+        </p>
 
       {/* heights */}
-      <div className="mt-8">
-        <label className="text-sm font-bold uppercase tracking-widest">
+      <div className="mt-16">
+        <label className="text-blue tracking-wide">
           Schichthöhe<span>*</span>
         </label>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-3 mt-4">
           {heights.map((mat) => {
             // PRÜFUNG: Ist DIESER Button gerade ausgewählt UND ist es PLA/PETG?
             const isSelected = selectedMaterial === mat;
@@ -149,11 +156,11 @@ export default function MaterialForm({ className }: Props) {
             return (
               <label
                 key={mat}
-                className={`h-12 bg-blue-500/40 relative flex items-center gap-8 py-2 px-4 rounded-xl border transition-all cursor-pointer
+                className={`h-12 bg-blue relative flex items-center gap-8 py-2 px-4 rounded-xl border transition-all cursor-pointer
                 ${
                   isSelected
-                    ? "border-blue-500 bg-blue-500/10"
-                    : "border-white/10  hover:bg-blue-500/60"
+                    ? "border-blue bg-blue-500/50"
+                    : "border-white/10  hover:bg-blue-500/50"
                 }`}
               >
                 <input
@@ -166,7 +173,7 @@ export default function MaterialForm({ className }: Props) {
 
                 {/* Material Name */}
                 <span
-                  className={`font-semibold transition-colors ${isSelected ? "text-blue-400" : "text-slate-300"}`}
+                  className={`font-semibold transition-colors w-full  hover:text-blue ${isSelected ? "text-blue" : "text-slate-300"}`}
                 >
                   {mat}
                 </span>
@@ -182,13 +189,13 @@ export default function MaterialForm({ className }: Props) {
       </div>
 
       {/* Fülldichte */}
-      <div className="mt-8 flex flex-col gap-4">
+      <div className="mt-16 flex flex-col gap-4">
         {/* Label & Wert-Anzeige */}
         <div className="flex justify-between items-center">
-          <label className="text-sm font-bold uppercase tracking-widest">
+          <label className="text-blue tracking-wide">
             Fülldichte<span>*</span>
           </label>
-          <span className="font-mono font-bold text-lg">{infill}%</span>
+          <span className="font-mono">{infill}%</span>
         </div>
 
         {/* Der Slider-Balken */}
@@ -200,8 +207,8 @@ export default function MaterialForm({ className }: Props) {
             step="5" // Optional: 5er Schritte für leichtere Bedienung
             value={infill}
             onChange={(e) => setInfill(Number(e.target.value))}
-            className="w-full h-2 bg-blue-500/40 rounded-lg appearance-none cursor-pointer 
-                     accent-blue-500 hover:bg-white/20 transition-all
+            className="w-full h-2 bg-blue rounded-lg appearance-none cursor-pointer 
+                     accent-blue-500 hover:bg-blue-500/50 transition-all
                      [&::-webkit-slider-thumb]:appearance-none 
                      [&::-webkit-slider-thumb]:w-4 
                      [&::-webkit-slider-thumb]:h-4 
@@ -221,62 +228,63 @@ export default function MaterialForm({ className }: Props) {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
         {/* Stückzahl */}
         <div className="flex flex-col gap-2">
-          <label className="text-sm font-bold uppercase tracking-widest">
+          <label className="text-blue tracking-wide">
             Stückzahl<span>*</span>
           </label>
           <div>
             <input
               type="text"
               min="1"
-              className="w-full bg-blue-500/40 border border-white/10 rounded-xl p-3 pr-12 text-white outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+              className="w-full bg-blue border border-blue rounded-xl p-3 pr-12 text-white outline-none focus:bg-blue-500/50 focus:ring-1 focus:ring-blue-500 focus:text-blue transition-all"
             />
           </div>
         </div>
 
         {/* Wandstärke */}
         <div className="flex flex-col gap-2">
-          <label className="text-sm font-bold uppercase tracking-widest">
+          <label className="text-blue tracking-wide">
             Wandstärke<span>*</span>
           </label>
           <div>
             <input
               type="text"
-              className="w-full bg-blue-500/40 border border-white/10 rounded-xl p-3 pr-12 text-white outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+              className="w-full bg-blue border border-blue rounded-xl p-3 pr-12 text-white outline-none focus:bg-blue-500/50 focus:ring-1 focus:ring-blue-500 focus:text-blue transition-all"
             />
           </div>
         </div>
       </div>
 
       {/* Düsendurchmesser */}
-      <div className="mt-8">
-        <label className="text-sm font-bold uppercase tracking-widest">
-          Düsendurchmesser
-        </label>
-        <p className="!text-white">0.4 mm (auf Anfrage 0.2mm möglich)</p>
+      <div className="mt-16">
+        <label className="text-blue tracking-wide">Düsendurchmesser</label>
+        <p className="text-blue">0.4 mm (auf Anfrage 0.2mm möglich)</p>
       </div>
 
       {/* Verwendungszweck */}
-      <div className="mt-8">
-        <label className="text-sm font-bold uppercase tracking-widest">
-          Verwendungszweck
-        </label>
+      <div className="mt-16">
+        <label className="text-blue tracking-wide">Verwendungszweck</label>
         <textarea
           rows={3} // Startgröße: 3 Zeilen hoch
           placeholder="Beschreibe kurz dein Projekt (z.B. mechanische Belastung, Hitzeeinwirkung, Einsatzort)..."
-          className=" mt-2 w-full bg-blue-500/40 border border-white/10 rounded-xl p-3 text-white outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none"
+          className="mt-4 w-full bg-blue border border-blue rounded-xl p-3 pr-12 text-white outline-none focus:bg-blue-500/50 focus:ring-1 focus:ring-blue-500 focus:text-blue transition-all"
         />
       </div>
       {/* File Drop */}
-      <div className="mt-8">
-        <label className="text-sm font-bold uppercase tracking-widest">
+      <div className="mt-16">
+        <label className="text-blue tracking-wide">
           ABC.abc. Datei hochladen<span>*</span>
         </label>
-        <div className="mt-2">
+        <div className="mt-4">
           <Dropzone />
         </div>
       </div>
 
-      <button type="submit" className="h-12 mt-8 text-sm font-bold uppercase tracking-widest bg-cta px-4 py-2 font-semibold tracking-tight rounded-xl hover:shadow-xl cursor-pointer w-full uppercase">Spezifikationen & Datei abschicken</button>
+      <button
+        type="submit"
+        className="text-white h-12 mt-16 font-bold uppercase tracking-widest bg-cta px-4 py-2 font-semibold  rounded-xl hover:shadow-xl cursor-pointer w-full uppercase"
+      >
+        Spezifikationen & Datei abschicken
+      </button>
     </form>
   );
 }

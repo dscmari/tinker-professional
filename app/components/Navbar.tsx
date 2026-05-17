@@ -31,25 +31,15 @@ export default function Navbar({ className }: Props) {
   };
 
   return (
-    <div className={`px-8 ${className}`}>
+    <div className={`${className}`}>
       {/* mobile */}
       <div className="lg:hidden">
         <div className="flex justify-between items-center">
-          {/* <Link href="/">
-            <Image
-              src="/images/logo.png"
-              alt="Logo"
-              width={100}
-              height={100}
-              className="w-12 md:w-32"
-            />
-          </Link> */}
           <Link href={"/"}>
-            <h1 className="!text-white !font-extrabold !tracking-tight">
+            <h1 className="!text-white !font-extrabold !tracking-tight !mb-0">
               TINKER PRO
             </h1>
           </Link>
-
           <div className="burgermenu" id="burger-menu" onClick={toggleMenu}>
             <span className="top"></span>
             <span className="middle"></span>
@@ -89,7 +79,7 @@ export default function Navbar({ className }: Props) {
         ) : null}
       </div>
       {/* desktop */}
-      <div className="hidden lg:flex items-center justify-between ">
+      <div className="hidden lg:flex items-end justify-between">
         {/* <Link className="z-100" href={"/"}>
           {" "}
           <Image
@@ -102,27 +92,24 @@ export default function Navbar({ className }: Props) {
           />
         </Link> */}
                <Link href={"/"}>
-            <h1 className="!text-white !font-extrabold !tracking-tight">
+            <h1 className="!text-white !font-extrabold !tracking-tight !mb-0">
               TINKER PRO
             </h1>
           </Link>
 
         <div className="flex items-center text-white text-lg xl:text-lg font-semibold font-inter lg:gap-4 xl:gap-8 2xl:gap-16">
-          <Link href={"/fdm-technologie/"} transitionTypes={['nav-forward']} className={`hover:shadow-xl ${pathname === "/fdm-technologie" ? "underline underline-offset-4" : ""}`}>
+          <Link href={"/fdm-technologie/"} transitionTypes={['nav-forward']} className={`hover:underline underline-offset-4 ${pathname === "/fdm-technologie" ? "underline " : ""}`}>
             FDM Technologie
           </Link>
-          {/* <Link href={"#"} className="hover:underline underline-offset-4">
-            Referenzen
-          </Link> */}
-          <Link href={"3d-druck-material"} transitionTypes={['nav-forward']} className={`hover:shadow-xl ${pathname === "/3d-druck-material" ? "underline underline-offset-4 " : ""}`}>
+          <Link href={"3d-druck-material"} transitionTypes={['nav-forward']} className={`hover:underline underline-offset-4 ${pathname === "/3d-druck-material" ? "underline" : ""}`}>
             Materialwahl
           </Link>
-          <Link href={"ueber-mich"} className={`hover:shadow-xl ${pathname === "/ueber-mich" ? "underline underline-offset-4 " : ""}`}>
+          <Link href={"ueber-mich"} className={`hover:underline underline-offset-4 ${pathname === "/ueber-mich" ? "underline" : ""}`}>
             Über mich
           </Link>
           <Link
             href={"#print-now"}
-            className="px-4 py-2 bg-cta rounded-xl font-bold tracking-tight hover:shadow-xl"
+            className="px-2 py-1 bg-cta rounded-xl font-bold tracking-tight hover:shadow-xl"
           >
             Jetzt Drucken
           </Link>

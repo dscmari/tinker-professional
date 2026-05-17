@@ -33,7 +33,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <div className="lg:col-span-2 order-1 lg:order-3 mt-12 lg:mt-0 ">
+        <div className="lg:col-span-2 order-1 lg:order-3 mt-12 lg:mt-0 text-center lg:text-start">
           <h1 className="!text-white">
             Professioneller 3D Druck - für Industrie & Tüftler
           </h1>

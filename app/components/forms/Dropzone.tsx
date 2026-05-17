@@ -15,13 +15,13 @@ export default function Dropzone() {
 
   return (
     <section className="container ">
-      <div {...getRootProps({className: 'dropzone h-24 bg-blue-500/40 rounded-xl flex flex-col items-center justify-center cursor-pointer'})}>
+      <div {...getRootProps({className: 'dropzone h-24 bg-blue rounded-xl flex flex-col items-center justify-center cursor-pointer'})}>
         <input {...getInputProps()} />
         <p className='text-sm !text-slate-200'>Dateien hierher ziehen oder klicken zum Auswählen</p>
       </div>
-      <aside className='mt-2 flex items-center gap-4 '>
+      <aside className='mt-4 flex items-start gap-4 '>
         <span>Datei:</span>
-        <ul className='text-sm text-green-500 font-bold uppercase tracking-widest'>{files}</ul>
+        <ul className='text-green-500 tracking-widest'>{files}</ul>
       </aside>
     </section>
   );
