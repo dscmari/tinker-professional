@@ -12,7 +12,7 @@ type Props = {
 
 export default function Navbar({ className }: Props) {
   const [showMenu, setShowMenu] = useState(false);
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     toggleX();
@@ -31,7 +31,7 @@ export default function Navbar({ className }: Props) {
   };
 
   return (
-    <div className={`${className}`}>
+    <div className={`z-100 px-16 pt-8 pb-4 xl:pt-12 xl:pb-8 just bg-gradient-to-br from-blue-950 from-10% via-blue-900 via-40% to-blue-500 to-70% ${className}`}>
       {/* mobile */}
       <div className="lg:hidden">
         <div className="flex justify-between items-center">
@@ -91,20 +91,31 @@ export default function Navbar({ className }: Props) {
             loading="eager"
           />
         </Link> */}
-               <Link href={"/"}>
-            <h1 className="!text-white !font-extrabold !tracking-tight !mb-0">
-              TINKER PRO
-            </h1>
-          </Link>
+        <Link href={"/"}>
+          <h1 className="!text-white !font-extrabold !tracking-tight !mb-0">
+            TINKER PRO
+          </h1>
+        </Link>
 
         <div className="flex items-center text-white text-lg xl:text-lg font-semibold font-inter lg:gap-4 xl:gap-8 2xl:gap-16">
-          <Link href={"/fdm-technologie/"} transitionTypes={['nav-forward']} className={`hover:underline underline-offset-4 ${pathname === "/fdm-technologie" ? "underline " : ""}`}>
+          <Link
+            href={"/fdm-technologie/"}
+            transitionTypes={["nav-forward"]}
+            className={`hover:underline underline-offset-4 ${pathname === "/fdm-technologie" ? "underline " : ""}`}
+          >
             FDM Technologie
           </Link>
-          <Link href={"3d-druck-material"} transitionTypes={['nav-forward']} className={`hover:underline underline-offset-4 ${pathname === "/3d-druck-material" ? "underline" : ""}`}>
+          <Link
+            href={"3d-druck-material"}
+            transitionTypes={["nav-forward"]}
+            className={`hover:underline underline-offset-4 ${pathname === "/3d-druck-material" ? "underline" : ""}`}
+          >
             Materialwahl
           </Link>
-          <Link href={"ueber-mich"} className={`hover:underline underline-offset-4 ${pathname === "/ueber-mich" ? "underline" : ""}`}>
+          <Link
+            href={"ueber-mich"}
+            className={`hover:underline underline-offset-4 ${pathname === "/ueber-mich" ? "underline" : ""}`}
+          >
             Über mich
           </Link>
           <Link

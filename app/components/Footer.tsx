@@ -35,12 +35,13 @@ export default function Footer() {
         </div>
         <div className="lg:col-span-2 order-1 lg:order-3 mt-12 lg:mt-0 text-center lg:text-start">
           <h1 className="!text-white">
-            Professioneller 3D Druck - für Industrie & Tüftler
+            Professioneller 3D Druck - für Unternehmen & Privatkunden
           </h1>
           <p className="mb-2 !text-white">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
-            incidunt laboriosam tempora itaque provident veniam, soluta
-            assumenda dicta facilis pariatur.
+            Hochwertige 3D-Drucke für Prototypen, Ersatzteile und individuelle
+            Bauteile. Ich unterstütze Sie von der ersten Idee bis zum fertigen
+            Druck – inklusive Beratung, Dateianpassung und Konstruktion
+            einfacher Bauteile für optimale Ergebnisse.
           </p>
         </div>
       </div>

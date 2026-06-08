@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Open_Sans, Space_Grotesk } from "next/font/google";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,10 +34,12 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="de" data-scroll-behavior="smooth"
+      lang="de"
+      data-scroll-behavior="smooth"
       className={`${inter.variable} ${openSans.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full">
+        <Navbar className="lg:fixed w-full" />
         <main>{children}</main>
         <Footer />
       </body>
