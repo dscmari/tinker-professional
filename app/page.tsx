@@ -22,82 +22,22 @@ export default function Home() {
         subintro={subintro}
         imgPath={imgPath}
       />
-      <section className="mx-4 sm:mx-16 lg:mx-32">
-        {/* <div className="relative p-16 flex-1 flex flex-col justify-center item-center">
-          <div className="absolute top-1/8 left-1/6 hidden lg:block">
-            <Image
-              src="/images/gear.png"
-              alt="Illustration eines Zahnrades"
-              width={200}
-              height={200}
-              className="w-24 "
-              loading="eager"
-            />
-          </div>
-          <div className="absolute top-1/5 right-1/6 hidden lg:block">
-            <Image
-              src="/images/tool_2.webp"
-              alt="Illustration eines Zahnrades"
-              width={200}
-              height={200}
-              className="w-32"
-              loading="eager"
-            />
-          </div>
-          <div className="absolute  bottom-10 left-1/6 hidden lg:block">
-            <Image
-              src="/images/tool_3.webp"
-              alt="Illustration eines Zahnrades"
-              width={200}
-              height={200}
-              className="w-48"
-              loading="eager"
-            />
-          </div>
-          <div className="absolute bottom-1/8 right-1/6 hidden lg:block">
-            <Image
-              src="/images/tool_4.png"
-              alt="Illustration eines Zahnrades"
-              width={200}
-              height={200}
-              className="w-24"
-              loading="eager"
-            />
-          </div>
-          <div className="z-10 bg-white">
-            <Image
-              src="/images/logo.png"
-              alt="Logo"
-              width={200}
-              height={200}
-              className="w-24 h-auto mx-auto"
-              loading="eager"
-            />
-            <h2 className="text-center mt-12">Jetzt Drucken</h2>
-            <h1 className="text-center mt-4">
-              Schnell und einfach ABC.abc Datei hochladen
-            </h1>
-            <p className="pb-4 text-lg text-center">
-              Laden Sie hier Ihre 3D-Datei (STL/STEP) hoch und wählen Sie Ihre
-              Spezifikationen. Ob robuster Industrieteil oder filigraner
-              Prototyp – wir fertigen nach Ihren Vorgaben. Sie sind unsicher bei
-              der Materialwahl? Bei Bedarf klären wir Ihre Fragen im Rahmen
-              eines Beratungsgesprächs.
-            </p>
-          </div>
-        </div> */}
-        <h1 className="max-w-3xl">
-          Druck-Spezifikationen festlegen, Datei hochladen und individuelles
-          Angebot erhalten
-        </h1>
-        <p className="max-w-3xl">
-          Laden Sie Ihre STL-, STEP- oder 3MF-Datei hoch und wählen Sie die
-          gewünschten Druckeinstellungen aus. Ich prüfe Ihr Projekt persönlich
-          und erstelle Ihnen ein individuelles Angebot inklusive
-          Materialempfehlung und technischer Beratung.
-        </p>
-        <div className="mt-8">
-          <MaterialForm />
+      <section className="mx-4 sm:mx-16 lg:mx-32 flex flex-col gap-8 lg:gap-16">
+        <div className=" max-w-4xl">
+          <h1>
+            Druck-Spezifikationen festlegen, Datei hochladen und individuelles
+            Angebot erhalten
+          </h1>
+          <p>
+            Laden Sie Ihre STL-, STEP- oder 3MF-Datei hoch und wählen Sie die
+            gewünschten Druckeinstellungen aus. Ich prüfe Ihr Projekt persönlich
+            und erstelle Ihnen ein individuelles Angebot inklusive
+            Materialempfehlung und technischer Beratung.
+          </p>
+        </div>
+
+        <div>
+          <MaterialForm className="lg:h-[700px] mx-auto  max-w-4xl" />
         </div>
       </section>
       <section className="px-4 sm:px-16 lg:px-32 pt-24 lg:pt-32 xl:pt-48">
