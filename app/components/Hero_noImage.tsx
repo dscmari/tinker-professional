@@ -7,6 +7,8 @@ import { usePathname } from "next/navigation";
 import { ViewTransition } from "react";
 import { useScrolled } from "../hooks/useScrolled";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import PrintNowBtn from "./btn/PrintNowBtn";
 
 type Props = {
@@ -30,8 +32,8 @@ export default function Hero({
   const isScrolled = useScrolled(20);
 
   return (
-    <div className="px-4 sm:px-16 lg:px-32 h-screen flex justify-center items-center gap-12">
-      <div className=" flex flex-col items-center lg:items-start">
+    <div className="px-4 sm:px-16 lg:px-0 h-screen grid lg:grid-cols-12 items-center">
+      <div className="lg:col-start-4 lg:col-span-8 flex flex-col items-center lg:items-start">
         <h1 className="max-w-4xl !text-5xl/14 !font-extrabold !tracking-tight text-center lg:text-start">
           {title}
         </h1>
@@ -44,19 +46,13 @@ export default function Hero({
          <p className="mt-4 font-semibold text-lg 2xl:text-lg max-w-3xl text-center lg:text-start">
           {subintro}
         </p>
-      
-          <div className="flex gap-12">
-    <ContactBtn className="mx-4 lg:mx-0 mt-8" />
-     <PrintNowBtn className="mx-4 lg:mx-0 mt-8"/>
-          </div>
+      <div className="flex gap-12">
+<ContactBtn className="mx-4 lg:mx-0 mt-8" />
+ <PrintNowBtn className="mx-4 lg:mx-0 mt-8"/>
+      </div>
+        
       </div>
       <div />
-<div className="grid grid-cols-2 gap-4">
-  <Image src={imgPath} alt="" width={250} height={250} className="rounded object-cover aspect-square" />
-  <Image src={"/images/3dprinter_1.png"} alt="" width={250} height={250} className="rounded object-cover aspect-square" />
-  <Image src={"/images/3dprinter_2.png"} alt="" width={250} height={250} className="rounded object-cover aspect-square" />
-  <Image src={"/images/tool_9.png"} alt="" width={250} height={250} className="rounded object-cover aspect-square" />
-</div>
     </div>
   );
 }

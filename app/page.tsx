@@ -10,7 +10,7 @@ export default function Home() {
       "Hochwertige 3D-Drucke für Prototypen, Ersatzteile und individuelle Bauteile. Ich unterstütze Sie von der ersten Idee bis zum fertigen Druck – inklusive Beratung, Dateianpassung und Konstruktion einfacher Bauteile für optimale Ergebnisse.",
     subintro:
       "Wählen Sie Material, Farbe und Druckeinstellungen, laden Sie Ihre Datei hoch und erhalten Sie innerhalb kürzester Zeit ein individuelles Angebot.",
-    imgPath: "/images/printer_graphic.png",
+    imgPath: "/images/3dprinter.png",
   };
   const { title, subtitle, intro, subintro, imgPath } = hero;
   return (
@@ -22,9 +22,10 @@ export default function Home() {
         subintro={subintro}
         imgPath={imgPath}
       />
-      <section className="mx-4 sm:mx-16 lg:mx-32 flex flex-col gap-8 lg:gap-16">
-        <div className=" max-w-4xl">
-          <h1>
+      <section id="print-now" className="scroll-mt-40 mx-4 sm:mx-16 lg:mx-32 flex flex-col gap-8 lg:gap-16">
+        <div className="mx-auto">
+          <div className="max-w-4xl">
+        <h1>
             Druck-Spezifikationen festlegen, Datei hochladen und individuelles
             Angebot erhalten
           </h1>
@@ -34,10 +35,13 @@ export default function Home() {
             und erstelle Ihnen ein individuelles Angebot inklusive
             Materialempfehlung und technischer Beratung.
           </p>
+          </div>
+  
+           <MaterialForm className="lg:h-[600px] mx-auto lg:mx-0  max-w-4xl  mt-12" />
         </div>
 
         <div>
-          <MaterialForm className="lg:h-[700px] mx-auto  max-w-4xl" />
+         
         </div>
       </section>
       <section className="px-4 sm:px-16 lg:px-32 pt-24 lg:pt-32 xl:pt-48">

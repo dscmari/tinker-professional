@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Hero from "../components/Hero";
 import { Check, X } from "lucide-react";
+import Hero_noImage from "../components/Hero_noImage";
 
 export default function page() {
   const hero = {
@@ -20,7 +21,7 @@ export default function page() {
 
   return (
     <div style={{ backgroundImage: `url(/images/tool_bg_vertikal.jpg)` }}>
-        <Hero
+        <Hero_noImage
           title={title}
           subtitle={subtitle}
           intro={intro}

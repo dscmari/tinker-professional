@@ -1,4 +1,5 @@
 import Hero from "../components/Hero";
+import Hero_noImage from "../components/Hero_noImage";
 import MaterialCard from "../components/MaterialCard";
 import { materialCardsData } from "../data/MaterialCardsData";
 import Image from "next/image";
@@ -22,7 +23,7 @@ export default function page() {
   const className = "placeholder";
   return (
     <div style={{ backgroundImage: `url(/images/tool_bg_vertikal.jpg)` }}>
-      <Hero
+      <Hero_noImage
         title={title}
         subtitle={subtitle}
         intro={intro}
