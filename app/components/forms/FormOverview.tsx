@@ -31,7 +31,7 @@ export default function FormOverview({ specification, files }: Props) {
           </div>
 
           {specification.material ? (
-            <span className="font-semibold">{specification.material}</span>
+            <span className="font-semibold">{specification.material.name}</span>
           ) : (
             <span className="text-lg text-red-500"> - </span>
           )}

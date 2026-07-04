@@ -2,14 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Material from "./Material";
-import { Specification } from "@/app/types";
+import { MaterialType, Specification } from "@/app/types";
 import Heights from "./Heights";
 import Filling from "./Filling";
 import AmountANDWall from "./AmountANDWall";
 import UsageANDUpload from "./UsageANDUpload";
 import FormOverview from "./FormOverview";
 import {
-  colors,
   heights,
   materials,
   pattern,
@@ -22,9 +21,9 @@ type Props = {
 
 export default function MaterialForm({ className }: Props) {
   const [specification, setSpecification] = useState<Specification>({
-    material: "",
-    color: "",
+    material: {name: "", colors: []},
     height: "0.20mm Standard @BBL H2S",
+    color: "",
     density: 20,
     pattern: "",
     quantity: 0,
@@ -34,7 +33,7 @@ export default function MaterialForm({ className }: Props) {
 
   const [files, setFiles] = useState<File[]>([]);
 
-  const handleChange = (key: keyof Specification, value: string) => {
+  const handleChange = (key: keyof Specification, value: string | MaterialType) => {
     setSpecification((prev) => ({ ...prev, [key]: value }));
   };
 
@@ -48,7 +47,6 @@ export default function MaterialForm({ className }: Props) {
   const STEPS = [
     <Material
       materials={materials}
-      colors={colors}
       specification={specification}
       handleChange={handleChange}
     />,

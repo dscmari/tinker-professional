@@ -1,6 +1,6 @@
 export type Specification = {
-  material: string;
-  color: string;
+  material: MaterialType;
+  color: "";
   height: string;
   pattern: string;
   density: number;
@@ -8,8 +8,13 @@ export type Specification = {
   wall: number;
   explaination: string;
 };
-
 export type Color = {
     name: string,
     class: string
 }
+
+export type MaterialType = {
+  name: string,
+  colors: Color []
+}
+

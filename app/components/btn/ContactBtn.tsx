@@ -2,12 +2,16 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
+
+
 type Props = {
   className?: string;
   content?: string;
 };
 
 export default function ContactBtn({ className, content }: Props) {
+ 
+
   return (
     <Link
       href={"#"}

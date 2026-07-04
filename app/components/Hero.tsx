@@ -51,35 +51,37 @@ export default function Hero({
         </div>
       </div>
       <div />
-      <div className="hidden lg:grid grid-cols-2 gap-4">
-        <Image
-          src={imgPath}
-          alt=""
-          width={250}
-          height={250}
-          className="rounded object-cover aspect-square"
-        />
-        <Image
-          src={"/images/3dprinter_1.png"}
-          alt=""
-          width={250}
-          height={250}
-          className="rounded object-cover aspect-square"
-        />
-        <Image
-          src={"/images/3dprinter_2.png"}
-          alt=""
-          width={250}
-          height={250}
-          className="rounded object-cover aspect-square"
-        />
-        <Image
-          src={"/images/tool_9.png"}
-          alt=""
-          width={250}
-          height={250}
-          className="rounded object-cover aspect-square"
-        />
+      <div className="hidden 2xl:grid grid-cols-2 grid-rows-3 gap-4 lg:mt-24">
+        <div className="relative row-span-2 h-80 w-60 bg-red-500">
+          <Image
+            src={"/images/3dprinter_1.png"}
+            alt=""
+            fill
+            className="rounded object-cover"
+          />
+        </div>
+        <div className="relative bg-blue-500">
+          {" "}
+          <Image
+            src={"/images/tool_9.png"}
+            alt=""
+            fill
+            className="rounded object-cover"
+          />
+        </div>
+        <div className="relative row-span-2 bg-green-500">
+          {" "}
+          <Image src={imgPath} alt="" fill className="rounded object-cover" />
+        </div>
+        <div className="relative bg-orange-500">
+          {" "}
+          <Image
+            src={"/images/3dprinter_2.png"}
+            alt=""
+            fill
+            className="rounded object-cover"
+          />
+        </div>
       </div>
     </div>
   );

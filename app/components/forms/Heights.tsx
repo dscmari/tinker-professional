@@ -52,7 +52,7 @@ export default function Heights({
         })}
         <p className="text-sm text-blue">
           Tipps zu richtigen Schichthöhe findest du{" "}
-          <Link href={"#"} className="underline">
+          <Link href={"/3d-druck-material"} className="underline">
             hier
           </Link>
           .
