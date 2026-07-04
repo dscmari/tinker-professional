@@ -22,7 +22,7 @@ export default function Home() {
         subintro={subintro}
         imgPath={imgPath}
       />
-      <section id="print-now" className="scroll-mt-40 mx-4 sm:mx-16 lg:mx-32 flex flex-col gap-8 lg:gap-16">
+      <section id="print-now" className="lg:scroll-mt-40 mx-4 sm:mx-16 lg:mx-32 mt-24 flex flex-col gap-8 lg:gap-16">
         <div className="mx-auto">
           <div className="max-w-4xl">
         <h1>

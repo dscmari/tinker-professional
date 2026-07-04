@@ -33,7 +33,7 @@ export default function Navbar({ className }: Props) {
 
   return (
     <div
-      className={`z-100 px-16 py-4 transition-all duration-300 bg-gradient-to-br from-blue-950 from-10% via-blue-900 via-40% to-blue-500 to-70% ${isScrolled ? "lg:pt-4" : "lg:py-12"} ${className}`}
+      className={`z-100 px-4 lg:px-16 py-4 transition-all duration-300 bg-gradient-to-br from-blue-950 from-10% via-blue-900 via-40% to-blue-500 to-70% ${isScrolled ? "lg:pt-4" : "lg:py-12"} ${className}`}
     >
       {/* mobile */}
       <div className="lg:hidden">

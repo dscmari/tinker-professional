@@ -30,9 +30,9 @@ export default function Hero({
   const isScrolled = useScrolled(20);
 
   return (
-    <div className="px-4 sm:px-16 lg:px-32 h-screen flex justify-center items-center gap-12">
-      <div className=" flex flex-col items-center lg:items-start">
-        <h1 className="max-w-4xl !text-5xl/14 !font-extrabold !tracking-tight text-center lg:text-start">
+    <div className="px-4 sm:px-16 lg:px-32 lg:h-screen lg:flex lg:justify-center lg:items-center gap-12">
+      <div className=" mt-12 flex flex-col items-center lg:items-start">
+        <h1 className="max-w-4xl lg:!text-5xl/14 !font-extrabold !tracking-tight text-center lg:text-start">
           {title}
         </h1>
         <h2 className="max-w-4xl !tracking-tight text-center lg:text-start">
@@ -41,22 +41,46 @@ export default function Hero({
         <p className="font-semibold text-lg 2xl:text-lg mt-8 max-w-3xl text-center lg:text-start">
           {intro}
         </p>
-         <p className="mt-4 font-semibold text-lg 2xl:text-lg max-w-3xl text-center lg:text-start">
+        <p className="mt-4 font-semibold text-lg 2xl:text-lg max-w-3xl text-center lg:text-start">
           {subintro}
         </p>
-      
-          <div className="flex gap-12">
-    <ContactBtn className="mx-4 lg:mx-0 mt-8" />
-     <PrintNowBtn className="mx-4 lg:mx-0 mt-8"/>
-          </div>
+
+        <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-12 mt-8">
+          <ContactBtn className="mx-4 lg:mx-0" />
+          <PrintNowBtn className="mx-4 lg:mx-0" />
+        </div>
       </div>
       <div />
-<div className="grid grid-cols-2 gap-4">
-  <Image src={imgPath} alt="" width={250} height={250} className="rounded object-cover aspect-square" />
-  <Image src={"/images/3dprinter_1.png"} alt="" width={250} height={250} className="rounded object-cover aspect-square" />
-  <Image src={"/images/3dprinter_2.png"} alt="" width={250} height={250} className="rounded object-cover aspect-square" />
-  <Image src={"/images/tool_9.png"} alt="" width={250} height={250} className="rounded object-cover aspect-square" />
-</div>
+      <div className="hidden lg:grid grid-cols-2 gap-4">
+        <Image
+          src={imgPath}
+          alt=""
+          width={250}
+          height={250}
+          className="rounded object-cover aspect-square"
+        />
+        <Image
+          src={"/images/3dprinter_1.png"}
+          alt=""
+          width={250}
+          height={250}
+          className="rounded object-cover aspect-square"
+        />
+        <Image
+          src={"/images/3dprinter_2.png"}
+          alt=""
+          width={250}
+          height={250}
+          className="rounded object-cover aspect-square"
+        />
+        <Image
+          src={"/images/tool_9.png"}
+          alt=""
+          width={250}
+          height={250}
+          className="rounded object-cover aspect-square"
+        />
+      </div>
     </div>
   );
 }
