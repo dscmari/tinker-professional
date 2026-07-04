@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "motion/react";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useScrolled } from "../hooks/useScrolled";
 
 type Props = {
   className?: string;
@@ -13,6 +13,7 @@ type Props = {
 export default function Navbar({ className }: Props) {
   const [showMenu, setShowMenu] = useState(false);
   const pathname = usePathname();
+  const isScrolled = useScrolled(50);
 
   const toggleMenu = () => {
     toggleX();
@@ -31,7 +32,9 @@ export default function Navbar({ className }: Props) {
   };
 
   return (
-    <div className={`z-100 px-16 pt-8 pb-4 xl:pt-12 xl:pb-8 just bg-gradient-to-br from-blue-950 from-10% via-blue-900 via-40% to-blue-500 to-70% ${className}`}>
+    <div
+      className={`z-100 px-16 py-4 transition-all duration-300 bg-gradient-to-br from-blue-950 from-10% via-blue-900 via-40% to-blue-500 to-70% ${isScrolled ? "lg:pt-4" : "lg:py-12"} ${className}`}
+    >
       {/* mobile */}
       <div className="lg:hidden">
         <div className="flex justify-between items-center">
