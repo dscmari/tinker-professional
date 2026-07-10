@@ -9,7 +9,7 @@ type Bullet = {
 
 type MaterialCard = {
   iconText: string;
-  title: string;
+  title: string | React.ReactNode;
   subtitle: string;
   bullets: Bullet[];
   applications: string[];
@@ -26,18 +26,18 @@ export default function MaterialCard({ className, data }: Props) {
     <div
       className={`flex flex-col bg-[#f5f6fa] rounded-xl font-inter border-x-1 border-b-1 border-slate-300 lg:w-xl h-full  ${className}`}
     >
-      <div className="bg-[#2e86de]/90 rounded-t-xl flex flex-col gap-2 p-8 xl:h-[200px]">
-        <span className="self-start bg-blue/60 px-2 py-1 text-white rounded-xl text-xs/5 font-semibold tracking-tight">
+      <div className="bg-[#2e86de]/90 rounded-t-xl flex flex-col gap-2 p-4 xl:h-[200px]">
+        <span className="self-start bg-blue/60 px-4 py-1 text-white rounded-xl text-xs/5 font-semibold tracking-tight">
           {iconText}
         </span>
-        <span className="font-semibold text-3xl text-white mt-4">{title}</span>
+        <h2 className="font-semibold !text-white mt-4 !mb-0">{title}</h2>
         <p className="!text-white font-semibold">{subtitle}</p>
       </div>
-      <div className="text-blue flex flex-col p-4">
+      <div className="text-blue flex flex-col">
         {bullets.map((e, index) => (
           <div
             key={index}
-            className={`border-b-1 border-slate-200  flex items-start gap-8 p-4`}
+            className={`border-b-1 border-slate-200  flex items-start gap-4 p-4`}
           >
             {e.icon}
             <div className="flex flex-col">

@@ -70,7 +70,7 @@ export default function Material({
             Materialfarbe<span>*</span>
           </label>
         </div>
-        <div className="flex gap-4 lg:gap-12 flex-wrap mt-4 justify-start">
+        <div className="flex gap-4 lg:gap-12 flex-wrap mt-8 justify-start">
           {availableColors.map((color, index) => (
             <label
               key={index}

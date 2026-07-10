@@ -1,4 +1,3 @@
-import Hero from "../components/Hero";
 import Hero_noImage from "../components/Hero_noImage";
 import MaterialCard from "../components/MaterialCard";
 import { materialCardsData } from "../data/MaterialCardsData";

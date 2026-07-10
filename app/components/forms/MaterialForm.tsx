@@ -13,7 +13,8 @@ import {
   materials,
   pattern,
 } from "@/app/data/MaterialSpecificationData";
-import { MoveLeft, MoveRight } from "lucide-react";
+import { Check, MoveLeft, MoveRight } from "lucide-react";
+import submitPrint from "@/actions/submitPrint";
 
 type Props = {
   className?: string;
@@ -21,7 +22,7 @@ type Props = {
 
 export default function MaterialForm({ className }: Props) {
   const [specification, setSpecification] = useState<Specification>({
-    material: {name: "", colors: []},
+    material: { name: "", colors: [] },
     height: "0.20mm Standard @BBL H2S",
     color: "",
     density: 20,
@@ -33,14 +34,17 @@ export default function MaterialForm({ className }: Props) {
 
   const [files, setFiles] = useState<File[]>([]);
 
-  const handleChange = (key: keyof Specification, value: string | MaterialType) => {
+  const handleChange = (
+    key: keyof Specification,
+    value: string | MaterialType,
+  ) => {
     setSpecification((prev) => ({ ...prev, [key]: value }));
   };
 
   useEffect(() => {
     console.log("Materials selected");
     console.log(specification);
-    console.log(files)
+    console.log(files);
   }, [specification, files]);
 
   const [currentStep, setCurrentStep] = useState(0);
@@ -61,14 +65,17 @@ export default function MaterialForm({ className }: Props) {
       handleChange={handleChange}
     />,
     <AmountANDWall handleChange={handleChange} />,
-    <UsageANDUpload handleChange={handleChange} setFiles={setFiles} files={files}  />,
+    <UsageANDUpload
+      handleChange={handleChange}
+      setFiles={setFiles}
+      files={files}
+    />,
     <FormOverview specification={specification} files={files} />,
   ];
 
   return (
     <form
-      className={`flex flex-col justify-between bg-white border border-2 border-slate-300 opacity-80 p-8 ${className}`}
-      action="#"
+      className={`flex flex-col justify-between bg-white border border-2 border-slate-300 p-16 pb-8 ${className}`}
     >
       <div>
         {STEPS.map((step, index) => (
@@ -83,39 +90,47 @@ export default function MaterialForm({ className }: Props) {
             <div key={index} className="flex items-center">
               <div
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium cursor-pointer
-    ${
-      index === currentStep ? "bg-blue text-white" : "bg-slate-200 text-blue"
-    }`}
+    ${index === currentStep ? "bg-blue text-white" : "bg-slate-200 text-blue"}`}
                 onClick={() => setCurrentStep(index)}
               >
                 {index + 1}
               </div>
               {index < STEPS.length - 1 && (
                 <div
-                  className={`h-1 w-16 ${index < currentStep ? "bg-blue" : "bg-slate-200"}`}
+                  className={`h-1 w-24 ${index < currentStep ? "bg-blue" : "bg-slate-200"}`}
                 />
               )}
             </div>
           ))}
         </div>
         {/* btns */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4 justify-end">
           <button
             type="button"
             onClick={() => setCurrentStep((prev) => Math.max(prev - 1, 0))}
-            className="mt-8 lg:mt-0 lg:absolute bottom-0 left-0 cursor-pointer"
+            className="flex items-center gap-4 mt-8 cursor-pointer text-white bg-[#2e86de]/50 font-semibold px-4 py-2 rounded-xl h-10"
           >
-            <MoveLeft className="shrink-0 text-blue" size={24} />
+            <span>ZURÜCK</span>
           </button>
-          <button
-            type="button"
-            onClick={() =>
-              setCurrentStep((prev) => Math.min(prev + 1, STEPS.length - 1))
-            }
-     className="mt-8 lg:mt-0 lg:absolute bottom-0 right-0 cursor-pointer"
-          >
-            <MoveRight className="shrink-0 text-blue" size={24} />
-          </button>
+          {currentStep === 5 ? (
+              <button
+              type="button"
+             onClick={() => submitPrint(specification, files)}
+              className="flex items-center gap-4 mt-8 cursor-pointer text-white bg-green-500  font-semibold px-4 py-2 rounded-xl h-10"
+            >
+              <span>SPEZIFIKATIONEN & DATEI ABSCHICKEN</span> <Check className="shrink-0"/>
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() =>
+                setCurrentStep((prev) => Math.min(prev + 1, STEPS.length - 1))
+              }
+              className="flex items-center gap-4 mt-8 cursor-pointer text-white bg-[#2e86de]/90  font-semibold px-4 py-2 rounded-xl h-10"
+            >
+              <span>WEITER</span> <MoveRight className="shrink-0" />
+            </button>
+          )}
         </div>
       </div>
     </form>

@@ -104,20 +104,20 @@ export default function Navbar({ className }: Props) {
           <Link
             href={"/fdm-technologie/"}
             transitionTypes={["nav-forward"]}
-            className={`hover:underline underline-offset-4 ${pathname === "/fdm-technologie" ? "underline " : ""}`}
+            className={`nav-link ${pathname === "/fdm-technologie" ? "active" : ""}`}
           >
             FDM Technologie
           </Link>
           <Link
             href={"3d-druck-material"}
             transitionTypes={["nav-forward"]}
-            className={`hover:underline underline-offset-4 ${pathname === "/3d-druck-material" ? "underline" : ""}`}
+            className={`nav-link ${pathname === "/3d-druck-material" ? "active" : ""}`}
           >
             Materialwahl
           </Link>
           <Link
             href={"ueber-mich"}
-            className={`hover:underline underline-offset-4 ${pathname === "/ueber-mich" ? "underline" : ""}`}
+            className={`nav-link ${pathname === "/ueber-mich" ? "active" : ""}`}
           >
             Über mich
           </Link>

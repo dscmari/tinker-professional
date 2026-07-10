@@ -21,7 +21,7 @@ type Props = {
 export default function FormOverview({ specification, files }: Props) {
   return (
     <div className="text-blue flex flex-col gap-4">
-      <div className="grid lg:grid-cols-3 gap-4">
+      <div className="grid lg:grid-cols-3 gap-6">
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
             <Layers className="shrink-0 text-blue" />
@@ -131,11 +131,11 @@ export default function FormOverview({ specification, files }: Props) {
           <span className="font-semibold">{specification.explaination}</span>
         </div>
       </div>
-      <aside className="mt-4 flex flex-col gap-2">
+      <aside className="mt-4 flex items-start gap-4">
         <div className="flex items-center gap-2">
           <Upload className="shrink-0 text-blue" />
           <label className="text-blue">
-            Datei(en) hochladen<span>*</span>
+            Datei(en):
           </label>
         </div>
         <ul className="text-blue font-semibold">
@@ -146,13 +146,6 @@ export default function FormOverview({ specification, files }: Props) {
           ))}
         </ul>
       </aside>
-
-      <button
-        type="submit"
-        className="mx-auto text-white lg:h-10 mt-8 tracking-wide bg-blue px-4 py-2 font-semibold rounded-xl hover:shadow-xl cursor-pointer"
-      >
-        Spezifikationen & Datei abschicken
-      </button>
     </div>
   );
 }
