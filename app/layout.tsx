@@ -40,7 +40,7 @@ export default function RootLayout({
     >
       <body className="min-h-full">
         <Navbar className="lg:fixed w-full" />
-        <main>{children}</main>
+        <main className="max-w-[1600px] mx-auto">{children}</main>
         <Footer />
       </body>
     </html>

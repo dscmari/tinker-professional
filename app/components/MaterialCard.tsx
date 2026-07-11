@@ -26,18 +26,18 @@ export default function MaterialCard({ className, data }: Props) {
     <div
       className={`flex flex-col bg-[#f5f6fa] rounded-xl font-inter border-x-1 border-b-1 border-slate-300 lg:w-xl h-full  ${className}`}
     >
-      <div className="bg-[#2e86de]/90 rounded-t-xl flex flex-col gap-2 p-4 xl:h-[200px]">
-        <span className="self-start bg-blue/60 px-4 py-1 text-white rounded-xl text-xs/5 font-semibold tracking-tight">
+      <div className="bg-white border-y border-slate-300 rounded-t-xl flex flex-col gap-2 p-4 xl:h-[160px]">
+        <span className="self-start bg-blue px-4 py-2 text-white rounded-xl text-sm font-semibold tracking-tight">
           {iconText}
         </span>
-        <h2 className="font-semibold !text-white mt-4 !mb-0">{title}</h2>
-        <p className="!text-white font-semibold">{subtitle}</p>
+        <h3 className="font-semibold mt-4 !mb-0">{title}</h3>
+        <p className="text-sm !font-light">{subtitle}</p>
       </div>
       <div className="text-blue flex flex-col">
         {bullets.map((e, index) => (
           <div
             key={index}
-            className={`border-b-1 border-slate-200  flex items-start gap-4 p-4`}
+            className={`border-b-1 border-slate-200  flex items-start gap-2 p-2`}
           >
             {e.icon}
             <div className="flex flex-col">
@@ -49,11 +49,11 @@ export default function MaterialCard({ className, data }: Props) {
       </div>
       <div className=" flex flex-col gap-2 p-4 mt-auto">
         <span className="text-slate-400 font-semibold">Einsatzgebiete</span>
-        <div className="flex flex-wrap items-center gap-4">
+        <div className="flex flex-wrap items-center gap-2">
           {applications.map((e, index) => (
             <span
               key={index}
-              className="self-start bg-green-500/80 px-4 py-1 text-white rounded-xl text-sm font-semibold tracking-tight"
+              className="self-start bg-green-500 px-4 py-1 text-white rounded-xl text-sm font-semibold tracking-tight"
             >
               {e}
             </span>

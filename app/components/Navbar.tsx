@@ -33,13 +33,13 @@ export default function Navbar({ className }: Props) {
 
   return (
     <div
-      className={`z-100 px-4 lg:px-16 py-4 transition-all duration-300 bg-gradient-to-br from-blue-950 from-10% via-blue-900 via-40% to-blue-500 to-70% ${isScrolled ? "lg:pt-4" : "lg:py-12"} ${className}`}
+      className={`z-100 px-4 lg:px-16 pt-4 transition-all duration-300 bg-white ${isScrolled ? "lg:pt-4" : "lg:py-12"} ${className}`}
     >
       {/* mobile */}
       <div className="lg:hidden">
         <div className="flex justify-between items-center">
           <Link href={"/"}>
-            <h1 className="!text-white !font-extrabold !tracking-tight !mb-0">
+            <h1 className="!font-extrabold !tracking-tight !mb-0">
               TINKER PRO
             </h1>
           </Link>
@@ -56,7 +56,7 @@ export default function Navbar({ className }: Props) {
             transition={{ ease: "easeOut", duration: 1 }}
             onClick={toggleMenu}
           >
-            <div className="flex flex-col items-end  gap-8 py-12 font-semibold text-white text-lg">
+            <div className="flex flex-col items-end  gap-8 py-12 font-semibold text-blue text-lg">
               <div className="pb-1 border-b-2 border-slate-200 w-full flex justify-end">
                 <Link href={"/"}>Home</Link>
               </div>
@@ -82,7 +82,7 @@ export default function Navbar({ className }: Props) {
         ) : null}
       </div>
       {/* desktop */}
-      <div className="hidden lg:flex items-end justify-between">
+      <div className="hidden lg:flex items-end justify-between border-b border-slate-300 pb-4">
         {/* <Link className="z-100" href={"/"}>
           {" "}
           <Image
@@ -95,12 +95,12 @@ export default function Navbar({ className }: Props) {
           />
         </Link> */}
         <Link href={"/"}>
-          <h1 className="!text-white !font-extrabold !tracking-tight !mb-0">
+          <h1 className="!font-extrabold !tracking-tight !mb-0">
             TINKER PRO
           </h1>
         </Link>
 
-        <div className="flex items-center text-white text-lg xl:text-lg font-semibold font-inter lg:gap-4 xl:gap-8 2xl:gap-16">
+        <div className="flex items-center text-blue text-lg xl:text-lg font-semibold font-inter lg:gap-4 xl:gap-8 2xl:gap-16">
           <Link
             href={"/fdm-technologie/"}
             transitionTypes={["nav-forward"]}
@@ -123,7 +123,7 @@ export default function Navbar({ className }: Props) {
           </Link>
           <Link
             href={"#print-now"}
-            className="px-2 py-1 bg-cta rounded-xl font-bold tracking-tight hover:shadow-xl"
+            className="!text-white px-2 py-1 bg-cta rounded-xl font-bold tracking-tight hover:shadow-xl"
           >
             Jetzt Drucken
           </Link>

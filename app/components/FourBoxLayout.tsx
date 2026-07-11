@@ -1,4 +1,4 @@
-import { Star } from 'lucide-react';
+import { Star } from "lucide-react";
 import React from "react";
 
 type Box = {
@@ -25,11 +25,19 @@ export default function FourBoxLayout({ className, data }: Props) {
           }`}
         >
           <div className="flex flex-col pt-4">
-            <div className={`flex items-center gap-4 ${index === 0 ? "mb-2" : ""}`}>
-              {index === 0 && <Star className=" shrink-0 text-[#EFBF04]" fill="#EFBF04" size={32}/>}
-     <h2 className={`${index === 0 ? "!mb-0" : ""}`}>{e.icon}</h2>
+            <div
+              className={`flex items-center gap-4 ${index === 0 ? "mb-2" : ""}`}
+            >
+              {index === 0 && (
+                <Star
+                  className=" shrink-0 text-[#EFBF04]"
+                  fill="#EFBF04"
+                  size={32}
+                />
+              )}
+              <h2 className={`${index === 0 ? "!mb-0" : ""}`}>{e.icon}</h2>
             </div>
-       
+
             <p className="pt-4 mb-4">{e.title}</p>
             <ul className="lg:text-sm text-blue font-medium ml-8 list-disc">
               {e.bullets.map((bullet, index) => (

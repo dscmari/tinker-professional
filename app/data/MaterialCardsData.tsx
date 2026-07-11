@@ -8,26 +8,26 @@ const plaCard = {
   subtitle: "Standardmaterial für Prototypen, Modelle und Designobjekte",
   bullets: [
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Druckqualität & Details",
       bulletSubtitle: "PLA bietet sehr gute Druckqualität feine Details",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Umweltfreundlich",
       bulletSubtitle:
         "Biobasiert und damit umweltfreundlicher als viele Kunststoffe",
       isPro: true,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Geringe Wärmebeständigkeit",
       bulletSubtitle: "Geringe Wärmebeständigkeit",
       isPro: false,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Nicht UV-beständig",
       bulletSubtitle: "Nicht UV-beständig",
       isPro: false,
@@ -42,25 +42,25 @@ const petgCard = {
   subtitle: "Kombiniert Stabilität mit Flexibilität – ideal für funktionale Bauteile",
   bullets: [
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Hohe Schlagfestigkeit",
       bulletSubtitle: "Sehr robust und widerstandsfähig gegen mechanische Stöße",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Chemikalienbeständigkeit",
       bulletSubtitle: "Gute Resistenz gegenüber vielen Laugen, Säuren und Ölen",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Geringe Verformung",
       bulletSubtitle: "Sehr maßhaltig durch minimales Warping-Risiko beim Druck",
       isPro: true,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Bedingt UV-beständig",
       bulletSubtitle: "Nur für geschützten Außenbereich oder kurze Einsatzzeiten geeignet",
       isPro: false,
@@ -75,25 +75,25 @@ const absCard = {
   subtitle: "Industrieller Standard für widerstandsfähige und belastbare Bauteile",
   bullets: [
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Hitzebeständigkeit",
       bulletSubtitle: "Formstabil bei hohen Temperaturen und mechanischer Last",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Hervorragende Nachbearbeitung",
       bulletSubtitle: "Lässt sich sehr gut schleifen und mit Aceton glätten",
       isPro: true,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Neigt zu Verzug (Warping)",
       bulletSubtitle: "Anspruchsvoll im Druck; benötigt meist einen geschlossenen Bauraum",
       isPro: false,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Nicht UV-beständig",
       bulletSubtitle: "Material wird bei direkter Sonneneinstrahlung spröde und gelb",
       isPro: false,
@@ -108,26 +108,26 @@ const asaCard = {
   subtitle: "Weiterentwicklung von ABS für anspruchsvolle Umgebungen",
   bullets: [
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Witterungs- & UV-Beständigkeit",
       bulletSubtitle:
         "Hält Sonneneinstrahlung und Feuchtigkeit dauerhaft stand",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Temperaturresistent",
       bulletSubtitle: "Stabil bei hohen und wechselnden Temperaturen",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Langlebig im Außenbereicht",
       bulletSubtitle: "Geringer Materialverschleiß über lange Zeiträume",
       isPro: true,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Warping",
       bulletSubtitle: "Erhöhter Anspruch an die Druckumgebung ",
       isPro: false,
@@ -142,25 +142,25 @@ const pa12Card = {
   subtitle: "Hochleistungsmaterial für mechanisch anspruchsvolle Anwendungen",
   bullets: [
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Maximale Zähigkeit",
       bulletSubtitle: "Enorm bruchfest und belastbar bei mechanischer Beanspruchung",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Verschleißfestigkeit",
       bulletSubtitle: "Hervorragende Gleiteigenschaften und chemische Beständigkeit",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Leichte Flexibilität",
       bulletSubtitle: "Material bricht nicht unter Last, sondern gibt leicht nach",
       isPro: true,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Bedingt UV-beständig",
       bulletSubtitle: "Ohne spezielle Additive nicht für dauerhaften Außeneinsatz geeignet",
       isPro: false,
@@ -175,25 +175,25 @@ export const tpuCard = {
   subtitle: "Gummiartiges Spezialmaterial für flexible und dämpfende Anwendungen",
   bullets: [
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Hohe Elastizität",
       bulletSubtitle: "Extrem biegsam und dehnbar ohne bleibende Verformung",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Stoßdämpfung",
       bulletSubtitle: "Hervorragende Absorption von Vibrationen und Aufprallenergie",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Abriebfestigkeit",
       bulletSubtitle: "Sehr widerstandsfähig gegen mechanischen Verschleiß und Wasser",
       isPro: true,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Bedingt UV-beständig",
       bulletSubtitle: "Längere Sonneneinstrahlung kann das Material verfärben oder spröde machen",
       isPro: false,
@@ -206,23 +206,23 @@ export const tpuCard = {
 
 export const wallThicknessStandard = {
   iconText: "Wandstärke",
-  title: <div className="flex gap-4 relative "> <Star className="absolute -top-1 shrink-0 text-[#EFBF04]" fill="#EFBF04" size={32}/> <h2 className="ml-12 !text-white !mb-0">2 Außenwände – Standard</h2></div>,
+  title: <div className="flex gap-4 relative "> <Star className="absolute -top-1 shrink-0 text-[#EFBF04]" fill="#EFBF04" size={24}/> <h3 className="ml-12 !mb-0">2 Außenwände – Standard</h3></div>,
   subtitle: " Ein Bauteil mit 2 Außenwänden benötigt etwa 4 Stunden Druckzeit",
   bullets: [
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Geringer Materialverbrauch",
       bulletSubtitle: "Spart Filament dank optimierter Fülldichte",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Kürzere Druckzeit",
       bulletSubtitle: "Schnellerer Druck durch effiziente Pfadplanung",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Gute Stabilität",
       bulletSubtitle: "Hohe Formfestigkeit auch bei Belastung",
       isPro: true,
@@ -237,19 +237,19 @@ export const wallThicknessThreeWalls = {
   subtitle: "Das gleiche Bauteil benötigt mit 3 Außenwänden etwa 4,5 bis 5 Stunden Druckzeit",
   bullets: [
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Deutlich höhere Stabilität",
       bulletSubtitle: "Widersteht stärker mechanischer Belastung",
       isPro: true,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Etwas höheres Gewicht",
       bulletSubtitle: "Erhöhter Materialeinsatz",
       isPro: false,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Moderat längere Druckzeit",
       bulletSubtitle: "Etwa 30 – 45 Minuten längere Druckzeit",
       isPro: false,
@@ -264,19 +264,19 @@ export const wallThicknessFourWalls = {
   subtitle: "Das gleiche Bauteil benötigt mit vier Außenwänden etwa 5 bis 5,5 Stunden.",
   bullets: [
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Sehr hohe Stabilität",
       bulletSubtitle: "Maximale Widerstandsfähigkeit",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Weniger anfällig für Brüche",
       bulletSubtitle: "Deutlich höhere Bruchfestigkeit im Betrieb",
       isPro: true,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Höherer Materialverbrauch",
       bulletSubtitle: "Erhöhter Materialeinsatz",
       isPro: false,
@@ -291,19 +291,19 @@ export const wallThicknessFiveWalls = {
   subtitle: "Das gleiche Bauteil benötigt mit fünf Außenwänden etwa 5,5 bis 6 Stunden",
   bullets: [
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Maximale Stabilität",
       bulletSubtitle: "Höchste Festigkeit der Wandstruktur",
       isPro: true,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Sehr hoher Materialverbrauch",
       bulletSubtitle: "Sehr hoher Materialverbrauch",
       isPro: false,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Lange Druckzeit",
       bulletSubtitle: "Spürbar längere Fertigung",
       isPro: false,
@@ -316,23 +316,23 @@ export const wallThicknessFiveWalls = {
 
 export const nozzleDiameterStandard = {
   iconText: "Düsendurchmesser",
-  title: <div className="flex gap-4 relative "> <Star className="absolute -top-1 shrink-0 text-[#EFBF04]" fill="#EFBF04" size={32}/> <h2 className="ml-12 !text-white !mb-0">0,4 mm – Standard</h2></div>,
+  title: <div className="flex gap-4 relative "> <Star className="absolute -top-1 shrink-0 text-[#EFBF04]" fill="#EFBF04" size={24}/> <h3 className="ml-12 !mb-0">0,4 mm – Standard</h3></div>,
   subtitle: "Empfohlender Standarddurchmesser",
   bullets: [
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Sehr gute Detailqualität",
       bulletSubtitle: "Feine Konturen und präzise Oberflächen",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Gute Stabilität",
       bulletSubtitle: "Zuverlässige Festigkeit für die meisten Bauteile",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Schnelle Druckzeit",
       bulletSubtitle: "Ausgewogenes Verhältnis von Tempo und Qualität",
       isPro: true,
@@ -346,31 +346,31 @@ export const nozzleDiameterFineDetail = {
   subtitle: "Feineres Auflösungsvermögen",
   bullets: [
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Höchste Detailgenauigkeit",
       bulletSubtitle: "Feinste Konturen werden originalgetreu abgebildet",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Sehr glatte Oberflächen",
       bulletSubtitle: "Kaum sichtbare Schichtlinien im Druckbild",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Kleine Radien möglich",
       bulletSubtitle: "Präzise Rundungen auch bei filigranen Formen",
       isPro: true,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Deutlich längere Druckzeit",
       bulletSubtitle: "Fast doppelt so lange wie mit Standarddüse",
       isPro: false,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Nicht für große Bauteile geeignet",
       bulletSubtitle: "Unwirtschaftlich bei großvolumigen Drucken",
       isPro: false,
@@ -385,31 +385,31 @@ export const nozzleDiameterFastStable = {
   subtitle: "Schnellerer Druck als bei den geringeren Durchmessern",
   bullets: [
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Kürzere Druckzeit",
       bulletSubtitle: "Deutlich schnellerer Druck durch breitere Bahnen",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Höhere Stabilität zwischen den Druckbahnen",
       bulletSubtitle: "Bessere Schichthaftung durch mehr Materialauftrag",
       isPro: true,
     },
     {
-      icon: <Check className="shrink-0 text-green-500" size={32} />,
+      icon: <Check className="shrink-0 text-green-500" size={24} />,
       bulletTitle: "Weniger empfindlich gegenüber kleinen Druckfehlern",
       bulletSubtitle: "Robusterer Druckprozess mit weniger Ausschuss",
       isPro: true,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Weniger feine Details",
       bulletSubtitle: "Geringere Auflösung bei kleinen Strukturen",
       isPro: false,
     },
     {
-      icon: <X className="shrink-0 text-red-500" size={32} />,
+      icon: <X className="shrink-0 text-red-500" size={24} />,
       bulletTitle: "Kleine Schrift und filigrane Strukturen können verloren gehen",
       bulletSubtitle: "Ungeeignet für sehr feine oder detaillierte Formen",
       isPro: false,

@@ -45,9 +45,9 @@ export default function Hero({
           {subintro}
         </p>
 
-        <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-12 mt-8">
-          <ContactBtn className="mx-4 lg:mx-0" />
-          <PrintNowBtn className="mx-4 lg:mx-0" />
+        <div className="flex flex-col items-center gap-4 lg:flex-row mt-8">
+            <PrintNowBtn className="mx-4 lg:mx-0" />
+          <ContactBtn className=" mx-4 lg:mx-0" />
         </div>
       </div>
       <div />

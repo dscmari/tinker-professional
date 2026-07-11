@@ -75,8 +75,14 @@ export default function MaterialForm({ className }: Props) {
 
   return (
     <form
-      className={`flex flex-col justify-between bg-white border border-2 border-slate-300 p-16 pb-8 ${className}`}
+      className={`flex flex-col justify-between bg-white border border-slate-300 rounded-xl p-16 py-8 ${className}`}
     >
+      {/* Header */}
+      <div>
+        <h2 className="text-left underline underline-offset-4">Druck-Spezifikationen angeben & Datei hochladen</h2>
+      </div>
+
+      {/* Inhalte */}
       <div>
         {STEPS.map((step, index) => (
           <div key={index}>{index === currentStep && <div>{step}</div>}</div>

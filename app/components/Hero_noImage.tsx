@@ -43,14 +43,13 @@ export default function Hero({
         <p className="font-semibold text-lg 2xl:text-lg mt-8 max-w-3xl text-center lg:text-start">
           {intro}
         </p>
-         <p className="mt-4 font-semibold text-lg 2xl:text-lg max-w-3xl text-center lg:text-start">
+        <p className="mt-4 font-semibold text-lg 2xl:text-lg max-w-3xl text-center lg:text-start">
           {subintro}
         </p>
-      <div className="flex gap-12">
-<ContactBtn className="mx-4 lg:mx-0 mt-8" />
- <PrintNowBtn className="mx-4 lg:mx-0 mt-8"/>
-      </div>
-        
+        <div className="flex gap-4">
+          <PrintNowBtn className="mx-4 lg:mx-0 mt-8" />
+          <ContactBtn className="mx-4 lg:mx-0 mt-8" />
+        </div>
       </div>
       <div />
     </div>

@@ -90,7 +90,7 @@ p {
   -moz-transition: 0.5s ease-in-out;
   -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
-  background-color: #ffffff;
+  background-color: var(--color-blue)
 }
 
 span:nth-child(1) {
