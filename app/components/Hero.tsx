@@ -38,15 +38,14 @@ export default function Hero({
         <h2 className="max-w-4xl !tracking-tight text-center lg:text-start">
           {subtitle}
         </h2>
-        <p className="font-semibold text-lg 2xl:text-lg mt-8 max-w-3xl text-center lg:text-start">
+        <p className="font-semibold 2xl:text-lg lg:mt-8 max-w-3xl text-center lg:text-start">
           {intro}
         </p>
-        <p className="mt-4 font-semibold text-lg 2xl:text-lg max-w-3xl text-center lg:text-start">
+        <p className="hidden md:block mt-4 font-semibold text-lg 2xl:text-lg max-w-3xl text-center lg:text-start">
           {subintro}
         </p>
-
         <div className="flex flex-col items-center gap-4 lg:flex-row mt-8">
-            <PrintNowBtn className="mx-4 lg:mx-0" />
+          <PrintNowBtn className="mx-4 lg:mx-0" />
           <ContactBtn className=" mx-4 lg:mx-0" />
         </div>
       </div>

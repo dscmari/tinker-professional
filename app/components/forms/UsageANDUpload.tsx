@@ -15,25 +15,25 @@ export default function UsageANDUpload({
   handleChange,
 }: Props) {
   return (
-    <div>
+    <div className="mt-8 lg:mt-0">
       {/* Verwendungszweck */}
       <div>
         <div className="flex items-center gap-2">
-          <FileText className="shrink-0 text-blue" />
-          <label className="text-blue">Verwendungszweck</label>
+          <FileText className="shrink-0 text-blue h-4 md:h-8" />
+          <label className="text-blue text-sm md:text-md">Verwendungszweck</label>
         </div>
         <textarea
           rows={3} // Startgröße: 3 Zeilen hoch
           placeholder="Beschreibe kurz dein Projekt (z.B. mechanische Belastung, Hitzeeinwirkung, Einsatzort)..."
-          className="mt-4 w-full bg-white border border-blue rounded-xl p-2 text-blue outline-none transition-all"
+          className="text-sm md:text-md mt-4 w-full bg-white border border-slate-300 rounded-xl p-2 text-blue outline-none transition-all"
           onChange={(e) => handleChange("explaination", e.target.value)}
         />
       </div>
       {/* File Drop */}
       <div className="mt-8">
         <div className="flex items-center gap-2">
-          <Upload className="shrink-0 text-blue" />
-          <label className="text-blue">
+          <Upload className="shrink-0 text-blue h-4 md:h-8" />
+          <label className="text-blue text-sm md:text-md">
             Datei(en) hochladen<span>*</span>
           </label>
         </div>
@@ -45,7 +45,7 @@ export default function UsageANDUpload({
           />
         </div>
         <aside className="mt-4 flex items-start gap-4 ">
-          <span className="text-blue">Datei:</span>
+          <span className="text-blue text-sm md:text-md">Datei:</span>
           <ul className="text-green-600 tracking-widest">
             {files.map((e, index) => (
               <li key={index}>

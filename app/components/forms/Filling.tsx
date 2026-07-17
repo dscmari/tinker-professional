@@ -13,16 +13,16 @@ export default function Filling({
   handleChange,
 }: Props) {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 mt-4 lg:mt-0">
       {/* Label & Wert-Anzeige */}
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <Gauge className="shrink-0 text-blue" />
-          <label className="text-blue">
+          <Gauge className="shrink-0 text-blue h-4 md:h-8" />
+          <label className="text-blue text-sm md:text-md">
             Fülldichte<span>*</span>
           </label>
         </div>
-        <span className="font-bold">{specification.density}%</span>
+        <span className="font-semibold text-blue">{specification.density}%</span>
       </div>
 
       {/* Der Slider-Balken */}
@@ -34,7 +34,7 @@ export default function Filling({
           step="1"
           value={specification.density}
           onChange={(e) => handleChange("density", e.target.value)}
-          className="w-full h-2 bg-blue rounded-lg appearance-none cursor-pointer 
+          className="w-full h-1 md:h-2 bg-blue rounded-lg appearance-none cursor-pointer 
                          accent-blue-500 hover:bg-blue-500/50 transition-all
                          [&::-webkit-slider-thumb]:appearance-none 
                          [&::-webkit-slider-thumb]:w-4 
@@ -45,14 +45,20 @@ export default function Filling({
         />
       </div>
       <div className="flex justify-between text-sm text-blue">
-        <span>5% (Leicht)</span>
+        <div className="flex flex-col lg:flex-row lg:gap-2">
+          <span>5 %</span>
+          <span>(Leicht)</span>
+        </div>
         <span>45%</span>
-        <span>80% (Massiv)</span>
+        <div className="flex flex-col lg:flex-row lg:gap-2">
+          <span>80 %</span>
+          <span>(Massiv)</span>
+        </div>
       </div>
       <div className="mt-8">
         <div className="flex items-center gap-2">
-          <Grid3X3 className="shrink-0 text-blue" />
-          <label className="text-blue">
+          <Grid3X3 className="shrink-0 text-blue h-4 md:h-8" />
+          <label className="text-blue text-sm md:text-md">
             Füllmuster<span>*</span>
           </label>
         </div>
@@ -63,7 +69,7 @@ export default function Filling({
               <label
                 key={index}
                 className={`h-10 bg-blue relative flex items-center gap-8 py-2 px-4 rounded-xl border transition-all cursor-pointer
-                 ${isSelected ? "border-blue bg-blue" : "bg-white border-blue hover:bg-slate-200"}`}
+                 ${isSelected ? "border-blue bg-blue" : "bg-white border-slate-300 hover:bg-slate-200"}`}
               >
                 <input
                   type="radio"
@@ -73,7 +79,7 @@ export default function Filling({
                   onChange={(e) => handleChange("pattern", e.target.value)}
                 />
                 <span
-                  className={`font-semibold transition-colors w-full  ${isSelected ? "text-white" : "text-blue"}`}
+                  className={`text-sm md:text-lg font-semibold transition-colors w-full  ${isSelected ? "text-white" : "text-blue"}`}
                 >
                   {e}
                 </span>

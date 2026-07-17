@@ -47,7 +47,7 @@ export default function Home() {
               persönlich und erstelle Ihnen ein individuelles Angebot inklusive
               Materialempfehlung und technischer Beratung.
             </p>
-            <div className="flex flex-col lg:flex-row gap-8 ml-4 mt-8 text-blue">
+            <div className="hidden md:flex flex-col lg:flex-row gap-8 ml-4 mt-8 text-blue">
               <div className="flex items-center gap-2">
                 {" "}
                 <SlidersHorizontal className="text-blue" size={32} />{" "}
@@ -68,7 +68,7 @@ export default function Home() {
             </div>
           </div>
 
-          <MaterialForm className="lg:h-[700px] mx-auto lg:mx-0  max-w-4xl mt-12" />
+          <MaterialForm className="lg:h-[700px] -mx-4 md:mx-auto lg:mx-0  max-w-4xl mt-12" />
         </div>
       </section>
       <section className="px-4 sm:px-16 lg:px-32 pt-24 lg:pt-32  flex flex-col gap-12 lg:flex-row lg:gap-24 lg:justify-center">
@@ -95,12 +95,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div>
+        <div className="hidden lg:block">
           <Image src={"/images/gear.png"} width={300} height={300} alt="" />
         </div>
       </section>
       <section className="px-4 sm:px-16 lg:px-32 pt-24 lg:pt-32  flex flex-col gap-12 lg:flex-row lg:gap-24 lg:justify-center">
-        <div>
+        <div className="hidden lg:block">
           <Image src={"/images/tool_7.png"} width={300} height={300} alt="" />
         </div>
         <div className="flex-1 max-w-2xl">
@@ -122,7 +122,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="px-4 sm:px-16 lg:px-32 pt-24 lg:py-32 lg:mt-32 flex flex-col items-center bg-slate-300/50">
+      <section className="px-4 sm:px-16 lg:px-32 py-4 lg:py-32 mt-24 lg:mt-32 flex flex-col items-center bg-slate-300/50">
         <h1>Tipps zur richtigen Schichthöhe</h1>
         <p className="max-w-3xl text-center">
           Die Schichthöhe bestimmt, wie fein Ihr Bauteil gedruckt wird. Kleinere
@@ -223,7 +223,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div>
+        <div className="hidden lg:block">
           <Image src={"/images/gear.png"} width={300} height={300} alt="" />
         </div>
       </section>
@@ -254,7 +254,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="px-4 sm:px-16 lg:px-32 pt-24 lg:py-32 lg:mt-32 flex flex-col items-center bg-slate-300/50">
+      <section className="px-4 sm:px-16 lg:px-32 py-4 lg:py-32 mt-24 lg:mt-32 flex flex-col items-center bg-slate-300/50">
         <h1>Welches Füllmuster sollte ich wählen?</h1>
         <p className="max-w-3xl text-center">
           Viele vermuten, dass eine sehr hohe Fülldichte automatisch ein

@@ -15,10 +15,10 @@ export default function Material({
 }: Props) {
         const availableColors = specification.material.colors;
   return (
-    <div>
+    <div className="mt-4 lg:mt-0">
       <div className="flex items-center gap-2">
-        <Layers className="shrink-0 text-blue" />
-        <label className="text-blue">
+        <Layers className="shrink-0 text-blue h-4 md:h-8" />
+        <label className="text-blue text-sm md:text-md">
           Material<span>*</span>
         </label>
       </div>
@@ -30,7 +30,7 @@ export default function Material({
             <div key={index}>
               <label
                 className={`h-10  border border-2 relative flex items-center gap-8 py-2 px-4 rounded-xl transition-all cursor-pointer
-                ${isSelected ? "border-blue bg-blue" : "bg-white border-blue hover:bg-slate-200"}`}
+                ${isSelected ? "border-blue bg-blue" : "bg-white border-slate-300 hover:bg-slate-200"}`}
               >
                 <input
                   type="radio"
@@ -42,7 +42,7 @@ export default function Material({
 
                 {/* Material Name */}
                 <span
-                  className={`font-semibold transition-colors w-full  ${isSelected ? "text-white" : "text-blue"}`}
+                  className={`text-sm md:text-lg font-semibold transition-colors w-full  ${isSelected ? "text-white" : "text-blue"}`}
                 >
                   {mat.name}
                 </span>
@@ -65,8 +65,8 @@ export default function Material({
       </p>
        <fieldset className="mt-8">
         <div className="flex items-center gap-2">
-          <PaintbrushVertical className="shrink-0 text-blue" />
-          <label className="text-blue">
+          <PaintbrushVertical className="shrink-0 text-blue h-4 md:h-8" />
+          <label className="text-blue text-sm lg:text-md">
             Materialfarbe<span>*</span>
           </label>
         </div>

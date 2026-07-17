@@ -75,11 +75,13 @@ export default function MaterialForm({ className }: Props) {
 
   return (
     <form
-      className={`flex flex-col justify-between bg-white border border-slate-300 rounded-xl p-16 py-8 ${className}`}
+      className={`flex flex-col justify-between bg-white border-y md:border border-slate-300 md:rounded-xl p-4 lg:p-16 lg:py-8 ${className}`}
     >
       {/* Header */}
       <div>
-        <h2 className="text-left underline underline-offset-4">Druck-Spezifikationen angeben & Datei hochladen</h2>
+        <h2 className="!text-lg lg:!text-2xl text-left underline underline-offset-4">
+          Druck-Spezifikationen angeben & Datei hochladen
+        </h2>
       </div>
 
       {/* Inhalte */}
@@ -110,7 +112,38 @@ export default function MaterialForm({ className }: Props) {
           ))}
         </div>
         {/* btns */}
-        <div className="flex items-center gap-4 justify-end">
+        {/* mobile */}
+        <div className="flex items-center gap-4 justify-between lg:justify-end">
+          <button
+            type="button"
+            onClick={() => setCurrentStep((prev) => Math.max(prev - 1, 0))}
+            className="mt-8 p-4"
+          >
+            <MoveLeft className="shrink-0 text-blue/50" size={32} />
+          </button>
+          {currentStep === 5 ? (
+            <button
+              type="button"
+              onClick={() => submitPrint(specification, files)}
+              className="flex items-center gap-4 mt-8 cursor-pointer text-white bg-green-500  font-semibold px-4 py-2 rounded-xl h-8"
+            >
+              <span>Hochladen</span>{" "}
+              <Check className="shrink-0" />
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() =>
+                setCurrentStep((prev) => Math.min(prev + 1, STEPS.length - 1))
+              }
+              className="mt-8 p-4"
+            >
+              <MoveRight className="shrink-0 text-blue" size={32} />
+            </button>
+          )}
+        </div>
+        {/* tablet & desktop */}
+        <div className="hidden md:flex items-center gap-4 justify-end">
           <button
             type="button"
             onClick={() => setCurrentStep((prev) => Math.max(prev - 1, 0))}
@@ -119,12 +152,13 @@ export default function MaterialForm({ className }: Props) {
             <span>ZURÜCK</span>
           </button>
           {currentStep === 5 ? (
-              <button
+            <button
               type="button"
-             onClick={() => submitPrint(specification, files)}
+              onClick={() => submitPrint(specification, files)}
               className="flex items-center gap-4 mt-8 cursor-pointer text-white bg-green-500  font-semibold px-4 py-2 rounded-xl h-10"
             >
-              <span>SPEZIFIKATIONEN & DATEI ABSCHICKEN</span> <Check className="shrink-0"/>
+              <span>SPEZIFIKATIONEN & DATEI ABSCHICKEN</span>{" "}
+              <Check className="shrink-0" />
             </button>
           ) : (
             <button

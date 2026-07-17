@@ -13,9 +13,9 @@ const { getRootProps, getInputProps } = useDropzone({
   
   return (
     <section className="container ">
-      <div {...getRootProps({className: 'dropzone h-12 lg:h-24 bg-white border border-blue rounded-xl flex flex-col items-center justify-center cursor-pointer'})}>
+      <div {...getRootProps({className: 'p-2 md:p-4 h-12 lg:h-24 bg-white border border-slate-300 rounded-xl flex flex-col items-center justify-center cursor-pointer'})}>
         <input {...getInputProps()} />
-        <p className='text-sm p-2'>Dateien hierher ziehen oder klicken zum Auswählen</p>
+        <p className='text-sm !font-light'>Dateien hierher ziehen oder klicken zum Auswählen</p>
       </div>
     </section>
   );

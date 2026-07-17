@@ -20,12 +20,12 @@ type Props = {
 
 export default function FormOverview({ specification, files }: Props) {
   return (
-    <div className="text-blue flex flex-col gap-4">
+    <div className="text-blue flex flex-col gap-4 mt-8 lg:mt-0">
       <div className="grid lg:grid-cols-3 gap-6">
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
-            <Layers className="shrink-0 text-blue" />
-            <label className="text-blue">
+            <Layers className="shrink-0 text-blue h-4 md:h-8" />
+            <label className="text-blue text-sm md:text-md">
               Material<span>*</span>
             </label>
           </div>
@@ -38,8 +38,8 @@ export default function FormOverview({ specification, files }: Props) {
         </div>
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
-            <PaintbrushVertical className="shrink-0 text-blue" />
-            <label className="text-blue">
+            <PaintbrushVertical className="shrink-0 text-blue h-4 md:h-8" />
+            <label className="text-blue text-sm md:text-md">
               Materialfarbe<span>*</span>
             </label>
           </div>
@@ -51,8 +51,8 @@ export default function FormOverview({ specification, files }: Props) {
         </div>
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
-            <Ruler className="shrink-0 text-blue" />
-            <label className="text-blue">
+            <Ruler className="shrink-0 text-blue h-4 md:h-8" />
+            <label className="text-blue text-sm md:text-md">
               Schichthöhe<span>*</span>
             </label>
           </div>
@@ -64,8 +64,8 @@ export default function FormOverview({ specification, files }: Props) {
         </div>
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
-            <Gauge className="shrink-0 text-blue" />
-            <label className="text-blue">
+            <Gauge className="shrink-0 text-blue h-4 md:h-8" />
+            <label className="text-blue text-sm md:text-md">
               Fülldichte<span>*</span>
             </label>
           </div>
@@ -77,8 +77,8 @@ export default function FormOverview({ specification, files }: Props) {
         </div>
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
-            <Grid3X3 className="shrink-0 text-blue" />
-            <label className="text-blue">
+            <Grid3X3 className="shrink-0 text-blue h-4 md:h-8" />
+            <label className="text-blue text-sm md:text-md">
               Füllmuster<span>*</span>
             </label>
           </div>
@@ -90,8 +90,8 @@ export default function FormOverview({ specification, files }: Props) {
         </div>
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
-            <Hash className="shrink-0 text-blue" />
-            <label className="text-blue">
+            <Hash className="shrink-0 text-blue h-4 md:h-8" />
+            <label className="text-blue text-sm md:text-md">
               Stückzahl<span>*</span>
             </label>
           </div>
@@ -103,8 +103,8 @@ export default function FormOverview({ specification, files }: Props) {
         </div>
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
-            <Shield className="shrink-0 text-blue" />
-            <label className="text-blue">
+            <Shield className="shrink-0 text-blue h-4 md:h-8" />
+            <label className="text-blue text-sm md:text-md">
               Wandstärke<span>*</span>
             </label>
           </div>
@@ -116,8 +116,10 @@ export default function FormOverview({ specification, files }: Props) {
         </div>
         <div className="flex flex-col gap-2 lg:col-span-2">
           <div className="flex items-center gap-2">
-            <Drill className="shrink-0 text-blue" />
-            <label className="text-blue">Düsendurchmesser</label>
+            <Drill className="shrink-0 text-blue h-4 md:h-8" />
+            <label className="text-blue text-sm md:text-md">
+              Düsendurchmesser
+            </label>
           </div>
           <span className="font-semibold">
             0.4 mm (auf Anfrage 0.2mm möglich)
@@ -125,18 +127,18 @@ export default function FormOverview({ specification, files }: Props) {
         </div>
         <div className="flex flex-col gap-2 lg:col-span-3">
           <div className="flex items-center gap-2">
-            <FileText className="shrink-0 text-blue" />
-            <label className="text-blue">Verwendungszweck</label>
+            <FileText className="shrink-0 text-blue h-4 md:h-8" />
+            <label className="text-blue text-sm md:text-md">
+              Verwendungszweck
+            </label>
           </div>
           <span className="font-semibold">{specification.explaination}</span>
         </div>
       </div>
       <aside className="mt-4 flex items-start gap-4">
         <div className="flex items-center gap-2">
-          <Upload className="shrink-0 text-blue" />
-          <label className="text-blue">
-            Datei(en):
-          </label>
+          <Upload className="shrink-0 text-blue h-4 md:h-8" />
+          <label className="text-blue text-sm md:text-md">Datei:</label>
         </div>
         <ul className="text-blue font-semibold">
           {files.map((e, index) => (
