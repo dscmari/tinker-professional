@@ -20,8 +20,8 @@ type Props = {
 
 export default function FormOverview({ specification, files }: Props) {
   return (
-    <div className="text-blue flex flex-col gap-4 mt-8 lg:mt-0">
-      <div className="grid lg:grid-cols-3 gap-6">
+    <div className="text-blue flex flex-col mt-8 lg:mt-0">
+      <div className="grid lg:grid-cols-3 gap-2 md:gap-4 lg:gap-6">
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
             <Layers className="shrink-0 text-blue h-4 md:h-8" />
@@ -31,7 +31,7 @@ export default function FormOverview({ specification, files }: Props) {
           </div>
 
           {specification.material ? (
-            <span className="font-semibold">{specification.material.name}</span>
+            <span className="text-sm md:text-md font-semibold">{specification.material.name}</span>
           ) : (
             <span className="text-lg text-red-500"> - </span>
           )}
@@ -44,7 +44,7 @@ export default function FormOverview({ specification, files }: Props) {
             </label>
           </div>
           {specification.color ? (
-            <span className="font-semibold">{specification.color}</span>
+            <span className="text-sm md:text-md font-semibold">{specification.color}</span>
           ) : (
             <span className="text-lg text-red-500"> - </span>
           )}
@@ -57,7 +57,7 @@ export default function FormOverview({ specification, files }: Props) {
             </label>
           </div>
           {specification.height ? (
-            <span className="font-semibold">{specification.height}</span>
+            <span className="text-sm md:text-md font-semibold">{specification.height}</span>
           ) : (
             <span className="text-lg text-red-500"> - </span>
           )}
@@ -70,7 +70,7 @@ export default function FormOverview({ specification, files }: Props) {
             </label>
           </div>
           {specification.density ? (
-            <span className="font-semibold">{specification.density}</span>
+            <span className="text-sm md:text-md font-semibold">{specification.density}</span>
           ) : (
             <span className="text-lg text-red-500"> - </span>
           )}
@@ -83,7 +83,7 @@ export default function FormOverview({ specification, files }: Props) {
             </label>
           </div>
           {specification.pattern ? (
-            <span className="font-semibold">{specification.pattern}</span>
+            <span className="text-sm md:text-md font-semibold">{specification.pattern}</span>
           ) : (
             <span className="text-lg text-red-500"> - </span>
           )}
@@ -96,7 +96,7 @@ export default function FormOverview({ specification, files }: Props) {
             </label>
           </div>
           {specification.quantity ? (
-            <span className="font-semibold">{specification.quantity}</span>
+            <span className="text-sm md:text-md font-semibold">{specification.quantity}</span>
           ) : (
             <span className="text-lg text-red-500"> - </span>
           )}
@@ -109,7 +109,7 @@ export default function FormOverview({ specification, files }: Props) {
             </label>
           </div>
           {specification.wall ? (
-            <span className="font-semibold">{specification.wall}</span>
+            <span className="text-sm md:text-md font-semibold">{specification.wall}</span>
           ) : (
             <span className="text-lg text-red-500"> - </span>
           )}
@@ -121,7 +121,7 @@ export default function FormOverview({ specification, files }: Props) {
               Düsendurchmesser
             </label>
           </div>
-          <span className="font-semibold">
+          <span className="text-sm md:text-md font-semibold">
             0.4 mm (auf Anfrage 0.2mm möglich)
           </span>
         </div>
@@ -132,7 +132,7 @@ export default function FormOverview({ specification, files }: Props) {
               Verwendungszweck
             </label>
           </div>
-          <span className="font-semibold">{specification.explaination}</span>
+          <span className="text-sm md:text-md font-semibold">{specification.explaination}</span>
         </div>
       </div>
       <aside className="mt-4 flex items-start gap-4">
@@ -140,7 +140,7 @@ export default function FormOverview({ specification, files }: Props) {
           <Upload className="shrink-0 text-blue h-4 md:h-8" />
           <label className="text-blue text-sm md:text-md">Datei:</label>
         </div>
-        <ul className="text-blue font-semibold">
+        <ul className="text-sm md:text-md text-blue font-semibold">
           {files.map((e, index) => (
             <li key={index} className="text">
               {e.name} - {formatSize(e.size)}

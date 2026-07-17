@@ -68,7 +68,7 @@ export default function Home() {
             </div>
           </div>
 
-          <MaterialForm className="lg:h-[700px] -mx-4 md:mx-auto lg:mx-0  max-w-4xl mt-12" />
+          <MaterialForm className="h-screenlg:h-[700px] -mx-4 md:mx-auto lg:mx-0  max-w-4xl mt-12" />
         </div>
       </section>
       <section className="px-4 sm:px-16 lg:px-32 pt-24 lg:pt-32  flex flex-col gap-12 lg:flex-row lg:gap-24 lg:justify-center">

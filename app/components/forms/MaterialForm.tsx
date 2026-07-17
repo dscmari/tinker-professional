@@ -15,12 +15,14 @@ import {
 } from "@/app/data/MaterialSpecificationData";
 import { Check, MoveLeft, MoveRight } from "lucide-react";
 import submitPrint from "@/actions/submitPrint";
+import { usePathname } from "next/navigation";
 
 type Props = {
   className?: string;
 };
 
 export default function MaterialForm({ className }: Props) {
+  const pathname = usePathname();
   const [specification, setSpecification] = useState<Specification>({
     material: { name: "", colors: [] },
     height: "0.20mm Standard @BBL H2S",
@@ -77,46 +79,58 @@ export default function MaterialForm({ className }: Props) {
     <form
       className={`flex flex-col justify-between bg-white border-y md:border border-slate-300 md:rounded-xl p-4 lg:p-16 lg:py-8 ${className}`}
     >
-      {/* Header */}
-      <div>
-        <h2 className="!text-lg lg:!text-2xl text-left underline underline-offset-4">
-          Druck-Spezifikationen angeben & Datei hochladen
-        </h2>
-      </div>
+      <div className="">
+        {/* Header */}
+        <div id="form-start" className="scroll-mt-12">
+          <h2 className="!text-lg lg:!text-2xl text-left underline underline-offset-4">
+            Druck-Spezifikationen angeben & Datei hochladen
+          </h2>
+        </div>
 
-      {/* Inhalte */}
-      <div>
-        {STEPS.map((step, index) => (
-          <div key={index}>{index === currentStep && <div>{step}</div>}</div>
-        ))}
-      </div>
-
-      {/* Leiste */}
-      <div className="relative">
-        <div className="hidden lg:flex items-center justify-center pb-4">
-          {STEPS.map((_, index) => (
-            <div key={index} className="flex items-center">
-              <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium cursor-pointer
-    ${index === currentStep ? "bg-blue text-white" : "bg-slate-200 text-blue"}`}
-                onClick={() => setCurrentStep(index)}
-              >
-                {index + 1}
-              </div>
-              {index < STEPS.length - 1 && (
-                <div
-                  className={`h-1 w-24 ${index < currentStep ? "bg-blue" : "bg-slate-200"}`}
-                />
-              )}
-            </div>
+        {/* Inhalte */}
+        <div>
+          {STEPS.map((step, index) => (
+            <div key={index}>{index === currentStep && <div>{step}</div>}</div>
           ))}
         </div>
-        {/* btns */}
+
+        {/* Leiste */}
+        <div className="relative">
+          <div className="hidden lg:flex items-center justify-center pb-4">
+            {STEPS.map((_, index) => (
+              <div key={index} className="flex items-center">
+                <div
+                  className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium cursor-pointer
+    ${index === currentStep ? "bg-blue text-white" : "bg-slate-200 text-blue"}`}
+                  onClick={() => setCurrentStep(index)}
+                >
+                  {index + 1}
+                </div>
+                {index < STEPS.length - 1 && (
+                  <div
+                    className={`h-1 w-24 ${index < currentStep ? "bg-blue" : "bg-slate-200"}`}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* btns */}
+      <div>
         {/* mobile */}
-        <div className="flex items-center gap-4 justify-between lg:justify-end">
+        <div className="flex md:hidden items-center gap-4 justify-between lg:justify-end">
           <button
             type="button"
-            onClick={() => setCurrentStep((prev) => Math.max(prev - 1, 0))}
+            onClick={(e) => {
+              if (pathname === "/") {
+                e.preventDefault();
+                document
+                  .getElementById("form-start")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }
+              setCurrentStep((prev) => Math.max(prev - 1, 0));
+            }}
             className="mt-8 p-4"
           >
             <MoveLeft className="shrink-0 text-blue/50" size={32} />
@@ -127,15 +141,20 @@ export default function MaterialForm({ className }: Props) {
               onClick={() => submitPrint(specification, files)}
               className="flex items-center gap-4 mt-8 cursor-pointer text-white bg-green-500  font-semibold px-4 py-2 rounded-xl h-8"
             >
-              <span>Hochladen</span>{" "}
-              <Check className="shrink-0" />
+              <span>Hochladen</span> <Check className="shrink-0" />
             </button>
           ) : (
             <button
               type="button"
-              onClick={() =>
-                setCurrentStep((prev) => Math.min(prev + 1, STEPS.length - 1))
-              }
+              onClick={(e) => {
+                if (pathname === "/") {
+                  e.preventDefault();
+                  document
+                    .getElementById("form-start")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }
+                setCurrentStep((prev) => Math.min(prev + 1, STEPS.length - 1));
+              }}
               className="mt-8 p-4"
             >
               <MoveRight className="shrink-0 text-blue" size={32} />
