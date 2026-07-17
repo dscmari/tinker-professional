@@ -16,6 +16,7 @@ import {
 import { Check, MoveLeft, MoveRight } from "lucide-react";
 import submitPrint from "@/actions/submitPrint";
 import { usePathname } from "next/navigation";
+import ContactInfo from "./ContactInfo";
 
 type Props = {
   className?: string;
@@ -32,6 +33,8 @@ export default function MaterialForm({ className }: Props) {
     quantity: 0,
     wall: 0,
     explaination: "",
+    name: "",
+    mail: "",
   });
 
   const [files, setFiles] = useState<File[]>([]);
@@ -72,6 +75,7 @@ export default function MaterialForm({ className }: Props) {
       setFiles={setFiles}
       files={files}
     />,
+    <ContactInfo handleChange={handleChange} specification={specification} />,
     <FormOverview specification={specification} files={files} />,
   ];
 
@@ -93,7 +97,9 @@ export default function MaterialForm({ className }: Props) {
             <div key={index}>{index === currentStep && <div>{step}</div>}</div>
           ))}
         </div>
+      </div>
 
+      <div>
         {/* Leiste */}
         <div className="relative">
           <div className="hidden lg:flex items-center justify-center pb-4">
@@ -115,9 +121,7 @@ export default function MaterialForm({ className }: Props) {
             ))}
           </div>
         </div>
-      </div>
-      {/* btns */}
-      <div>
+        {/* btns */}
         {/* mobile */}
         <div className="flex md:hidden items-center gap-4 justify-between lg:justify-end">
           <button
@@ -135,7 +139,7 @@ export default function MaterialForm({ className }: Props) {
           >
             <MoveLeft className="shrink-0 text-blue/50" size={32} />
           </button>
-          {currentStep === 5 ? (
+          {currentStep === 6 ? (
             <button
               type="button"
               onClick={() => submitPrint(specification, files)}

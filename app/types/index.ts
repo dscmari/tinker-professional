@@ -7,6 +7,8 @@ export type Specification = {
   quantity: number;
   wall: number;
   explaination: string;
+  name: string;
+  mail: string;
 };
 export type Color = {
     name: string,
