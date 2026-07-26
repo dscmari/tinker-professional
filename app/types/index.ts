@@ -11,12 +11,11 @@ export type Specification = {
   mail: string;
 };
 export type Color = {
-    name: string,
-    class: string
-}
+  name: string;
+  class: string;
+};
 
 export type MaterialType = {
-  name: string,
-  colors: Color []
-}
-
+  name: string;
+  colors: Color[];
+};

@@ -1,5 +1,5 @@
 import { Specification } from "@/app/types";
-import { Mail, Ruler } from "lucide-react";
+import { FileText, Mail, Ruler } from "lucide-react";
 import Link from "next/link";
 
 type Props = {
@@ -11,7 +11,7 @@ export default function Heights({ specification, handleChange }: Props) {
   return (
     <div>
       <div>
-        <div className="flex items-center gap-2 mt-4 lg:mt-0">
+        <div className="flex items-center gap-2 mt-4 lg:mt-12">
           <Ruler className="shrink-0 text-blue text-blue h-4 md:h-8" />
           <label className="text-blue text-sm md:text-md">
             Name<span>*</span>
@@ -25,7 +25,7 @@ export default function Heights({ specification, handleChange }: Props) {
           />
         </div>
       </div>
-      <div>
+      <div className="mt-8">
         <div className="flex items-center gap-2 mt-4 lg:mt-0">
           <Mail className="shrink-0 text-blue text-blue h-4 md:h-8" />
           <label className="text-blue text-sm md:text-md">
@@ -39,6 +39,18 @@ export default function Heights({ specification, handleChange }: Props) {
              onChange={(e) => handleChange("mail", e.target.value)}
           />
         </div>
+      </div>
+         <div className="mt-8">
+        <div className="flex items-center gap-2">
+          <FileText className="shrink-0 text-blue h-4 md:h-8" />
+          <label className="text-blue text-sm md:text-md">Verwendungszweck</label>
+        </div>
+        <textarea
+          rows={3} // Startgröße: 3 Zeilen hoch
+          placeholder="Beschreibe kurz dein Projekt (z.B. mechanische Belastung, Hitzeeinwirkung, Einsatzort)..."
+          className="text-sm md:text-md mt-4 w-full bg-white border border-slate-300 rounded-xl p-2 text-blue outline-none transition-all"
+          onChange={(e) => handleChange("explaination", e.target.value)}
+        />
       </div>
     </div>
   );

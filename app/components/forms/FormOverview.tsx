@@ -1,5 +1,6 @@
+"use client";
+
 import { Specification } from "@/app/types";
-import { formatSize } from "../utils/formatSize";
 import {
   Drill,
   FileText,
@@ -7,6 +8,7 @@ import {
   Grid3X3,
   Hash,
   Layers,
+  Mail,
   PaintbrushVertical,
   Ruler,
   Shield,
@@ -15,13 +17,25 @@ import {
 
 type Props = {
   specification: Specification;
-  files: File[];
+  honeypotRef: any;
+  inputFileRef: any,
+selectedFiles: File[],
+  onFilesChange: any
+
 };
 
-export default function FormOverview({ specification, files }: Props) {
+export default function FormOverview({
+  specification,
+  honeypotRef,
+  inputFileRef,
+  selectedFiles,
+  onFilesChange
+}: Props) {
+
+
   return (
     <div className="text-blue flex flex-col mt-8 lg:mt-0">
-      <div className="grid lg:grid-cols-3 gap-2 md:gap-4 lg:gap-6">
+      <div className="grid lg:grid-cols-3 gap-2 md:gap-4">
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
             <Layers className="shrink-0 text-blue h-4 md:h-8" />
@@ -31,7 +45,9 @@ export default function FormOverview({ specification, files }: Props) {
           </div>
 
           {specification.material ? (
-            <span className="text-sm md:text-md font-semibold">{specification.material.name}</span>
+            <span className="text-sm md:text-md font-semibold">
+              {specification.material.name}
+            </span>
           ) : (
             <span className="text-lg text-red-500"> - </span>
           )}
@@ -44,7 +60,9 @@ export default function FormOverview({ specification, files }: Props) {
             </label>
           </div>
           {specification.color ? (
-            <span className="text-sm md:text-md font-semibold">{specification.color}</span>
+            <span className="text-sm md:text-md font-semibold">
+              {specification.color}
+            </span>
           ) : (
             <span className="text-lg text-red-500"> - </span>
           )}
@@ -57,7 +75,9 @@ export default function FormOverview({ specification, files }: Props) {
             </label>
           </div>
           {specification.height ? (
-            <span className="text-sm md:text-md font-semibold">{specification.height}</span>
+            <span className="text-sm md:text-md font-semibold">
+              {specification.height}
+            </span>
           ) : (
             <span className="text-lg text-red-500"> - </span>
           )}
@@ -70,7 +90,9 @@ export default function FormOverview({ specification, files }: Props) {
             </label>
           </div>
           {specification.density ? (
-            <span className="text-sm md:text-md font-semibold">{specification.density}</span>
+            <span className="text-sm md:text-md font-semibold">
+              {specification.density}
+            </span>
           ) : (
             <span className="text-lg text-red-500"> - </span>
           )}
@@ -83,7 +105,9 @@ export default function FormOverview({ specification, files }: Props) {
             </label>
           </div>
           {specification.pattern ? (
-            <span className="text-sm md:text-md font-semibold">{specification.pattern}</span>
+            <span className="text-sm md:text-md font-semibold">
+              {specification.pattern}
+            </span>
           ) : (
             <span className="text-lg text-red-500"> - </span>
           )}
@@ -96,7 +120,9 @@ export default function FormOverview({ specification, files }: Props) {
             </label>
           </div>
           {specification.quantity ? (
-            <span className="text-sm md:text-md font-semibold">{specification.quantity}</span>
+            <span className="text-sm md:text-md font-semibold">
+              {specification.quantity}
+            </span>
           ) : (
             <span className="text-lg text-red-500"> - </span>
           )}
@@ -109,12 +135,14 @@ export default function FormOverview({ specification, files }: Props) {
             </label>
           </div>
           {specification.wall ? (
-            <span className="text-sm md:text-md font-semibold">{specification.wall}</span>
+            <span className="text-sm md:text-md font-semibold">
+              {specification.wall}
+            </span>
           ) : (
             <span className="text-lg text-red-500"> - </span>
           )}
         </div>
-        <div className="flex flex-col gap-2 lg:col-span-2">
+        <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
             <Drill className="shrink-0 text-blue h-4 md:h-8" />
             <label className="text-blue text-sm md:text-md">
@@ -125,6 +153,16 @@ export default function FormOverview({ specification, files }: Props) {
             0.4 mm (auf Anfrage 0.2mm möglich)
           </span>
         </div>
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-2">
+            <Mail className="shrink-0 text-blue h-4 md:h-8" />
+            <label className="text-blue text-sm md:text-md">Kontakt<span>*</span></label>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-sm md:text-md">{specification.name}</span>
+            <span className="text-sm md:text-md">{specification.mail}</span>
+          </div>
+        </div>
         <div className="flex flex-col gap-2 lg:col-span-3">
           <div className="flex items-center gap-2">
             <FileText className="shrink-0 text-blue h-4 md:h-8" />
@@ -132,21 +170,48 @@ export default function FormOverview({ specification, files }: Props) {
               Verwendungszweck
             </label>
           </div>
-          <span className="text-sm md:text-md font-semibold">{specification.explaination}</span>
+          <span className="text-sm md:text-md">
+            {specification.explaination}
+          </span>
         </div>
       </div>
-      <aside className="mt-4 flex items-start gap-4">
+      <aside className="mt-4 flex flex-col lg:flex-row lg:items-center gap-4">
         <div className="flex items-center gap-2">
           <Upload className="shrink-0 text-blue h-4 md:h-8" />
           <label className="text-blue text-sm md:text-md">Datei:</label>
         </div>
-        <ul className="text-sm md:text-md text-blue font-semibold">
-          {files.map((e, index) => (
-            <li key={index} className="text">
-              {e.name} - {formatSize(e.size)}
-            </li>
-          ))}
-        </ul>
+        <div className="flex flex-col lg:flex-row gap-2 lg:gap-4">
+          {selectedFiles.length > 0 ? (
+            selectedFiles.map((file: File, index: number) => <p key={index}>{file.name.length > 16 ? file.name.slice(0, 16) + '...' : file.name}</p>)
+          ) : (
+            <p className="text-sm mx-auto lg:mx-0 !font-normal">Keine Dateien ausgewählt</p>
+          )}
+        </div>
+        <input
+          ref={honeypotRef}
+          type="text"
+          name="website"
+          style={{ display: "none" }}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+        />
+        <div className="flex lg:ml-auto">
+          <input
+            ref={inputFileRef}
+            type="file"
+            className="hidden"
+            accept=".stl,.obj,.3mf,.txt"
+            onChange={(e) => onFilesChange((prev: File[]) => [...prev, ...Array.from(e.target.files ?? [])])}
+          />
+          <button
+            type="button"
+            className="mx-auto lg:mx-auto cursor-pointer bg-blue text-white rounded-lg py-1 px-4 hover:shadow-xl"
+            onClick={() => inputFileRef.current?.click()}
+          >
+            Datei auswählen
+          </button>
+        </div>
       </aside>
     </div>
   );

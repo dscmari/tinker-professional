@@ -7,7 +7,7 @@ type Props = {
 
 export default function AmountANDWall({ handleChange }: Props) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 lg:mt-0">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 lg:mt-12">
       {/* Stückzahl */}
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-2">

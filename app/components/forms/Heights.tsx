@@ -14,7 +14,7 @@ export default function Heights({
   handleChange,
 }: Props) {
   return (
-    <div>
+    <div className="mt-12">
       <div className="flex items-center gap-2 mt-4 lg:mt-0">
         <Ruler className="shrink-0 text-blue text-blue h-4 md:h-8" />
         <label className="text-blue text-sm md:text-md">

@@ -5,27 +5,36 @@ import { Layers, PaintbrushVertical } from "lucide-react";
 type Props = {
   materials: MaterialType[];
   specification: Specification;
-  handleChange: (key: keyof Specification, value: string | MaterialType) => void;
+  handleChange: (
+    key: keyof Specification,
+    value: string | MaterialType,
+  ) => void;
+  isAttempted: boolean
+  hasValidMaterial: boolean
+  hasValidColor: boolean
 };
 
 export default function Material({
   materials,
   specification,
   handleChange,
+  isAttempted,
+  hasValidMaterial,
+  hasValidColor
 }: Props) {
-        const availableColors = specification.material.colors;
+  const availableColors = specification.material.colors;
   return (
     <div className="mt-4 lg:mt-0">
       <div className="flex items-center gap-2">
         <Layers className="shrink-0 text-blue h-4 md:h-8" />
-        <label className="text-blue text-sm md:text-md">
+        <label className={`text-blue text-sm md:text-md ${isAttempted && !hasValidMaterial ? "text-red-500" : "text-blue"}`}>
           Material<span>*</span>
         </label>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
         {materials.map((mat, index) => {
           const isSelected = specification.material.name === mat.name;
-  
+
           return (
             <div key={index}>
               <label
@@ -63,10 +72,10 @@ export default function Material({
         </Link>
         .
       </p>
-       <fieldset className="mt-8">
+      <fieldset className="mt-8">
         <div className="flex items-center gap-2">
           <PaintbrushVertical className="shrink-0 text-blue h-4 md:h-8" />
-          <label className="text-blue text-sm lg:text-md">
+             <label className={`text-blue text-sm md:text-md ${isAttempted && !hasValidColor? "text-red-500" : "text-blue"}`}>
             Materialfarbe<span>*</span>
           </label>
         </div>
@@ -92,7 +101,7 @@ export default function Material({
             </label>
           ))}
         </div>
-      </fieldset> 
+      </fieldset>
     </div>
   );
 }

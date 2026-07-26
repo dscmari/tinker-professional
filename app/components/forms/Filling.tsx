@@ -5,15 +5,19 @@ type Props = {
   pattern: string[];
   specification: Specification;
   handleChange: (key: keyof Specification, value: string) => void;
+  isAttempted: boolean
+  isStepValid: boolean
 };
 
 export default function Filling({
   pattern,
   specification,
   handleChange,
+  isAttempted,
+  isStepValid
 }: Props) {
   return (
-    <div className="flex flex-col gap-4 mt-4 lg:mt-0">
+    <div className="flex flex-col gap-4 mt-4 lg:mt-12">
       {/* Label & Wert-Anzeige */}
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
@@ -58,7 +62,7 @@ export default function Filling({
       <div className="mt-8">
         <div className="flex items-center gap-2">
           <Grid3X3 className="shrink-0 text-blue h-4 md:h-8" />
-          <label className="text-blue text-sm md:text-md">
+          <label className={`text-sm md:text-md ${isAttempted && !isStepValid ? "text-red-500" : "text-blue"}`}>
             Füllmuster<span>*</span>
           </label>
         </div>
