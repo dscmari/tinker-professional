@@ -18,7 +18,6 @@ import { usePathname } from "next/navigation";
 import ContactInfo from "./ContactInfo";
 import { type PutBlobResult } from "@vercel/blob";
 import { upload } from "@vercel/blob/client";
-import { p } from "motion/react-client";
 
 type Props = {
   className?: string;
@@ -62,9 +61,13 @@ export default function MaterialForm({ className }: Props) {
 
   const isStepValid = (step: number): boolean => {
     if (step === 0)
-      return !!specification.material.name && specification.color !== "";
-    else if(step === 2) {
+      return !!specification.material.name && !!specification.color;
+    else if (step === 2) {
       return !!specification.pattern;
+    } else if (step === 3) {
+      return specification.quantity > 0 && specification.wall > 0;
+    } else if (step === 4) {
+      return !!specification.name && !!specification.mail;
     }
     return true;
   };
@@ -89,13 +92,25 @@ export default function MaterialForm({ className }: Props) {
       isAttempted={isAttempted}
       isStepValid={isStepValid(currentStep)}
     />,
-    <AmountANDWall handleChange={handleChange} />,
+    <AmountANDWall
+      handleChange={handleChange}
+      specification={specification}
+      isAttempted={isAttempted}
+      hasValidQuantity={specification.quantity > 0}
+      hasValidWall={specification.wall > 0}
+    />,
     // <UsageANDUpload
     //   handleChange={handleChange}
     //   setFiles={setFiles}
     //   files={files}
     // />,
-    <ContactInfo handleChange={handleChange} specification={specification} />,
+    <ContactInfo
+      handleChange={handleChange}
+      specification={specification}
+      isAttempted={isAttempted}
+      hasValidName={!!specification.name}
+      hasValidMail={!!specification.mail}
+    />,
     <FormOverview
       specification={specification}
       honeypotRef={honeypotRef}
@@ -145,7 +160,10 @@ export default function MaterialForm({ className }: Props) {
         </div>
 
         {/* Inhalte */}
-        <div key={currentStep} className="slide-in">
+        <div
+          key={currentStep}
+          className={`${currentStep === 0 || isAttempted ? "" : "slide-in"} ${isAttempted && !isStepValid(currentStep) ? "shake" : ""}`}
+        >
           {STEPS[currentStep]}
         </div>
       </div>
@@ -200,18 +218,17 @@ export default function MaterialForm({ className }: Props) {
           ) : (
             <button
               type="button"
-              onClick={(e) => {
-                if (pathname === "/") {
-                  e.preventDefault();
-                  document
-                    .getElementById("form-start")
-                    ?.scrollIntoView({ behavior: "smooth" });
+              onClick={() => {
+                if (!isStepValid(currentStep)) {
+                  setIsAttempted(true);
+                  return;
                 }
+                setIsAttempted(false);
                 setCurrentStep((prev) => Math.min(prev + 1, STEPS.length - 1));
               }}
               className="mt-8 p-4"
             >
-              <MoveRight className="shrink-0 text-blue" size={32} />
+              <MoveRight className={`shrink-0 ${isStepValid(currentStep) ? "text-blue" : "text-blue/50"}`} size={32} />
             </button>
           )}
         </div>
@@ -243,7 +260,7 @@ export default function MaterialForm({ className }: Props) {
                 setIsAttempted(false);
                 setCurrentStep((prev) => Math.min(prev + 1, STEPS.length - 1));
               }}
-              className={`flex items-center gap-2 mt-8 cursor-pointer text-white  font-semibold px-4 py-2 rounded-xl h-10 border ${isStepValid(currentStep) ? "bg-[#2e86de]/90" : "bg-[#2e86de]/50"} ${isAttempted && !isStepValid(currentStep) ? "border-red-500" : "border-white"}`}
+              className={`flex items-center gap-2 mt-8 cursor-pointer text-white  font-semibold px-4 py-2 rounded-xl h-10 border ${isStepValid(currentStep) ? "bg-[#2e86de]/90" : "bg-[#2e86de]/50"}`}
             >
               <span>WEITER</span> <MoveRight className="shrink-0" size={16} />
             </button>

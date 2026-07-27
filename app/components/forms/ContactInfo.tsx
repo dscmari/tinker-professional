@@ -5,45 +5,62 @@ import Link from "next/link";
 type Props = {
   specification: Specification;
   handleChange: (key: keyof Specification, value: string) => void;
+  isAttempted: boolean;
+  hasValidName: boolean;
+  hasValidMail: boolean;
 };
 
-export default function Heights({ specification, handleChange }: Props) {
+export default function Heights({
+  specification,
+  handleChange,
+  isAttempted,
+  hasValidName,
+  hasValidMail,
+}: Props) {
   return (
     <div>
       <div>
         <div className="flex items-center gap-2 mt-4 lg:mt-12">
           <Ruler className="shrink-0 text-blue text-blue h-4 md:h-8" />
-          <label className="text-blue text-sm md:text-md">
+          <label
+            className={`text-blue text-sm md:text-md ${isAttempted && !hasValidName ? "text-red-500" : "text-blue"}`}
+          >
             Name<span>*</span>
           </label>
         </div>
         <div>
           <input
             type="text"
+              value={specification.name || ""}
             className="mt-2 w-full h-10 relative flex items-center gap-8 py-2 px-4 rounded-xl border border-slate-300 transition-all cursor-pointer"
-             onChange={(e) => handleChange("name", e.target.value)}
+            onChange={(e) => handleChange("name", e.target.value)}
           />
         </div>
       </div>
       <div className="mt-8">
         <div className="flex items-center gap-2 mt-4 lg:mt-0">
           <Mail className="shrink-0 text-blue text-blue h-4 md:h-8" />
-          <label className="text-blue text-sm md:text-md">
+          <label
+            className={`text-blue text-sm md:text-md ${isAttempted && !hasValidMail ? "text-red-500" : "text-blue"}`}
+          >
             Mail<span>*</span>
           </label>
         </div>
         <div>
           <input
-            type="mail"
+            type="email"
+             value={specification.mail || ""}
             className="mt-2 w-full h-10 relative flex items-center gap-8 py-2 px-4 rounded-xl border border-slate-300 transition-all cursor-pointer"
-             onChange={(e) => handleChange("mail", e.target.value)}
+            onChange={(e) => handleChange("mail", e.target.value)}
           />
         </div>
       </div>
-         <div className="mt-8">
+      <div className="mt-8">
         <div className="flex items-center gap-2">
           <FileText className="shrink-0 text-blue h-4 md:h-8" />
-          <label className="text-blue text-sm md:text-md">Verwendungszweck</label>
+          <label className="text-blue text-sm md:text-md">
+            Verwendungszweck
+          </label>
         </div>
         <textarea
           rows={3} // Startgröße: 3 Zeilen hoch
