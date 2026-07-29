@@ -10,7 +10,7 @@ type Props = {
   hasValidMail: boolean;
 };
 
-export default function Heights({
+export default function ContactInfo({
   specification,
   handleChange,
   isAttempted,
@@ -31,7 +31,7 @@ export default function Heights({
         <div>
           <input
             type="text"
-              value={specification.name || ""}
+            value={specification.name || ""}
             className="mt-2 w-full h-10 relative flex items-center gap-8 py-2 px-4 rounded-xl border border-slate-300 transition-all cursor-pointer"
             onChange={(e) => handleChange("name", e.target.value)}
           />
@@ -49,7 +49,7 @@ export default function Heights({
         <div>
           <input
             type="email"
-             value={specification.mail || ""}
+            value={specification.mail || ""}
             className="mt-2 w-full h-10 relative flex items-center gap-8 py-2 px-4 rounded-xl border border-slate-300 transition-all cursor-pointer"
             onChange={(e) => handleChange("mail", e.target.value)}
           />

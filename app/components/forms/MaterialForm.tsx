@@ -50,12 +50,6 @@ export default function MaterialForm({ className }: Props) {
     setSpecification((prev) => ({ ...prev, [key]: value }));
   };
 
-  useEffect(() => {
-    console.log("Materials selected");
-    console.log(specification);
-    console.log(selectedFiles);
-  }, [specification, selectedFiles]);
-
   const [currentStep, setCurrentStep] = useState(0);
   const [isAttempted, setIsAttempted] = useState(false);
 
@@ -99,11 +93,6 @@ export default function MaterialForm({ className }: Props) {
       hasValidQuantity={specification.quantity > 0}
       hasValidWall={specification.wall > 0}
     />,
-    // <UsageANDUpload
-    //   handleChange={handleChange}
-    //   setFiles={setFiles}
-    //   files={files}
-    // />,
     <ContactInfo
       handleChange={handleChange}
       specification={specification}
@@ -111,6 +100,7 @@ export default function MaterialForm({ className }: Props) {
       hasValidName={!!specification.name}
       hasValidMail={!!specification.mail}
     />,
+
     <FormOverview
       specification={specification}
       honeypotRef={honeypotRef}
@@ -120,12 +110,19 @@ export default function MaterialForm({ className }: Props) {
     />,
   ];
 
+  useEffect(() => {
+    // console.log("Materials selected");
+    // console.log(specification);
+    // console.log(selectedFiles);
+    console.log(currentStep);
+  }, [specification, selectedFiles, currentStep]);
+
   return (
     <form
       className={`flex flex-col justify-between bg-white border-y md:border border-slate-300 md:rounded-xl p-4 lg:p-16 lg:py-8 ${className}`}
       onSubmit={async (event) => {
         event.preventDefault();
-
+        console.log("submit triggered at step:", currentStep);
         // Honeypot check — wenn ausgefüllt, ist es ein Bot
         if (honeypotRef.current?.value) {
           return;
@@ -224,11 +221,18 @@ export default function MaterialForm({ className }: Props) {
                   return;
                 }
                 setIsAttempted(false);
-                setCurrentStep((prev) => Math.min(prev + 1, STEPS.length - 1));
+                setTimeout(() => {
+                  setCurrentStep((prev) =>
+                    Math.min(prev + 1, STEPS.length - 1),
+                  );
+                }, 10);
               }}
               className="mt-8 p-4"
             >
-              <MoveRight className={`shrink-0 ${isStepValid(currentStep) ? "text-blue" : "text-blue/50"}`} size={32} />
+              <MoveRight
+                className={`shrink-0 ${isStepValid(currentStep) ? "text-blue" : "text-blue/50"}`}
+                size={32}
+              />
             </button>
           )}
         </div>
@@ -258,7 +262,11 @@ export default function MaterialForm({ className }: Props) {
                   return;
                 }
                 setIsAttempted(false);
-                setCurrentStep((prev) => Math.min(prev + 1, STEPS.length - 1));
+                setTimeout(() => {
+                  setCurrentStep((prev) =>
+                    Math.min(prev + 1, STEPS.length - 1),
+                  );
+                }, 10);
               }}
               className={`flex items-center gap-2 mt-8 cursor-pointer text-white  font-semibold px-4 py-2 rounded-xl h-10 border ${isStepValid(currentStep) ? "bg-[#2e86de]/90" : "bg-[#2e86de]/50"}`}
             >
