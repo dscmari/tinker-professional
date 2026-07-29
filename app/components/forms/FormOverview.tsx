@@ -18,10 +18,9 @@ import {
 type Props = {
   specification: Specification;
   honeypotRef: any;
-  inputFileRef: any,
-selectedFiles: File[],
-  onFilesChange: any
-
+  inputFileRef: any;
+  selectedFiles: File[];
+  onFilesChange: any;
 };
 
 export default function FormOverview({
@@ -29,10 +28,8 @@ export default function FormOverview({
   honeypotRef,
   inputFileRef,
   selectedFiles,
-  onFilesChange
+  onFilesChange,
 }: Props) {
-
-
   return (
     <div className="text-blue flex flex-col mt-8 lg:mt-0">
       <div className="grid lg:grid-cols-3 gap-4">
@@ -156,11 +153,17 @@ export default function FormOverview({
         <div className="flex flex-col gap-1 md:gap-2">
           <div className="flex items-center gap-2">
             <Mail className="shrink-0 text-blue h-4 md:h-8" />
-            <label className="text-blue text-sm md:text-md">Kontakt<span>*</span></label>
+            <label className="text-blue text-sm md:text-md">
+              Kontakt<span>*</span>
+            </label>
           </div>
           <div className="flex flex-col">
-            <span className="text-sm md:text-md font-semibold ml-2">{specification.name}</span>
-            <span className="text-sm md:text-md font-semibold ml-2">{specification.mail}</span>
+            <span className="text-sm md:text-md font-semibold ml-2">
+              {specification.name}
+            </span>
+            <span className="text-sm md:text-md font-semibold ml-2">
+              {specification.mail}
+            </span>
           </div>
         </div>
         <div className="flex flex-col gap-1 md:gap-2 lg:col-span-3">
@@ -182,9 +185,17 @@ export default function FormOverview({
         </div>
         <div className="flex flex-col lg:flex-row gap-2 lg:gap-4">
           {selectedFiles.length > 0 ? (
-            selectedFiles.map((file: File, index: number) => <p key={index}>{file.name.length > 16 ? file.name.slice(0, 16) + '...' : file.name}</p>)
+            selectedFiles.map((file: File, index: number) => (
+              <p key={index}>
+                {file.name.length > 16
+                  ? file.name.slice(0, 16) + "..."
+                  : file.name}
+              </p>
+            ))
           ) : (
-            <p className="text-sm mx-auto lg:mx-0 !font-normal">Keine Dateien ausgewählt</p>
+            <p className="text-sm mx-auto lg:mx-0 !font-normal">
+              Keine Dateien ausgewählt
+            </p>
           )}
         </div>
         <input
@@ -202,7 +213,12 @@ export default function FormOverview({
             type="file"
             className="hidden"
             accept=".stl,.obj,.3mf,.txt"
-            onChange={(e) => onFilesChange((prev: File[]) => [...prev, ...Array.from(e.target.files ?? [])])}
+            onChange={(e) =>
+              onFilesChange((prev: File[]) => [
+                ...prev,
+                ...Array.from(e.target.files ?? []),
+              ])
+            }
           />
           <button
             type="button"

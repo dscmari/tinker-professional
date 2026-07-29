@@ -112,7 +112,7 @@ export default function MaterialForm({ className }: Props) {
 
   useEffect(() => {
     // console.log("Materials selected");
-    // console.log(specification);
+    console.log(specification);
     // console.log(selectedFiles);
     console.log(currentStep);
   }, [specification, selectedFiles, currentStep]);
