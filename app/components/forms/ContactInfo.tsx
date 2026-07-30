@@ -1,6 +1,5 @@
 import { Specification } from "@/app/types";
 import { FileText, Mail, Ruler } from "lucide-react";
-import Link from "next/link";
 
 type Props = {
   specification: Specification;
@@ -44,6 +43,7 @@ export default function ContactInfo({
             className={`text-blue text-sm md:text-md ${isAttempted && !hasValidMail ? "text-red-500" : "text-blue"}`}
           >
             Mail<span>*</span>
+            {isAttempted && !hasValidMail ? <span className="ml-4">Bitte eine gültige Email-Adresse angeben. Z.b. max@musterfrau.de</span> : ""}
           </label>
         </div>
         <div>

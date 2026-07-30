@@ -1,6 +1,6 @@
 "use server"
-
 import { Specification } from "@/app/types";
+import { sendMail } from "@/app/utils/mail";
 
 export default async function submitPrint(specification: Specification, files: File[], blobUrls: string[]) {
   // hier an Cloud-API schicken, z.B. S3, Email, Datenbank etc.
@@ -8,4 +8,12 @@ export default async function submitPrint(specification: Specification, files: F
   console.log(specification);
   console.log(files);
   console.log(blobUrls)
+
+  
+
+  try {
+    sendMail(specification, blobUrls, files)
+  } catch (err) {
+  console.error("Error while sending mail:", err);
+}
 }

@@ -1,7 +1,7 @@
 import { FileText, Upload } from "lucide-react";
-import { formatSize } from "../utils/formatSize";
 import Dropzone from "./Dropzone";
 import { Specification } from "@/app/types";
+import { formatSize } from "@/app/utils/formatSize";
 
 type Props = {
   handleChange: (key: keyof Specification, value: string) => void;
