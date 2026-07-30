@@ -2,6 +2,7 @@
 
 import { Specification } from "@/app/types";
 import {
+  Bold,
   Drill,
   FileText,
   Gauge,
@@ -14,6 +15,7 @@ import {
   Shield,
   Upload,
 } from "lucide-react";
+import { useEffect } from "react";
 
 type Props = {
   specification: Specification;
@@ -21,6 +23,8 @@ type Props = {
   inputFileRef: any;
   selectedFiles: File[];
   onFilesChange: any;
+  isAttempted :boolean
+  hasValidFiles: boolean
 };
 
 export default function FormOverview({
@@ -29,7 +33,16 @@ export default function FormOverview({
   inputFileRef,
   selectedFiles,
   onFilesChange,
+  isAttempted,
+  hasValidFiles
 }: Props) {
+
+useEffect(() => {
+  console.log(selectedFiles)
+  console.log(hasValidFiles)
+  console.log(isAttempted)
+},[selectedFiles])
+
   return (
     <div className="text-blue flex flex-col mt-8 lg:mt-0">
       <div className="grid lg:grid-cols-3 gap-4">
@@ -193,7 +206,7 @@ export default function FormOverview({
               </p>
             ))
           ) : (
-            <p className="text-sm mx-auto lg:mx-0 !font-normal">
+            <p className={`text-sm mx-auto lg:mx-0 !font-normal ${!hasValidFiles && isAttempted  ? "!text-red-500" : ""}`}>
               Keine Dateien ausgewählt
             </p>
           )}
@@ -222,7 +235,7 @@ export default function FormOverview({
           />
           <button
             type="button"
-            className="mx-auto lg:mx-auto cursor-pointer bg-blue text-white rounded-lg py-1 px-4 hover:shadow-xl"
+            className={`mx-auto lg:mx-auto cursor-pointer bg-blue text-white rounded-lg py-1 px-4 hover:shadow-xl`}
             onClick={() => inputFileRef.current?.click()}
           >
             Datei auswählen

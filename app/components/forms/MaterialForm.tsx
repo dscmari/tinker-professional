@@ -18,6 +18,7 @@ import { usePathname } from "next/navigation";
 import ContactInfo from "./ContactInfo";
 import { type PutBlobResult } from "@vercel/blob";
 import { upload } from "@vercel/blob/client";
+import ThankYou from "./ThankYou";
 
 type Props = {
   className?: string;
@@ -61,7 +62,12 @@ export default function MaterialForm({ className }: Props) {
     } else if (step === 3) {
       return specification.quantity > 0 && specification.wall > 0;
     } else if (step === 4) {
-      return !!specification.name && !!specification.mail;
+      return (
+        !!specification.mail &&
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(specification.mail)
+      );
+    } else if (step === 5) {
+      return selectedFiles.length > 0;
     }
     return true;
   };
@@ -98,16 +104,21 @@ export default function MaterialForm({ className }: Props) {
       specification={specification}
       isAttempted={isAttempted}
       hasValidName={!!specification.name}
-      hasValidMail={!!specification.mail}
+      hasValidMail={
+        !!specification.mail &&
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(specification.mail)
+      }
     />,
-
     <FormOverview
       specification={specification}
       honeypotRef={honeypotRef}
       inputFileRef={inputFileRef}
       selectedFiles={selectedFiles}
       onFilesChange={setSelectedFiles}
+      isAttempted={isAttempted}
+      hasValidFiles={selectedFiles.length > 0}
     />,
+    <ThankYou specification={specification} />,
   ];
 
   useEffect(() => {
@@ -128,8 +139,8 @@ export default function MaterialForm({ className }: Props) {
           return;
         }
 
-        if (!selectedFiles.length) {
-          throw new Error("No file selected");
+        if (selectedFiles.length === 0) {
+          return;
         }
 
         const files = selectedFiles;
@@ -145,14 +156,20 @@ export default function MaterialForm({ className }: Props) {
         const blobUrls = await blobs.map((b) => b.url);
         await submitPrint(specification, files, blobUrls);
 
-        setBlob(blobs);
+        // setBlob(blobs);
       }}
     >
-      <div className="">
+      <div
+        className={`${currentStep === 6 ? "h-full flex flex-col items-center justify-center" : ""}`}
+      >
         {/* Header */}
         <div id="form-start" className="scroll-mt-12">
-          <h2 className="!text-lg lg:!text-2xl text-left underline underline-offset-4">
-            Druck-Spezifikationen angeben & Datei hochladen
+          <h2
+            className={`!text-lg lg:!text-2xl  ${currentStep === 6 ? "" : " text-left underline underline-offset-4 "}`}
+          >
+            {currentStep === 6
+              ? "Druckauftrag erfolgreich hochgeladen!"
+              : "Druck-Spezifikationen angeben & Datei hochladen"}
           </h2>
         </div>
 
@@ -165,7 +182,7 @@ export default function MaterialForm({ className }: Props) {
         </div>
       </div>
       {/* Leiste */}
-      <div className="relative">
+      <div className={`${currentStep === 6 ? "hidden" : "relative"}`}>
         <div className="hidden lg:flex items-center justify-center pb-4">
           {STEPS.map((_, index) => (
             <div key={index} className="flex items-center">
@@ -208,6 +225,18 @@ export default function MaterialForm({ className }: Props) {
           {currentStep === 5 ? (
             <button
               type="submit"
+              onClick={() => {
+                if (!isStepValid(currentStep)) {
+                  setIsAttempted(true);
+                  return;
+                }
+                setIsAttempted(false);
+                setTimeout(() => {
+                  setCurrentStep((prev) =>
+                    Math.min(prev + 1, STEPS.length - 1),
+                  );
+                }, 10);
+              }}
               className="flex items-center gap-4 mt-8 cursor-pointer text-white bg-green-500  font-semibold px-4 py-2 rounded-xl h-8"
             >
               <span>Hochladen</span> <Check className="shrink-0" />
@@ -216,6 +245,7 @@ export default function MaterialForm({ className }: Props) {
             <button
               type="button"
               onClick={() => {
+                document.getElementById("form-start")?.scrollIntoView({ behavior: "smooth" });
                 if (!isStepValid(currentStep)) {
                   setIsAttempted(true);
                   return;
@@ -248,6 +278,18 @@ export default function MaterialForm({ className }: Props) {
           {currentStep === 5 ? (
             <button
               type="submit"
+              onClick={() => {
+                if (!isStepValid(currentStep)) {
+                  setIsAttempted(true);
+                  return;
+                }
+                setIsAttempted(false);
+                setTimeout(() => {
+                  setCurrentStep((prev) =>
+                    Math.min(prev + 1, STEPS.length - 1),
+                  );
+                }, 10);
+              }}
               className="flex items-center gap-4 mt-8 cursor-pointer text-white bg-green-500  font-semibold px-4 py-2 rounded-xl h-10"
             >
               <span>SPEZIFIKATIONEN & DATEI ABSCHICKEN</span>{" "}

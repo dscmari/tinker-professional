@@ -47,7 +47,7 @@ export default function AmountANDWall({
           <label
             className={`text-blue text-sm md:text-md ${isAttempted && !hasValidWall ? "text-red-500" : "text-blue"}`}
           >
-            Wandstärke<span>*</span>
+            Wandstärke in Millimeter<span>*</span>
           </label>
         </div>
         <div>
