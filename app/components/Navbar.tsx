@@ -115,6 +115,11 @@ export default function Navbar({ className }: Props) {
           >
             Materialwahl
           </Link>
+                 <Link
+            href={"kontakt"}
+            className={`nav-link ${pathname === "/kontakt" ? "active" : ""}`}
+          >
+            Kontakt          </Link>
           <Link
             href={"ueber-mich"}
             className={`nav-link ${pathname === "/ueber-mich" ? "active" : ""}`}

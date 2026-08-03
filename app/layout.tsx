@@ -39,8 +39,8 @@ export default function RootLayout({
       className={`${inter.variable} ${openSans.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full">
-        <Navbar className="lg:fixed w-full" />
-        <main className="max-w-[1600px] mx-auto">{children}</main>
+        <Navbar className="lg:fixed w-full max-w-[2048px]" />
+        <main className="max-w-[2048px] mx-auto">{children}</main>
         <Footer />
       </body>
     </html>

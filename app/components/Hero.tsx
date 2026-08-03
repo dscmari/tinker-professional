@@ -26,8 +26,6 @@ export default function Hero({
   subintro,
   imgPath,
 }: Props) {
-  const pathname = usePathname();
-  const isScrolled = useScrolled(20);
 
   return (
     <div className="px-4 sm:px-16 lg:px-32 lg:h-screen lg:flex lg:justify-center lg:items-center gap-12">

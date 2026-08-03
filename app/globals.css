@@ -13,8 +13,15 @@
   --color-cta: #ee5a24;
 }
 
+*{
+ 
+   
+}
+
 html {
   scroll-behavior: smooth;
+   max-width: 2048px;
+   margin: 0 auto 0 auto;
 }
 
 body {
