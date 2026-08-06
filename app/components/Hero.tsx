@@ -28,7 +28,7 @@ export default function Hero({
 }: Props) {
 
   return (
-    <div className="px-4 sm:px-16 lg:px-32 lg:h-screen lg:flex lg:justify-center lg:items-center gap-12">
+    <div className={`px-4 sm:px-16 lg:px-32 lg:pt-20 2xl:pt-0 lg:h-[75vh] 2xl:h-screen lg:flex lg:justify-center lg:items-center gap-12 ${className}`}>
       <div className=" mt-12 flex flex-col items-center lg:items-start">
         <h1 className="max-w-4xl lg:!text-5xl/14 !font-extrabold !tracking-tight text-center lg:text-start">
           {title}
@@ -43,7 +43,7 @@ export default function Hero({
           {subintro}
         </p>
         <div className="flex flex-col items-center gap-4 lg:flex-row mt-8">
-          <PrintNowBtn className="mx-4 lg:mx-0 w-60" />
+          <PrintNowBtn hasArrow={true} className="mx-4 lg:mx-0 w-60" />
           <ContactBtn className=" mx-4 lg:mx-0 w-60" />
         </div>
       </div>

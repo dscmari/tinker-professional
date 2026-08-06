@@ -34,7 +34,7 @@ export default function Hero({
   return (
     <div className="px-4 sm:px-16 lg:px-32 lg:h-screen lg:flex lg:justify-center lg:items-center gap-12">
       <div className="mt-12 lg:mt-0 lg:col-start-4 lg:col-span-8 flex flex-col items-center lg:items-start">
-        <h1 className="max-w-4xl !text-5xl/14 !font-extrabold !tracking-tight text-center lg:text-start">
+        <h1 className="max-w-4xl lg:!text-5xl/14 !font-extrabold !tracking-tight text-center lg:text-start">
           {title}
         </h1>
         <h2 className="max-w-4xl !tracking-tight text-center lg:text-start">

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useScrolled } from "../hooks/useScrolled";
+import PrintNowBtn from "./btn/PrintNowBtn";
 
 type Props = {
   className?: string;
@@ -67,15 +68,13 @@ export default function Navbar({ className }: Props) {
                 <Link href={"/3d-druck-material/"}>Materialwahl</Link>
               </div>
               <div className="pb-1 border-b-2 border-slate-200 w-full flex justify-end">
-                <Link href={"#n"}>Über mich</Link>
+                <Link href={"/kontakt/"}>Kontakt</Link>
               </div>
-              <div className=" w-full flex justify-end">
-                <Link
-                  href={"#"}
-                  className="text-center bg-cta py-2 px-4 tracking-tight flex items-center gap-4 rounded-xl"
-                >
-                  <ArrowRight className="shrink-0" /> <span>Jetzt Drucken</span>
-                </Link>
+              <div className="pb-1 border-b-2 border-slate-200 w-full flex justify-end">
+                <Link href={"/ueber-mich/"}>Über mich</Link>
+              </div>
+                 <div className="pb-1  w-full flex justify-center">
+                <Link href={"/"} className="bg-cta py-2 px-4 rounded-xl text-white font-semibold">Jetzt Drucken</Link>
               </div>
             </div>
           </motion.div>
@@ -95,9 +94,7 @@ export default function Navbar({ className }: Props) {
           />
         </Link> */}
         <Link href={"/"}>
-          <h1 className="!font-extrabold !tracking-tight !mb-0">
-            TINKER PRO
-          </h1>
+          <h1 className="!font-extrabold !tracking-tight !mb-0">TINKER PRO</h1>
         </Link>
 
         <div className="flex items-center text-blue text-lg xl:text-lg font-semibold font-inter lg:gap-4 xl:gap-8 2xl:gap-16">
@@ -115,23 +112,19 @@ export default function Navbar({ className }: Props) {
           >
             Materialwahl
           </Link>
-                 <Link
+          <Link
             href={"kontakt"}
             className={`nav-link ${pathname === "/kontakt" ? "active" : ""}`}
           >
-            Kontakt          </Link>
+            Kontakt{" "}
+          </Link>
           <Link
             href={"ueber-mich"}
             className={`nav-link ${pathname === "/ueber-mich" ? "active" : ""}`}
           >
             Über mich
           </Link>
-          <Link
-            href={"#print-now"}
-            className="!text-white px-2 py-1 bg-cta rounded-xl font-bold tracking-tight hover:shadow-xl"
-          >
-            Jetzt Drucken
-          </Link>
+          <PrintNowBtn className="bg-cta" />
         </div>
       </div>
     </div>
