@@ -74,6 +74,8 @@ console.log("sendMail is called")
     <p>Beste Grüße,<br/><b>Ihr Tinker Professional Team</b></p>
   `,
     });
+
+    console.log("sendMail end of try");
   } catch (err) {
     console.error("Mail error:", err);
     throw err;
