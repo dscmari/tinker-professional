@@ -7,6 +7,9 @@ export async function sendMail(
   blobUrls: string[],
   files: File[],
 ) {
+
+console.log("sendMail is called")
+
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: 587,
@@ -16,6 +19,7 @@ export async function sendMail(
       pass: process.env.SMTP_PASS,
     },
   });
+
 
   try {
     await transporter.sendMail({

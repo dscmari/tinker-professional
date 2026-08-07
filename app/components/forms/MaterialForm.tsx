@@ -184,7 +184,7 @@ export default function MaterialForm({ className }: Props) {
       {/* Leiste */}
       <div className={`${currentStep === 6 ? "hidden" : "relative"}`}>
         <div className="hidden lg:flex items-center justify-center pb-4">
-          {STEPS.map((_, index) => (
+          {STEPS.slice(0,-1).map((_, index) => (
             <div key={index} className="flex items-center">
               <div
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium cursor-default transition-colors duration-500
@@ -193,7 +193,7 @@ export default function MaterialForm({ className }: Props) {
               >
                 {index + 1}
               </div>
-              {index < STEPS.length - 1 && (
+              {index < STEPS.length - 2 && (
                 <div className="relative h-1 w-24 bg-slate-200">
                   <div
                     className="absolute top-0 left-0 h-1 bg-blue transition-all duration-300"
