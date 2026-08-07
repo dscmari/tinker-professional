@@ -77,6 +77,7 @@ console.log("sendMail is called")
 
     console.log("sendMail end of try");
   } catch (err) {
+    console.log("sendMail in catch")
     console.error("Mail error:", err);
     throw err;
   }
