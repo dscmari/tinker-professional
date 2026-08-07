@@ -16,4 +16,5 @@ export default async function submitPrint(specification: Specification, files: F
   } catch (err) {
   console.error("Error while sending mail:", err);
 }
+console.log("end of submitPrint()")
 }

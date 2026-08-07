@@ -17,12 +17,13 @@ export async function sendMail(
     },
   });
 
-  await transporter.sendMail({
-    from: `"Tinker Professional" <${process.env.SMTP_USER}>`, // sender address
-    to: process.env.SMTP_USER, // list of recipients
-    subject: "3D-Druck-Anfrage", // subject line
-    text: "Hello world?", // fallback
-    html: `
+  try {
+    await transporter.sendMail({
+      from: `"Tinker Professional" <${process.env.SMTP_USER}>`, // sender address
+      to: process.env.SMTP_USER, // list of recipients
+      subject: "3D-Druck-Anfrage", // subject line
+      text: "Hello world?", // fallback
+      html: `
   <h2>Neue Bestellung eingegangen</h2>
     <p><b>Name:</b> ${specification.name}</p>
   <p><b>Mail:</b> ${specification.mail}</p>
@@ -40,14 +41,14 @@ export async function sendMail(
     ${blobUrls.map((url, index) => `<li><a href="${url}">Datei ${index + 1} herunterladen</a></li>`).join("")}
   </ul>
 `,
-  });
+    });
 
-  await transporter.sendMail({
-    from: `"Tinker Professional" <${process.env.SMTP_USER}>`, // sender address
-    to: specification.mail, // list of recipients
-    subject: "Bestellbestätigung - Ihre 3D-Druck-Anfrage",
-    text: "Hello world?", // fallback
-    html: `
+    await transporter.sendMail({
+      from: `"Tinker Professional" <${process.env.SMTP_USER}>`, // sender address
+      to: specification.mail, // list of recipients
+      subject: "Bestellbestätigung - Ihre 3D-Druck-Anfrage",
+      text: "Hello world?", // fallback
+      html: `
     <h2>Vielen Dank für Ihre Bestellung, ${specification.name}!</h2>
     <p>Wir haben Ihre Anfrage erhalten und verarbeiten sie umgehend. Hier ist eine Übersicht Ihrer Angaben:</p>
     <hr/>
@@ -68,5 +69,9 @@ export async function sendMail(
     <br/>
     <p>Beste Grüße,<br/><b>Ihr Tinker Professional Team</b></p>
   `,
-  });
+    });
+  } catch (err) {
+    console.error("Mail error:", err);
+    throw err;
+  }
 }
