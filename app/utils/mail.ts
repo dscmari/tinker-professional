@@ -20,6 +20,8 @@ console.log("sendMail is called")
     },
   });
 
+  await transporter.verify();
+console.log("connected to SMTP");
 
   try {
     console.log("start of try")
