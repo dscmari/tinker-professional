@@ -22,6 +22,8 @@ console.log("sendMail is called")
 
 
   try {
+    console.log("start of try")
+
     await transporter.sendMail({
       from: `"Tinker Professional" <${process.env.SMTP_USER}>`, // sender address
       to: process.env.SMTP_USER, // list of recipients
@@ -46,6 +48,8 @@ console.log("sendMail is called")
   </ul>
 `,
     });
+
+    console.log("in try between messages")
 
     await transporter.sendMail({
       from: `"Tinker Professional" <${process.env.SMTP_USER}>`, // sender address
