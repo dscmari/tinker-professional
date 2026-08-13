@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useScrolled } from "../hooks/useScrolled";
 import PrintNowBtn from "./btn/PrintNowBtn";
@@ -34,7 +34,7 @@ export default function Navbar({ className }: Props) {
 
   return (
     <div
-      className={`z-100 px-4 lg:px-16 pt-4 transition-all duration-300 bg-white ${isScrolled ? "lg:pt-4" : "lg:pt-12"} ${className}`}
+      className={`z-100 px-4 lg:px-16 pt-4 transition-all duration-300 bg-white ${isScrolled ? "lg:pt-0" : "lg:pt-8"} ${className}`}
     >
       {/* mobile */}
       <div className="lg:hidden">
@@ -73,16 +73,44 @@ export default function Navbar({ className }: Props) {
               <div className="pb-1 border-b-2 border-slate-200 w-full flex justify-end">
                 <Link href={"/ueber-mich/"}>Über mich</Link>
               </div>
-                 <div className="pb-1  w-full flex justify-center">
-                <Link href={"/"} className="bg-cta py-2 px-4 rounded-xl text-white font-semibold">Jetzt Drucken</Link>
+              <div className="pb-1  w-full flex justify-center">
+                <Link
+                  href={"/"}
+                  className="bg-cta py-2 px-4 rounded-xl text-white font-semibold"
+                >
+                  Jetzt Drucken
+                </Link>
               </div>
             </div>
           </motion.div>
         ) : null}
       </div>
       {/* desktop */}
-      <div className="hidden lg:flex items-end justify-between border-b border-slate-300 pb-4">
-        {/* <Link className="z-100" href={"/"}>
+      <div className="">
+        <div className={`flex justify-end items-center gap-2 pb-8`}>
+          <Link href="https://www.youtube.com/@lu.techtinker" target="_blank">
+            <Image
+              src="/images/yt_icon_red_digital.png"
+              alt="Logo"
+              width={50}
+              height={50}
+              loading="eager"
+            />
+          </Link>
+          <Link href={"#"}>
+            {" "}
+            <Image
+              src="/images/Instagram_icon.png.webp"
+              alt="Logo"
+              width={10}
+              height={10}
+              loading="eager"
+              className="w-6 h-6"
+            />
+          </Link>
+        </div>
+        <div className="hidden lg:flex items-end justify-between border-b border-slate-300 pb-4">
+          {/* <Link className="z-100" href={"/"}>
           {" "}
           <Image
             src="/images/logo.png"
@@ -93,38 +121,41 @@ export default function Navbar({ className }: Props) {
             loading="eager"
           />
         </Link> */}
-        <Link href={"/"}>
-          <h1 className="!font-extrabold !tracking-tight !mb-0">TINKER PRO</h1>
-        </Link>
+          <Link href={"/"}>
+            <h1 className="!font-extrabold !tracking-tight !mb-0">
+              TINKER PRO
+            </h1>
+          </Link>
 
-        <div className="flex items-center text-blue text-lg xl:text-lg font-semibold font-inter lg:gap-4 xl:gap-8 2xl:gap-16">
-          <Link
-            href={"/fdm-technologie/"}
-            transitionTypes={["nav-forward"]}
-            className={`nav-link ${pathname === "/fdm-technologie" ? "active" : ""}`}
-          >
-            FDM Technologie
-          </Link>
-          <Link
-            href={"3d-druck-material"}
-            transitionTypes={["nav-forward"]}
-            className={`nav-link ${pathname === "/3d-druck-material" ? "active" : ""}`}
-          >
-            Materialwahl
-          </Link>
-          <Link
-            href={"kontakt"}
-            className={`nav-link ${pathname === "/kontakt" ? "active" : ""}`}
-          >
-            Kontakt{" "}
-          </Link>
-          <Link
-            href={"ueber-mich"}
-            className={`nav-link ${pathname === "/ueber-mich" ? "active" : ""}`}
-          >
-            Über mich
-          </Link>
-          <PrintNowBtn className="bg-cta" />
+          <div className="flex items-center text-blue text-lg xl:text-lg font-semibold font-inter lg:gap-4 xl:gap-8 2xl:gap-16">
+            <Link
+              href={"/fdm-technologie/"}
+              transitionTypes={["nav-forward"]}
+              className={`nav-link ${pathname === "/fdm-technologie" ? "active" : ""}`}
+            >
+              FDM Technologie
+            </Link>
+            <Link
+              href={"3d-druck-material"}
+              transitionTypes={["nav-forward"]}
+              className={`nav-link ${pathname === "/3d-druck-material" ? "active" : ""}`}
+            >
+              Materialwahl
+            </Link>
+            <Link
+              href={"kontakt"}
+              className={`nav-link ${pathname === "/kontakt" ? "active" : ""}`}
+            >
+              Kontakt{" "}
+            </Link>
+            <Link
+              href={"ueber-mich"}
+              className={`nav-link ${pathname === "/ueber-mich" ? "active" : ""}`}
+            >
+              Über mich
+            </Link>
+            <PrintNowBtn className="bg-cta" />
+          </div>
         </div>
       </div>
     </div>
