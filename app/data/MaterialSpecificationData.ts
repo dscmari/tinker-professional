@@ -58,4 +58,6 @@ export const heights = [
   "0.24mm Standard @BBL H2S",
 ];
 
-export const pattern = ["Stabil", "Instabil"];
+export const pattern = ["Funktionsbauteil", "Modellbauteil"];
+
+export const nozzles = ["0,2 Millimeter", "0,4 Millimeter", "0,6 Millimeter"];

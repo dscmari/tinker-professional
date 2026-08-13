@@ -17,7 +17,8 @@
     "postcss": "^8.5.10",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "react-dropzone": "^15.0.0"
+    "react-dropzone": "^15.0.0",
+    "sendpigeon": "^1.13.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.4",

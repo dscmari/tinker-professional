@@ -1,11 +1,12 @@
 export type Specification = {
   material: MaterialType;
-  color: "";
+  color: string;
   height: string;
   pattern: string;
   density: number;
   quantity: number;
   wall: number;
+  nozzle: string;
   explaination: string;
   name: string;
   mail: string;

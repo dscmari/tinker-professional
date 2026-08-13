@@ -11,6 +11,7 @@ import {
   heights,
   materials,
   pattern,
+  nozzles
 } from "@/app/data/MaterialSpecificationData";
 import { Check, MoveLeft, MoveRight } from "lucide-react";
 import submitPrint from "@/actions/submitPrint";
@@ -38,7 +39,8 @@ export default function MaterialForm({ className }: Props) {
     density: 20,
     pattern: "",
     quantity: 0,
-    wall: 0,
+    wall: 2,
+    nozzle: "0,4 Millimeter",
     explaination: "",
     name: "",
     mail: "",
@@ -95,6 +97,7 @@ export default function MaterialForm({ className }: Props) {
     <AmountANDWall
       handleChange={handleChange}
       specification={specification}
+      nozzles={nozzles}
       isAttempted={isAttempted}
       hasValidQuantity={specification.quantity > 0}
       hasValidWall={specification.wall > 0}

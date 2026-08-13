@@ -23,8 +23,8 @@ type Props = {
   inputFileRef: any;
   selectedFiles: File[];
   onFilesChange: any;
-  isAttempted :boolean
-  hasValidFiles: boolean
+  isAttempted: boolean;
+  hasValidFiles: boolean;
 };
 
 export default function FormOverview({
@@ -34,14 +34,13 @@ export default function FormOverview({
   selectedFiles,
   onFilesChange,
   isAttempted,
-  hasValidFiles
+  hasValidFiles,
 }: Props) {
-
-useEffect(() => {
-  console.log(selectedFiles)
-  console.log(hasValidFiles)
-  console.log(isAttempted)
-},[selectedFiles])
+  useEffect(() => {
+    console.log(selectedFiles);
+    console.log(hasValidFiles);
+    console.log(isAttempted);
+  }, [selectedFiles]);
 
   return (
     <div className="text-blue flex flex-col mt-8 lg:mt-0">
@@ -160,7 +159,7 @@ useEffect(() => {
             </label>
           </div>
           <span className="text-sm md:text-md font-semibold ml-2">
-            0.4 mm (auf Anfrage 0.2mm möglich)
+            {specification.nozzle}
           </span>
         </div>
         <div className="flex flex-col gap-1 md:gap-2">
@@ -206,7 +205,9 @@ useEffect(() => {
               </p>
             ))
           ) : (
-            <p className={`text-sm mx-auto lg:mx-0 !font-normal ${!hasValidFiles && isAttempted  ? "!text-red-500" : ""}`}>
+            <p
+              className={`text-sm mx-auto lg:mx-0 !font-normal ${!hasValidFiles && isAttempted ? "!text-red-500" : ""}`}
+            >
               Keine Dateien ausgewählt
             </p>
           )}

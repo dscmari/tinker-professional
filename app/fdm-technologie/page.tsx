@@ -4,7 +4,10 @@ import { Check, Star, X } from "lucide-react";
 import Hero_noImage from "../components/Hero_noImage";
 import FourBoxLayout from "../components/FourBoxLayout";
 import { heightsData } from "../data/HeightsData";
-import { nozzleDiameterCards, wallThicknessCards } from "../data/MaterialCardsData";
+import {
+  nozzleDiameterCards,
+  wallThicknessCards,
+} from "../data/MaterialCardsData";
 import MaterialCard from "../components/MaterialCard";
 import { densityData } from "../data/DensityData";
 
@@ -15,23 +18,18 @@ export default function page() {
     intro:
       "In der modernen additiven Fertigung ist die Entscheidung für eine bestimmte Technologie eine strategische Weichenstellung. Bevor man sich mit den Spezifikationen und Parametern auseinandersetzt, steht eine grundlegende Analyse im Vordergrund: Harmoniert die gewählte Methode mit dem angestrebten Einsatzzweck des Bauteils?",
     imgPath: "/images/tool_5.png",
-       backgroundImgPath: "/images/tool_bg_horizontal.jpg"
+    backgroundImgPath: "/images/tool_bg_horizontal.jpg",
   };
-  const {
-   title,
-    subtitle,
-    intro,
-    imgPath,
-  } = hero;
+  const { title, subtitle, intro, imgPath } = hero;
 
   return (
     <div style={{ backgroundImage: `url(/images/tool_bg_vertikal.jpg)` }}>
-        <Hero_noImage
-          title={title}
-          subtitle={subtitle}
-          intro={intro}
-          imgPath={imgPath}
-        />
+      <Hero_noImage
+        title={title}
+        subtitle={subtitle}
+        intro={intro}
+        imgPath={imgPath}
+      />
       <section className="px-4 sm:px-16 lg:px-32 pt-24 lg:pt-32 xl:pt-48">
         <div>
           <h3 className="text-center">Fused Deposition Modeling</h3>
@@ -94,7 +92,7 @@ export default function page() {
         </div>
         <p className="mt-24 lg:text-lg max-w-3xl mx-auto text-center">
           Für unsere Fertigung setzen wir auf hochwertige Komponenten wie den
-          Bambu Lab h3S, die eine gleichbleibend hohe Druckqualität, präzise
+          Bambu Lab h2S, die eine gleichbleibend hohe Druckqualität, präzise
           Details und zuverlässige Ergebnisse ermöglichen. Moderne
           FDM-Technologie bietet dabei eine optimale Kombination aus
           <strong> Geschwindigkeit</strong>, <strong> Stabilität</strong> und{" "}
@@ -173,7 +171,7 @@ export default function page() {
           </div>
         </div>
       </section>
-        <section className="px-4 sm:px-16 lg:px-32 pt-24 lg:pt-32  flex flex-col gap-12 lg:flex-row lg:gap-24 lg:justify-center">
+      <section className="px-4 sm:px-16 lg:px-32 pt-24 lg:pt-32  flex flex-col gap-12 lg:flex-row lg:gap-24 lg:justify-center">
         <div className="flex-1 max-w-3xl">
           <h1>Präzision und Maßhaltigkeit</h1>
           <div className="flex flex-col gap-4">
@@ -257,20 +255,18 @@ export default function page() {
             <h2>Gut zu wissen</h2>
             <div className="flex flex-col gap-4">
               <p>
-                Die Schichthöhe beeinflusst hauptsächlich die
-                Oberflächenqualität, den Detailgrad und die Druckzeit. Die
-                Stabilität eines Bauteils hängt dagegen überwiegend von anderen
-                Faktoren ab, wie beispielsweise:
+                Eine größere Düse macht ein Bauteil nicht automatisch stabiler.
+                Sie ermöglicht jedoch breitere Druckbahnen und kräftigere
+                Wandstrukturen, was besonders bei großen und funktionalen
+                Bauteilen von Vorteil sein kann.
               </p>
-              <div className="text-blue font-medium">
-                <ul className="list-disc ml-8">
-                  <li>Materialwahl</li>
-                  <li>Bauteilausrichtung</li>
-                  <li>Wandstärke </li>
-                  <li>Anzahl der Außenwände </li>
-                  <li>Fülldichte</li>
-                </ul>
-              </div>
+              <p>
+                Entscheidend für die Stabilität ist das Zusammenspiel aus
+                Düsengröße, Wandstärke, Fülldichte, Druckausrichtung und
+                Material. Deshalb passe ich diese Parameter individuell an das
+                jeweilige Bauteil und seinen Einsatzzweck an – für eine optimale
+                Kombination aus Stabilität, Gewicht und Kosten.{" "}
+              </p>
             </div>
           </div>
         </div>

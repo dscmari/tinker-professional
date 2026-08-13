@@ -7,7 +7,7 @@ export default function page() {
   return (
     <div
       style={{ backgroundImage: `url(/images/tool_bg_vertikal.jpg)` }}
-      className="px-4 sm:px-16 lg:px-32 grid lg:grid-cols-12 gap-12 pt-12 md:pt-24 lg:pt-60"
+      className="px-4 sm:px-16 lg:px-32 grid lg:grid-cols-12 gap-12 xl:gap-24 pt-12 md:pt-24 lg:pt-60"
     >
       <div className="lg:col-span-6">
         <h1 className="xl:!text-5xl/14 !font-extrabold">

@@ -34,7 +34,7 @@ export default function Navbar({ className }: Props) {
 
   return (
     <div
-      className={`z-100 px-4 lg:px-16 pt-4 transition-all duration-300 bg-white ${isScrolled ? "lg:pt-4" : "lg:py-12"} ${className}`}
+      className={`z-100 px-4 lg:px-16 pt-4 transition-all duration-300 bg-white ${isScrolled ? "lg:pt-4" : "lg:pt-12"} ${className}`}
     >
       {/* mobile */}
       <div className="lg:hidden">
