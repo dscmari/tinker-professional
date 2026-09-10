@@ -87,7 +87,7 @@ export default function Navbar({ className }: Props) {
       </div>
       {/* desktop */}
       <div className="">
-        <div className={`flex justify-end items-center gap-2 pb-8`}>
+        <div className={`flex justify-end items-center gap-2 transition-all duration-300 ${isScrolled ? "pb-0" : "pb-4"}`}>
           <Link href="https://www.youtube.com/@lu.techtinker" target="_blank">
             <Image
               src="/images/yt_icon_red_digital.png"
