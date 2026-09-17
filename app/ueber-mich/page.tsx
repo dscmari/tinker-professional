@@ -40,10 +40,10 @@ export default function page() {
   return (
     <div style={{ backgroundImage: `url(/images/tool_bg_vertikal.jpg)` }}>
       <Hero title={title} subtitle={subtitle} intro={intro} imgPath={imgPath} />
-      <section className="sm:px-16 lg:px-32 pt-24 lg:pt-48 2xl:pt-0 flex flex-col gap-12 2xl:flex-row 2xl:gap-24 2xl:justify-center lg:items-center">
-        <div className="flex-1 max-w-3xl">
+      <section className="sm:px-16 lg:px-32 pt-24 lg:pt-48 2xl:pt-0 flex flex-col gap-12 xl:flex-row xl:gap-24 xl:justify-center lg:items-center">
+        <div className="flex-1">
           <h1 className="px-4 sm:px-0">Techtinker bei YouTube</h1>
-          <div className="flex flex-col gap-4 ">
+          <div className="flex flex-col gap-4 md-max-w-">
             <p className="px-4 sm:px-0">
               Auf meinem{" "}
               <Link
@@ -67,7 +67,7 @@ export default function page() {
                 alt="Screenshot Youtube Kanal TechTinker"
               />
             </div>
-          <p className="px-4 sm:px-0">
+            <p className="px-4 sm:px-0">
               Auch der Nachwuchs soll dabei nicht zu kurz kommen: Auf meiner
               Experimentier-Webseite finden Kinder und Familien verschiedene
               Experimente mit unterschiedlichen Materialien, die sich mit

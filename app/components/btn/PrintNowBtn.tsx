@@ -25,7 +25,7 @@ export default function ContactBtn({ className, content, hasArrow}: Props) {
             ?.scrollIntoView({ behavior: "smooth" });
         }
       }}
-      className={`flex items-center gap-2 justify-center lg:justify-start text-white bg-blue px-4 py-2 font-inter font-semibold rounded-xl hover:shadow-xl lg:w-fit ${className}`}
+      className={`flex items-center justify-center xl:justfiy-start gap-4 bg-blue text-white hover:shadow-xl px-4 py-2  font-semibold tracking-tight rounded-xl whitespace-nowrap hover:shadow-xl w-full xl:w-52 ${className}`}
     >
       {hasArrow &&     <ArrowRight className="shrink-0" /> }
   

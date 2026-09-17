@@ -34,7 +34,7 @@ export default function Navbar({ className }: Props) {
 
   return (
     <div
-      className={`z-100 px-4 lg:px-16 pt-4 transition-all duration-300 bg-white ${isScrolled ? "lg:pt-0" : "lg:pt-8"} ${className}`}
+      className={`z-100 px-4 lg:px-16 pt-4 transition-all duration-300 bg-white ${isScrolled ? "lg:pt-0" : "lg:pt-4"} ${className}`}
     >
       {/* mobile */}
       <div className="lg:hidden">
@@ -87,7 +87,9 @@ export default function Navbar({ className }: Props) {
       </div>
       {/* desktop */}
       <div className="">
-        <div className={`flex justify-end items-center gap-2 transition-all duration-300 ${isScrolled ? "pb-0" : "pb-4"}`}>
+        <div
+          className={`flex justify-end items-center gap-2 transition-all duration-300 ${isScrolled ? "pb-0" : "pb-4"}`}
+        >
           <Link href="https://www.youtube.com/@lu.techtinker" target="_blank">
             <Image
               src="/images/yt_icon_red_digital.png"
@@ -127,7 +129,7 @@ export default function Navbar({ className }: Props) {
             </h1>
           </Link>
 
-          <div className="flex items-center text-blue text-lg xl:text-lg font-semibold font-inter lg:gap-4 xl:gap-8 2xl:gap-16">
+          <div className="flex items-center text-blue font-semibold font-inter lg:gap-4 xl:gap-8 2xl:gap-16">
             <Link
               href={"/fdm-technologie/"}
               transitionTypes={["nav-forward"]}
@@ -154,7 +156,7 @@ export default function Navbar({ className }: Props) {
             >
               Über mich
             </Link>
-            <PrintNowBtn className="bg-cta" />
+            <PrintNowBtn className="bg-cta !w-52 font-bold" />
           </div>
         </div>
       </div>
