@@ -41,7 +41,7 @@ export default function RootLayout({
       <body className="min-h-full">
         <Navbar className="lg:fixed w-full max-w-[2048px]" />
         <main className="max-w-[2048px] mx-auto">{children}</main>
-        <Footer className="pt-24 lg:pt-48" />
+        <Footer />
       </body>
     </html>
   );

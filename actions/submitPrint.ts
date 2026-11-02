@@ -24,7 +24,7 @@ export default async function submitPrint(
   <h2>Neue Bestellung eingegangen</h2>
     <p><b>Name:</b> ${specification.name}</p>
   <p><b>Mail:</b> ${specification.mail}</p>
-  <p><b>Material:</b> ${specification.material.name}</p>
+  <p><b>Material:</b> ${specification.material}</p>
   <p><b>Farbe:</b> ${specification.color}</p>
   <p><b>Schichthöhe:</b> ${specification.height}</p>
   <p><b>Fülldichte:</b> ${specification.density}%</p>
@@ -50,7 +50,7 @@ export default async function submitPrint(
     <p>Wir haben Ihre Anfrage erhalten und verarbeiten sie umgehend. Hier ist eine Übersicht Ihrer Angaben:</p>
     <hr/>
     <h3>Bestelldetails:</h3>
-    <p><b>Material:</b> ${specification.material.name}</p>
+    <p><b>Material:</b> ${specification.material}</p>
     <p><b>Farbe:</b> ${specification.color}</p>
     <p><b>Schichthöhe:</b> ${specification.height}</p>
     <p><b>Fülldichte:</b> ${specification.density}%</p>

@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import Material from "./Material";
-import { MaterialType, Specification } from "@/app/types";
+import {Specification } from "@/app/types";
 import Heights from "./Heights";
 import Filling from "./Filling";
 import AmountANDWall from "./AmountANDWall";
@@ -11,7 +11,7 @@ import {
   heights,
   materials,
   pattern,
-  nozzles
+  nozzles,
 } from "@/app/data/MaterialSpecificationData";
 import { Check, MoveLeft, MoveRight } from "lucide-react";
 import submitPrint from "@/actions/submitPrint";
@@ -20,6 +20,7 @@ import ContactInfo from "./ContactInfo";
 import { type PutBlobResult } from "@vercel/blob";
 import { upload } from "@vercel/blob/client";
 import ThankYou from "./ThankYou";
+import Color from "./Color";
 
 type Props = {
   className?: string;
@@ -33,9 +34,10 @@ export default function MaterialForm({ className }: Props) {
 
   const pathname = usePathname();
   const [specification, setSpecification] = useState<Specification>({
-    material: { name: "", colors: [] },
+    material:  "",
+        color: "",
     height: "0.20mm Standard @BBL H2S",
-    color: "",
+
     density: 20,
     pattern: "",
     quantity: 0,
@@ -48,7 +50,7 @@ export default function MaterialForm({ className }: Props) {
 
   const handleChange = (
     key: keyof Specification,
-    value: string | MaterialType,
+    value: string ,
   ) => {
     setSpecification((prev) => ({ ...prev, [key]: value }));
   };
@@ -58,17 +60,19 @@ export default function MaterialForm({ className }: Props) {
 
   const isStepValid = (step: number): boolean => {
     if (step === 0)
-      return !!specification.material.name && !!specification.color;
-    else if (step === 2) {
+      return !!specification.material
+    if(step === 1) return !!specification.color
+    
+    else if (step === 3) {
       return !!specification.pattern;
-    } else if (step === 3) {
-      return specification.quantity > 0 && specification.wall > 0;
     } else if (step === 4) {
+      return specification.quantity > 0 && specification.wall > 0;
+    } else if (step === 5) {
       return (
         !!specification.mail &&
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(specification.mail)
       );
-    } else if (step === 5) {
+    } else if (step === 6) {
       return selectedFiles.length > 0;
     }
     return true;
@@ -79,7 +83,12 @@ export default function MaterialForm({ className }: Props) {
       specification={specification}
       handleChange={handleChange}
       isAttempted={isAttempted}
-      hasValidMaterial={!!specification.material.name}
+      hasValidMaterial={!!specification.material}
+    />,
+    <Color
+      specification={specification}
+      handleChange={handleChange}
+      isAttempted={isAttempted}
       hasValidColor={specification.color !== ""}
     />,
     <Heights
@@ -187,7 +196,7 @@ export default function MaterialForm({ className }: Props) {
       {/* Leiste */}
       <div className={`${currentStep === 6 ? "hidden" : "relative"}`}>
         <div className="hidden lg:flex items-center justify-center pb-4">
-          {STEPS.slice(0,-1).map((_, index) => (
+          {STEPS.slice(0, -1).map((_, index) => (
             <div key={index} className="flex items-center">
               <div
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium cursor-default transition-colors duration-500
@@ -248,7 +257,9 @@ export default function MaterialForm({ className }: Props) {
             <button
               type="button"
               onClick={() => {
-                document.getElementById("form-start")?.scrollIntoView({ behavior: "smooth" });
+                document
+                  .getElementById("form-start")
+                  ?.scrollIntoView({ behavior: "smooth" });
                 if (!isStepValid(currentStep)) {
                   setIsAttempted(true);
                   return;
@@ -263,7 +274,7 @@ export default function MaterialForm({ className }: Props) {
               className="mt-8 p-4"
             >
               <MoveRight
-                className={`shrink-0 ${isStepValid(currentStep) ? "text-blue" : "text-blue/50"}`}
+                className={`shrink-0 ${true ? "text-blue" : "text-blue/50"}`}
                 size={32}
               />
             </button>

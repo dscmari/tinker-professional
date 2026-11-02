@@ -1,17 +1,16 @@
 import Link from "next/link";
-import { Specification, MaterialType } from "@/app/types";
+import { Specification } from "@/app/types";
 import { Layers, PaintbrushVertical } from "lucide-react";
 
 type Props = {
-  materials: MaterialType[];
+  materials: string[];
   specification: Specification;
   handleChange: (
     key: keyof Specification,
-    value: string | MaterialType,
+    value: string
   ) => void;
   isAttempted: boolean
   hasValidMaterial: boolean
-  hasValidColor: boolean
 };
 
 export default function Material({
@@ -20,9 +19,7 @@ export default function Material({
   handleChange,
   isAttempted,
   hasValidMaterial,
-  hasValidColor
 }: Props) {
-  const availableColors = specification.material.colors;
   return (
     <div className="mt-4 lg:mt-0">
       <div className="flex items-center gap-2">
@@ -33,7 +30,7 @@ export default function Material({
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
         {materials.map((mat, index) => {
-          const isSelected = specification.material.name === mat.name;
+          const isSelected = specification.material === mat;
 
           return (
             <div key={index}>
@@ -44,7 +41,7 @@ export default function Material({
                 <input
                   type="radio"
                   name="material"
-                  value={mat.name}
+                  value={mat}
                   className="sr-only"
                   onChange={(e) => handleChange("material", mat)}
                 />
@@ -53,7 +50,7 @@ export default function Material({
                 <span
                   className={`text-sm md:text-lg font-semibold transition-colors w-full  ${isSelected ? "text-white" : "text-blue"}`}
                 >
-                  {mat.name}
+                  {mat}
                 </span>
 
                 {/* Indikator-Punkt oben rechts */}
@@ -72,7 +69,7 @@ export default function Material({
         </Link>
         .
       </p>
-      <fieldset className="mt-8">
+      {/* <fieldset className="mt-8">
         <div className="flex items-center gap-2">
           <PaintbrushVertical className="shrink-0 text-blue h-4 md:h-8" />
              <label className={`text-blue text-sm md:text-md ${isAttempted && !hasValidColor? "text-red-500" : "text-blue"}`}>
@@ -101,7 +98,7 @@ export default function Material({
             </label>
           ))}
         </div>
-      </fieldset>
+      </fieldset> */}
     </div>
   );
 }

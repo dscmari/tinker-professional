@@ -1,4 +1,8 @@
 export const materials = [
+  "ABS", "ASA", "PA12-CF", "TPU", "PLA", "PETG"
+]
+
+export const materialsWithColors = [
   {
     name: "ABS",
     colors: [

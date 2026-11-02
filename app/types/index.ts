@@ -1,5 +1,5 @@
 export type Specification = {
-  material: MaterialType;
+  material: string;
   color: string;
   height: string;
   pattern: string;
@@ -16,7 +16,3 @@ export type Color = {
   class: string;
 };
 
-export type MaterialType = {
-  name: string;
-  colors: Color[];
-};
