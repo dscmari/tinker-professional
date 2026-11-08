@@ -7,17 +7,16 @@ export default async function submitPrint(
   files: File[],
   blobUrls: string[],
 ) {
-
   console.log("submitPrint in server action called");
   console.log(specification);
 
-const apiKey = process.env.SEND_PIGEON;
+  const apiKey = process.env.SEND_PIGEON;
 
-if (!apiKey) {
-  throw new Error("Umgebungsvariable SEND_PIGEON ist nicht gesetzt!");
-}
+  if (!apiKey) {
+    throw new Error("Umgebungsvariable SEND_PIGEON ist nicht gesetzt!");
+  }
 
-const pigeon = new SendPigeon(apiKey);
+  const pigeon = new SendPigeon(apiKey);
   //bestellbestätigung für Luca
   await pigeon.send({
     from: "onboarding@sendpigeon-sandbox.dev",
@@ -46,7 +45,7 @@ const pigeon = new SendPigeon(apiKey);
   //Beställbestätigung für User
   await pigeon.send({
     from: "onboarding@sendpigeon-sandbox.dev",
-    to:  `${specification.mail}`, // Must be your account email
+    to: `${specification.mail}`, // Must be your account email
     subject: "Welcome!",
     html: `
     <h2>Vielen Dank für Ihre Bestellung, ${specification.name}!</h2>
