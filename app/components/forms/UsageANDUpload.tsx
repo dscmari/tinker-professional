@@ -15,7 +15,7 @@ export default function UsageANDUpload({
   handleChange,
 }: Props) {
   return (
-    <div className="mt-8 lg:mt-0">
+    <div className="mt-8">
       {/* Verwendungszweck */}
       <div>
         <div className="flex items-center gap-2">

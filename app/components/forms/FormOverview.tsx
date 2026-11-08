@@ -2,7 +2,6 @@
 
 import { Specification } from "@/app/types";
 import {
-  Bold,
   Drill,
   FileText,
   Gauge,
@@ -43,8 +42,8 @@ export default function FormOverview({
   }, [selectedFiles]);
 
   return (
-    <div className="text-blue flex flex-col mt-8 lg:mt-0">
-      <div className="grid lg:grid-cols-3 gap-4">
+    <div className="text-blue flex flex-col mt-8">
+      <div className="grid lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-8">
         <div className="flex flex-col gap-1 md:gap-2">
           <div className="flex items-center gap-2">
             <Layers className="shrink-0 text-blue h-4 md:h-8" />
@@ -55,7 +54,7 @@ export default function FormOverview({
 
           {specification.material ? (
             <span className="text-sm md:text-md font-semibold ml-2">
-              {specification.material.name}
+              {specification.material}
             </span>
           ) : (
             <span className="text-lg text-red-500"> - </span>
@@ -190,7 +189,7 @@ export default function FormOverview({
           </span>
         </div>
       </div>
-      <aside className="mt-4 flex flex-col lg:flex-row lg:items-center gap-4">
+      <aside className="mt-8 flex flex-col lg:flex-row lg:items-center lg:gap-8">
         <div className="flex items-center gap-2">
           <Upload className="shrink-0 text-blue h-4 md:h-8" />
           <label className="text-blue text-sm md:text-md">Datei:</label>
@@ -221,7 +220,7 @@ export default function FormOverview({
           autoComplete="off"
           aria-hidden="true"
         />
-        <div className="flex lg:ml-auto">
+        <div className="mt-4 lg:mt-0">
           <input
             ref={inputFileRef}
             type="file"

@@ -1,6 +1,3 @@
--Blogreferenzen wenn Referenzobjekte da sind
--Cloudlösung für Upload recherchieren
--Namen evtl. Logo kommt von Luca einbauen
--Tipps Unterseite
--Über mich in footer
--Erklärung ablauf Upload
+-domain www.techtinker3d-druck.de bei sendPigeon registrieren
+  (ohne Registrierung einer Domain funktionieren nur mail an anmelde adresse, noekel@namaste-websites.de)
+-key für sendPigeon in .env variable verschieben  

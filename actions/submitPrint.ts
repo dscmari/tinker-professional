@@ -11,10 +11,13 @@ export default async function submitPrint(
   console.log("submitPrint in server action called");
   console.log(specification);
 
-  const pigeon = new SendPigeon(
-    "sk_test_2H8HuRLnXiWeck0Mgio_o0BwFRofm2SK_zfobFcXARg",
-  );
+const apiKey = process.env.SEND_PIGEON;
 
+if (!apiKey) {
+  throw new Error("Umgebungsvariable SEND_PIGEON ist nicht gesetzt!");
+}
+
+const pigeon = new SendPigeon(apiKey);
   //bestellbestätigung für Luca
   await pigeon.send({
     from: "onboarding@sendpigeon-sandbox.dev",
@@ -43,7 +46,7 @@ export default async function submitPrint(
   //Beställbestätigung für User
   await pigeon.send({
     from: "onboarding@sendpigeon-sandbox.dev",
-    to: "noekel@namaste-websites.de", // Must be your account email
+    to:  `${specification.mail}`, // Must be your account email
     subject: "Welcome!",
     html: `
     <h2>Vielen Dank für Ihre Bestellung, ${specification.name}!</h2>

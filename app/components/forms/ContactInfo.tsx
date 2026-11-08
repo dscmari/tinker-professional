@@ -55,7 +55,7 @@ export default function ContactInfo({
           />
         </div>
       </div>
-      <div className="mt-8">
+      {/* <div className="mt-8">
         <div className="flex items-center gap-2">
           <FileText className="shrink-0 text-blue h-4 md:h-8" />
           <label className="text-blue text-sm md:text-md">
@@ -68,7 +68,7 @@ export default function ContactInfo({
           className="text-sm md:text-md mt-4 w-full bg-white border border-slate-300 rounded-xl p-2 text-blue outline-none transition-all"
           onChange={(e) => handleChange("explaination", e.target.value)}
         />
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -68,7 +68,7 @@ export default function Home() {
             </div>
           </div>
 
-          <MaterialForm className="lg:h-[700px] -mx-4 md:mx-auto lg:mx-0  max-w-4xl mt-12" />
+          <MaterialForm className="lg:h-[600px] -mx-4 md:mx-auto lg:mx-0 xl:min-w-7xl  mt-12" />
         </div>
       </section>
     

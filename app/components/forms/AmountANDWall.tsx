@@ -35,7 +35,7 @@ export default function AmountANDWall({
             type="number"
             min="1"
             placeholder=""
-            value={specification.quantity || ""}
+            value={specification.quantity}
             className="h-10 w-full bg-white border border-slate-300 rounded-xl p-2 text-blue outline-none transition-all"
             onChange={(e) => handleChange("quantity", e.target.value)}
           />
