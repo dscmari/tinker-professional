@@ -43,7 +43,7 @@ export default function FormOverview({
 
   return (
     <div className="text-blue flex flex-col mt-8">
-      <div className="grid lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-8">
+      <div className="grid lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 xl:gap-8">
         <div className="flex flex-col gap-1 md:gap-2">
           <div className="flex items-center gap-2">
             <Layers className="shrink-0 text-blue h-4 md:h-8" />

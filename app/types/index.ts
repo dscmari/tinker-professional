@@ -16,3 +16,11 @@ export type Color = {
   class: string;
 };
 
+export type Inquiry = {
+  name: string,
+  mail: string,
+  message: string,
+  material:string,
+  quantity: number
+}
+

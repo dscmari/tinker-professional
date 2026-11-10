@@ -11,11 +11,13 @@ import {
 } from "./data/MaterialCardsData";
 import { FileCheck2, SlidersHorizontal, Star, UploadCloud } from "lucide-react";
 import { densityData } from "./data/DensityData";
+import EasyUpload from "./components/forms/EasyUpload";
 
 export default function Home() {
   const hero = {
-    title: "Professioneller 3D-Druck Service",
-    subtitle: "- für Unternehmen & Privatkunden",
+    title: "3d-Druck & CAD-Konstruktion",
+    subtitle:
+      "  Für Privatpersonen und Unternehmen: Wir verwandeln Skizzen, Ideen und 3D-Dateien in maßgeschneiderte Bauteile.",
     intro:
       "Hochwertige 3D-Drucke für Prototypen, Ersatzteile und individuelle Bauteile. Ich unterstütze Sie von der ersten Idee bis zum fertigen Druck – inklusive Beratung, Dateianpassung und Konstruktion einfacher Bauteile für optimale Ergebnisse.",
     subintro:
@@ -38,8 +40,8 @@ export default function Home() {
       >
         <div className="lg:mx-auto">
           <div className="max-w-4xl">
-            <h1 className="lg:!text-5xl/14 !font-extrabold !tracking-tight text-center">
-             Jetzt Drucken
+            <h1 className="lg:!text-5xl/14 !font-extrabold !tracking-tight text-center xl:text-start">
+              Jetzt Drucken
             </h1>
             <p>
               Laden Sie Ihre STL-, STEP- oder 3MF-Datei hoch und wählen Sie die
@@ -68,10 +70,18 @@ export default function Home() {
             </div>
           </div>
 
-          <MaterialForm className="lg:h-[600px] -mx-4 md:mx-auto lg:mx-0 xl:min-w-7xl  mt-12" />
+          <MaterialForm className="lg:min-h-[700px] 2xl:min-h-[600px] -mx-4 md:mx-auto lg:mx-0 xl:min-w-5xl 2xl:min-w-7xl  mt-12" />
         </div>
       </section>
-    
+      <section className="py-12 lg:py-32 px-4 md:px-16 lg:px-32">
+        <h1 className="text-center">Anfrage</h1>
+        <p className="text-center max-w-4xl mx-auto">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure fugit
+          officia odit magni co.
+        </p>
+        <EasyUpload className="mt-8 mx-auto" />
+      </section>
+      <section className="py-12 lg:py-32 px-4 md:px-16 lg:px-32"></section>
     </div>
   );
 }
