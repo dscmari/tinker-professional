@@ -6,6 +6,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useScrolled } from "../hooks/useScrolled";
 import PrintNowBtn from "./btn/PrintNowBtn";
+import EasyUpload from "./forms/EasyUpload";
+import EasyUploadBtn from "./btn/EasyUploadBtn";
 
 type Props = {
   className?: string;
@@ -34,16 +36,46 @@ export default function Navbar({ className }: Props) {
 
   return (
     <div
-      className={`z-100 px-4 lg:px-16 pt-4 transition-all duration-300 bg-white ${isScrolled ? "lg:pt-0" : "lg:pt-4"} ${className}`}
+      className={`z-100 pt-4 transition-all duration-300 ${isScrolled ? "lg:pt-0" : "lg:pt-4"} ${className}`}
     >
       {/* mobile */}
-      <div className="lg:hidden">
+      <div className="lg:hidden bg-white px-4 md:px-16">
         <div className="flex justify-between items-center">
-          <Link href={"/"}>
-            <h1 className="!font-extrabold !tracking-tight !mb-0">
-              TINKER PRO
-            </h1>
-          </Link>
+          <div className="pt-4">
+            <Link href={"/"}>
+              <h1 className="!font-extrabold !tracking-tight !mb-0">
+                TINKER PRO
+              </h1>
+            </Link>
+            <div
+              className={`flex justify-start items-center gap-2 transition-all`}
+            >
+              <Link
+                href="https://www.youtube.com/@lu.techtinker"
+                target="_blank"
+              >
+                <Image
+                  src="/images/yt_icon_red_digital.png"
+                  alt="Logo"
+                  width={50}
+                  height={50}
+                  loading="eager"
+                />
+              </Link>
+              <Link href={"#"}>
+                {" "}
+                <Image
+                  src="/images/Instagram_icon.png.webp"
+                  alt="Logo"
+                  width={10}
+                  height={10}
+                  loading="eager"
+                  className="w-6 h-6"
+                />
+              </Link>
+            </div>
+          </div>
+
           <div className="burgermenu" id="burger-menu" onClick={toggleMenu}>
             <span className="top"></span>
             <span className="middle"></span>
@@ -73,22 +105,20 @@ export default function Navbar({ className }: Props) {
               <div className="pb-1 border-b-2 border-slate-200 w-full flex justify-end">
                 <Link href={"/ueber-mich/"}>Über mich</Link>
               </div>
-              <div className="pb-1  w-full flex justify-center">
-                <Link
-                  href={"/"}
-                  className="bg-cta py-2 px-4 rounded-xl text-white font-semibold"
-                >
-                  Jetzt Drucken
-                </Link>
+              <div className="pb-1  w-full flex justify-end">
+                <div className="flex flex-col items-end gap-4 mt-4">
+                  <EasyUploadBtn className="bg-cta font-bold" hasArrow={true} />
+                  <PrintNowBtn className="bg-blue font-bold" hasArrow={true} />
+                </div>
               </div>
             </div>
           </motion.div>
         ) : null}
       </div>
       {/* desktop */}
-      <div className="">
+      <div className="bg-white px-4 lg:px-16 ">
         <div
-          className={`flex justify-end items-center gap-2 transition-all duration-300 ${isScrolled ? "pb-0" : "pb-4"}`}
+          className={`hidden lg:flex justify-end items-center gap-2 transition-all duration-300 ${isScrolled ? "pb-0" : "pb-4"}`}
         >
           <Link href="https://www.youtube.com/@lu.techtinker" target="_blank">
             <Image
@@ -156,9 +186,12 @@ export default function Navbar({ className }: Props) {
             >
               Über mich
             </Link>
-            <PrintNowBtn className="bg-cta !w-52 font-bold" />
           </div>
         </div>
+      </div>
+      <div className="hidden lg:flex flex-col items-end gap-2 mt-12 mr-16">
+        <EasyUploadBtn className="bg-cta font-bold" hasArrow={true} />
+        <PrintNowBtn className="bg-blue font-bold" hasArrow={true} />
       </div>
     </div>
   );

@@ -8,6 +8,8 @@ import { ViewTransition } from "react";
 import { useScrolled } from "../hooks/useScrolled";
 import { AnimatePresence, motion } from "framer-motion";
 import PrintNowBtn from "./btn/PrintNowBtn";
+import EasyUpload from "./forms/EasyUpload";
+import EasyUploadBtn from "./btn/EasyUploadBtn";
 
 type Props = {
   className?: string;
@@ -45,9 +47,12 @@ export default function Hero({
         <p className="hidden md:block mt-4 font-semibold max-w-3xl text-center lg:text-start">
           {subintro}
         </p>
-        <div className="flex flex-col items-center gap-4 lg:flex-row mt-8 w-full">
-          <PrintNowBtn hasArrow={true} className="mx-4 lg:mx-0" />
-          <ContactBtn className=" mx-4 lg:mx-0" />
+        <div className="flex flex-col items-center gap-4 md:flex-row md:justify-center lg:justify-start mt-16 w-full">
+          <EasyUploadBtn
+            hasArrow={true}
+            className="mx-4 lg:mx-0 bg-cta md:w-64"
+          />
+          <PrintNowBtn hasArrow={true} className="mx-4 lg:mx-0 md:w-64" />
         </div>
       </div>
       <div />
@@ -85,7 +90,13 @@ export default function Hero({
           </div>
         </div>
       ) : (
-        <Image src={imgPath} alt="" width={400} height={800} className="rounded object-cover mx-auto lg:mx-0" />
+        <Image
+          src={imgPath}
+          alt=""
+          width={400}
+          height={800}
+          className="rounded object-cover mx-auto lg:mx-0"
+        />
       )}
     </div>
   );

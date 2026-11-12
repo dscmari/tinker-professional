@@ -16,20 +16,20 @@ export default function ContactBtn({ className, content, hasArrow}: Props) {
 
   return (
     <Link
-      href={"/"}
-      onClick={(e) => {
-        if (pathname === "/") {
-          e.preventDefault();
-          document
-            .getElementById("print-now")
-            ?.scrollIntoView({ behavior: "smooth" });
-        }
-      }}
-      className={`flex items-center justify-center xl:justfiy-start gap-4 bg-blue text-white hover:shadow-xl px-4 py-2  font-semibold tracking-tight rounded-xl whitespace-nowrap hover:shadow-xl w-full xl:w-52 ${className}`}
+      href={"/3d-druck-konfigurieren/"}
+      // onClick={(e) => {
+      //   if (pathname === "/") {
+      //     e.preventDefault();
+      //     document
+      //       .getElementById("print-now")
+      //       ?.scrollIntoView({ behavior: "smooth" });
+      //   }
+      // }}
+      className={`flex items-center justify-between xl:justfiy-start gap-2 bg-blue text-white px-4 py-2 font-semibold tracking-tight rounded-xl whitespace-nowrap shadow w-full lg:w-60 transform transition-transform duration-300 ease-in-out hover:scale-105 ${className}`}
     >
-      {hasArrow &&     <ArrowRight className="shrink-0" /> }
-  
-      <span>{content ? `${content}` : "JETZT DRUCKEN"}</span>
+    
+      <span>{content ? `${content}` : "3D Druck konfigurieren"}</span>
+      {hasArrow &&     <ArrowRight className="shrink-0" size={18} /> }
     </Link>
   );
 }
